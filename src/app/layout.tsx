@@ -1,4 +1,5 @@
 import "@/app/globals.css";
+import ThemeProvider from "@/components/atoms/ThemeProvider";
 import type { Metadata } from "next";
 import { Sarabun, Tajawal } from "next/font/google";
 
@@ -24,9 +25,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${sarabun.variable} ${tajawal.variable} antialiased`}>
-        <main className="px-20 pt-10">{children}</main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="mx-20 mt-10">{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );
