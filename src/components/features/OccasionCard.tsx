@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { IOccasionCardProps } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { IOccasionCardProps } from "@/lib/types/interface";
 
 const OccasionCard = ({ occasion, height, children }: IOccasionCardProps) => {
     return (

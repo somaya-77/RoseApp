@@ -1,18 +1,29 @@
-export interface IBenefitsSection {
-    title: string;
-    description: string;
-    icon: React.ReactNode;
+import * as RPNInput from "react-phone-number-input";
+
+
+export type Status = "default" | "error" | "disabled";
+
+export type CountrySelectProps = {
+    disabled?: boolean;
+    value: RPNInput.Country;
+    options: { label: string; value: RPNInput.Country |undefined }[];
+    onChange: (country: RPNInput.Country) => void;
+    status?: Status;
 };
 
-export interface IOccasionsSection {
-    image: string;
-    badge?: string;
-    description?: string;
-    title: string;
+export type PaginationLinkProps = {
+  isActive?: boolean;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+export type SearchInputProps = React.ComponentProps<"input"> & {
+  status?: Status;
 };
 
-export interface IOccasionCardProps {
-    occasion: IOccasionsSection,
-    height: number,
-    children?: React.ReactNode
-}
+export type SelectProps = React.ComponentProps<"select"> & {
+  status?: Status;
+};
+
+export type InputProps = React.ComponentProps<"input"> & {
+  status?: Status;
+};
+

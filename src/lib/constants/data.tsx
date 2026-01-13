@@ -1,5 +1,5 @@
-import { IBenefitsSection, IOccasionsSection } from "../types";
 import { Headset, RefreshCw, ShieldCheck, Truck } from 'lucide-react';
+import { IBenefitsSection, IOccasionsSection } from '../types/interface';
 
 export const benefitsData: IBenefitsSection[] = [
     {

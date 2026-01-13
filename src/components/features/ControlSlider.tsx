@@ -1,7 +1,7 @@
 'use client';
-import { occasionsSliderData } from '@/lib/constants/data';
 import { cn } from '@/lib/utils';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { occasionsSliderData } from '@/lib/constants/data';
 
 const ControlSlider = ({ activeIndex, swiper }: { activeIndex: number | null, swiper?: any }) => {
     // verify first and last item

@@ -1,18 +1,55 @@
 import "@/app/globals.css";
+import { Footer, Header } from "@/components";
 import ThemeProvider from "@/components/atoms/ThemeProvider";
 import type { Metadata } from "next";
 import { Sarabun, Tajawal } from "next/font/google";
 
-const sarabun = Sarabun({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+
+import localFont from "next/font/local";
+
+const sarabun = localFont({
+  src: [
+    {
+      path: "/fonts/Sarabun/Sarabun-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "/fonts/Sarabun/Sarabun-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-sarabun",
 });
-const tajawal = Tajawal({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700", "800"],
+
+const tajawal = localFont({
+  src: [
+    {
+      path: "/fonts/Tajawal/Tajawal-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "/fonts/Tajawal/Tajawal-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-tajawal",
 });
+
+
+// const sarabun = Sarabun({
+//   subsets: ["latin"],
+//   weight: ["300", "400", "500", "600", "700", "800"],
+//   variable: "--font-sarabun",
+// });
+// const tajawal = Tajawal({
+//   subsets: ["latin"],
+//   weight: ["300", "400", "500", "700", "800"],
+//   variable: "--font-tajawal",
+// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -33,7 +70,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Header />
           <main className="mx-20 mt-10">{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

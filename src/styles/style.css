@@ -1,0 +1,48 @@
+/* Swiper pagination customization */
+.swiper-pagination-custom .swiper-pagination-bullet {
+  @apply bg-maroon-50 size-2.5;
+}
+
+.swiper-pagination-custom .swiper-pagination-bullet-active {
+  @apply bg-maroon-600 w-[1.9rem] rounded-[0.7rem];
+}
+
+/* BADGE COMPONENT */
+.badge_variants {
+  @apply inline-flex items-center rounded-md border px-2.5 py-0.5 font-medium text-xs transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-zinc-800;
+}
+
+.badge_subtle {
+  @apply bg-zinc-100 text-zinc-700 hover:bg-zinc-200 dark:bg-zinc-700 dark:text-zinc-50 dark:hover:text-zinc-50 dark:hover:bg-zinc-600;
+}
+
+.badge_secondary {
+  @apply bg-maroon-50 text-maroon-600 border-maroon-200 hover:bg-maroon-100 dark:bg-zinc-700 dark:text-softPink-300 dark:hover:text-softPink-300 dark:hover:bg-zinc-600;
+}
+
+.badge_primary {
+  @apply bg-maroon-600 text-white border-maroon-600 hover:bg-maroon-700 dark:bg-softPink-300 dark:text-zinc-800 dark:hover:text-zinc-800 dark:hover:bg-softPink-400;
+}
+
+/* LABEL */
+.label {
+  @apply text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 dark:text-zinc-50 dark:peer-disabled:opacity-50;
+}
+
+/* SELECT */
+.select {
+  @apply border-zinc-300 hover:border-zinc-400 focus-visible:border-maroon-600 focus-visible:ring-1 focus-visible:ring-maroon-600 dark:bg-zinc-700 dark:border-zinc-600 dark:hover:bg-zinc-700 dark:hover:border-zinc-500 dark:text-zinc-400 dark:focus-visible:border-softPink-400 dark:focus-visible:ring-1 dark:focus-visible:ring-softPink-400
+}
+
+.error_select {
+  @apply border-red-600 hover:border-red-600 focus:border-red-600 dark:border-red-500 dark:bg-zinc-700 dark:text-zinc-400
+}
+
+.disabled_select {
+  @apply bg-zinc-100 text-zinc-400 cursor-not-allowed border-none dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-700
+}
+
+/* POPOVER */
+.popover {
+  @apply z-50 w-72 rounded-xl border border-zinc-300 bg-white p-4 text-zinc-800 shadow-md outline-none dark:border-zinc-600 dark:bg-zinc-700 dark:text-zinc-400 
+}

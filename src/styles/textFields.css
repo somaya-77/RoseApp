@@ -1,0 +1,51 @@
+/* TEXTAREA */
+.textarea {
+    @apply border-zinc-300 hover:border-zinc-400 focus-visible:border-maroon-600 focus-visible:ring-1 focus-visible:ring-maroon-600 dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-400 dark:hover:border-zinc-500 dark:focus-visible:border-softPink-400 dark:focus-visible:ring-1 dark:focus-visible:ring-softPink-400;
+}
+
+.error_textarea {
+    @apply border-red-600 hover:border-red-600 focus:border-red-600 dark:border-red-500 dark:bg-zinc-700 dark:text-zinc-400;
+}
+
+.disabled_textarea {
+    @apply bg-zinc-100 text-zinc-400 cursor-not-allowed border-none dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-600;
+}
+
+/* INPUT */
+.input {
+    @apply border-zinc-300 hover:border-zinc-400 focus-visible:border-maroon-600 focus-visible:ring-1 focus-visible:ring-maroon-600 dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-400 dark:hover:border-zinc-500 dark:focus-visible:border-softPink-400 dark:focus-visible:ring-1 dark:focus-visible:ring-softPink-400;
+}
+
+.error_input {
+    @apply border-red-600 hover:border-red-600 focus:border-red-600 dark:border-red-500 dark:bg-zinc-700 dark:text-zinc-400;
+}
+
+.disabled_input {
+    @apply bg-zinc-100 text-zinc-400 cursor-not-allowed border-none dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-700;
+}
+
+/* FILE INPUT */
+.file_input {
+    @apply border-zinc-300 hover:border-zinc-400 focus-within:border-maroon-600 dark:bg-zinc-700 dark:border-zinc-600 dark:hover:bg-zinc-700 dark:hover:border-zinc-500 dark:focus-within:bg-zinc-700 dark:focus-within:border-softPink-400;
+}
+
+.error_file_input {
+    @apply border-red-600 hover:border-red-600 focus-within:border-red-600 dark:border-red-500 dark:bg-zinc-700;
+}
+
+.disabled_file_input {
+    @apply bg-zinc-100 text-zinc-400 cursor-not-allowed border-none dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-700;
+}
+
+/* SEARCH INPUT */
+.search_input {
+    @apply border-zinc-300 hover:border-zinc-400 focus-visible:border-maroon-600 focus-visible:ring-1 focus-visible:ring-maroon-600 dark:bg-zinc-700 dark:border-zinc-600 dark:hover:bg-zinc-700 dark:hover:border-zinc-500 dark:text-zinc-400 dark:focus-visible:border-softPink-400 dark:focus-visible:ring-1 dark:focus-visible:ring-softPink-400;
+}
+
+.error_search_input {
+    @apply border-red-600 hover:border-red-600 focus:border-red-600 focus:ring-1 focus:ring-red-600 dark:border-red-500 dark:bg-zinc-700 dark:text-zinc-400;
+}
+
+.disabled_search_input {
+    @apply bg-zinc-100 text-zinc-400 cursor-not-allowed border-none dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-700;
+}
