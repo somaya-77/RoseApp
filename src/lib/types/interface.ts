@@ -1,9 +1,9 @@
-import { Status } from ".";
+import { Occasion, Status } from ".";
 import { OTPInputProps } from "input-otp";
 import * as RPNInput from "react-phone-number-input";
 import { VariantProps } from "class-variance-authority";
-import { badgeVariants } from "@/components/atoms/badge/Badge";
-import { buttonVariants } from "@/components/atoms/button/Button";
+import { badgeVariants } from "@/components/atoms/badge";
+import { buttonVariants } from "@/components/atoms/button";
 
 
 export interface TextareaProps
@@ -57,6 +57,10 @@ export interface ButtonProps
     loading?: boolean;
 }
 
+
+export interface MostPopularHeaderProps {
+  occasions: Occasion[];
+}
 // export interface PhoneInputProps extends Omit<React.ComponentProps<"input">, "onChange" | "value" | "ref">,
 //     Omit<RPNInput.Props<typeof RPNInput.default>, "onChange"> {
 //     onChange?: (value: RPNInput.Value) => void;

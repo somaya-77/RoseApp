@@ -1,0 +1,40 @@
+import Image from "next/image";
+import {SubTitle,MainTitle} from "@/components";
+import { galleryFeatures } from "@/lib/constants/homepage";
+import { useTranslations } from "next-intl";
+
+export default function GallerySection() {
+  // Translation
+  const t = useTranslations("gallery");
+
+  return (
+    <section>
+      {/* Section Header */}
+      <SubTitle className="text-center" title={t("title")} />
+      <header className="text-center mt-2 mb-10">
+        <MainTitle title={t("header")} />
+      </header>
+
+      {/* Masonry Gallery */}
+      <div className="columns-3 gap-3 space-y-3.5">
+        {galleryFeatures.map((image) => (
+          <div
+            key={image.id}
+            className="relative w-full break-inside-avoid"
+            style={{ height: image.height }}
+          >
+            <Image
+              src={image.src}
+              alt="Gallery image"
+              fill
+              sizes="(max-width: 640px) 100vw,
+         (max-width: 1024px) 50vw,
+         33vw"
+              className="object-cover"
+            />
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
