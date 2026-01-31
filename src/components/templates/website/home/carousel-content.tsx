@@ -1,25 +1,15 @@
 "use client";
 
-import * as React from "react";
-import { Testimonial } from "@/lib/types";
 import TestimonialsCard from "./testimonials-card";
-// import {
-//     CarouselContent,
-//     CarouselItem,
-// } from "@/components";
+import { CarouselContent, CarouselItem } from "@/components";
+import { TestimonialsCarouselProps } from "@/lib/types/interface";
 
-type TestimonialsCarouselProps = {
-    items: Testimonial[];
-};
 
-export default function Content({
-    items,
-}: TestimonialsCarouselProps) {
+export default function Content({ items }: TestimonialsCarouselProps) {
 
-    return
     return (
         <CarouselContent>
-            {[...items, ...items].map((item, index) => (
+            {Array.isArray(items) && [...items, ...items].map((item, index) => (
                 <CarouselItem
                     key={index}
                     className="basis-full sm:basis-1/2 lg:basis-1/3 pt-11 px-8 pb-16"

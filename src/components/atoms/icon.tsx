@@ -11,6 +11,8 @@ import {
     Heart,
     LocationEdit,
     User,
+    Sun,
+    Moon,
 } from "lucide-react";
 
 
@@ -25,6 +27,8 @@ const iconMap: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>
     CheckIcon,
     ClosedCaption,
     X,
+    Sun,
+    Moon,
     Check,
     Search,
     ShoppingCart,

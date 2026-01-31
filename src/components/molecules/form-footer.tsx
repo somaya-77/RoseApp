@@ -32,7 +32,7 @@ export default function FormFooter({ title }: { title: string }) {
         "pt-5 font-medium text-sm text-center border-t border-t-zinc-200 mt-9 first-letter:capitalize",
       )}>
       {text}
-      <Link className="text-maroon-700 font-bold ms-1" href={path}>
+      <Link className="text-maroon-700 dark:text-softPink-300 font-bold ms-1" href={path}>
         {link}
       </Link>
     </div>

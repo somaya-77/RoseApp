@@ -12,6 +12,13 @@ import {
 import { Button } from "./atoms/button"
 import { Card, CardContent, CardFooter, CardHeader } from "./atoms/card";
 import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselPrevious,
+    CarouselNext
+} from "./atoms/carousel";
+import {
     Dialog,
     DialogPortal,
     DialogOverlay,
@@ -168,23 +175,28 @@ export {
     PaginationLast,
     Pagination,
     // Popover
-    PopoverTrigger, 
-    PopoverContent, 
+    PopoverTrigger,
+    PopoverContent,
     PopoverAnchor,
-    Popover, 
+    Popover,
     // Scroll
-    ScrollArea, 
+    ScrollArea,
     ScrollBar,
     // Card
-    CardContent, 
-    CardFooter, 
+    CardContent,
+    CardFooter,
     CardHeader,
-    Card, 
-    
-    
-    
-    
-    
+    Card,
+
+    // Carousel
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselPrevious,
+    CarouselNext,
+
+
+
     // MOLECULES
     EmptyNotifications,
     LanguageSwitcher,
@@ -199,7 +211,7 @@ export {
     OTPTimer,
     InfoUser,
     Location,
-    
+
     // ORGANISM
     Header,
     NavBar,

@@ -3,6 +3,7 @@ import React, { Suspense } from "react";
 import BestSellingStaticText from "./best-selling-static-text";
 // import BestSellingCarouselSkeleton from "@/components/skeletons/best-selling-carousel.skeleton";
 import BestSellingCarousel from "./best-selling-carousel";
+import BestSellingCarouselSkeleton from "./best-selling-carousel.skeleton";
 
 export default function BestSelling() {
   return (
@@ -11,9 +12,9 @@ export default function BestSelling() {
         <BestSellingStaticText />
       </div>
       <div className="flex-1 w-full min-w-0">
-        {/* <Suspense fallback={<BestSellingCarouselSkeleton />}>
+        <Suspense fallback={<BestSellingCarouselSkeleton />}>
           <BestSellingCarousel />
-        </Suspense> */}
+        </Suspense>
       </div>
     </div>
   );

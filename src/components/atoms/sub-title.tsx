@@ -9,7 +9,7 @@ export default function SubTitle({ title, className }: SubTitleProps) {
   return (
     <p
       className={cn(
-        "uppercase font-bold text-softPink-600 tracking-widest dark:text-maroon-400",
+        "uppercase font-bold text-softPink-600 tracking-[10px] dark:text-maroon-400",
         className,
       )}
     >

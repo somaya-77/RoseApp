@@ -1,36 +1,38 @@
-import * as React from "react";
+'use client'
 
-// import {
-//   Carousel,
-//   CarouselContent,
-//   CarouselItem,
-//   CarouselNext,
-//   CarouselPrevious,
-// } from "@/components";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  EmptyProductState
+} from "@/components";
 
 import BestSellingCard from "./best-selling-card";
 
-// import { getBestSelling } from "@/lib/api/get-best-selling";
+import { useBestSelling } from "@/lib/query/website-query/home";
 
-import {EmptyProductState} from "@/components";
 interface BestSellingCarouselProps {
-  params: { locale: string };
+  params?: { locale: string };
 }
 
-export default async function BestSellingCarousel({
+export default function BestSellingCarousel({
   params,
 }: BestSellingCarouselProps) {
   //get best selling function
-  // const result = await getBestSelling({ limit: 6 });
+  const result = useBestSelling();
 
+
+  console.log("result", result?.data)
   //handling empty state
-  // if (!result?.data || result.data.length === 0) {
-  //   return <EmptyProductState />;
-  // }
+  if (!result?.data || result.data.length === 0) {
+    return <EmptyProductState />;
+  }
 
   //locale direction
   const isRTL = params?.locale === "ar";
-return
+
   return (
     <Carousel
       opts={{

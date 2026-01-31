@@ -1,24 +1,29 @@
+'use client'
+
 import React, { Suspense } from "react";
 import MostPopularHeader from "../most-pop-header";
 import MostPopularList from "../most-pop-list";
-import { getAllOccasions } from "@/lib/api/get-all-occasions";
-import ProductCardSkeleton from "@/components/skeletons/product-card.skeleton";
+import ProductCardSkeleton from "../product-card.skeleton";
+import { useAllOccasions } from "@/lib/query/website-query/home";
+
 
 interface MostPopularIndexProps {
   searchParams?: { occasion?: string };
 }
 
-export default async function MostPopularIndex({
+export default function MostPopularIndex({
   searchParams,
 }: MostPopularIndexProps) {
-  const allOccasions = await getAllOccasions();
+  const allOccasions = useAllOccasions();
+console.log("allOccasions", allOccasions?.data)
+
 
   return (
     <div className="my-36">
-      <MostPopularHeader occasions={allOccasions.data} />
-      <Suspense fallback={<ProductCardSkeleton count={12} />}>
+      <MostPopularHeader occasions={allOccasions?.data?.occasions} />
+      {/* <Suspense fallback={<ProductCardSkeleton count={12} />}>
         <MostPopularList searchParams={searchParams} />
-      </Suspense>
+      </Suspense> */}
     </div>
   );
 }

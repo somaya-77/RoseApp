@@ -1,4 +1,5 @@
-import { AboutSection, BenefitsSection, Companies, GallerySection, HeroSection, OccasionsSection, Testimonials } from "@/components/templates/website";
+import { AboutSection, BenefitsSection, BestSelling, Companies, GallerySection, HeroSection, OccasionsSection, Testimonials } from "@/components/templates/website";
+import MostPopularIndex from "@/components/templates/website/home/most-popular";
 
 interface HomeProps {
   searchParams: { [key: string]: string | string[] | undefined };
@@ -7,7 +8,7 @@ interface HomeProps {
 export default function Home({ searchParams }: HomeProps) {
   return (
     <>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-16">
         {/* Hero section */}
         <HeroSection />
 
@@ -19,10 +20,10 @@ export default function Home({ searchParams }: HomeProps) {
 
 
         {/* Best Selling Section */}
-        {/* <BestSellingIndex /> */}
+        {/* <BestSelling /> */}
 
         {/* Most Popular Section */}
-        {/* <MostPopularIndex searchParams={searchParams as { occasion?: string }} /> */}
+        <MostPopularIndex searchParams={searchParams as { occasion?: string }} />
 
 
         {/* About Section */}

@@ -1,4 +1,4 @@
-import { Occasion, Status } from ".";
+import { Occasion, Status, Testimonial } from ".";
 import { OTPInputProps } from "input-otp";
 import * as RPNInput from "react-phone-number-input";
 import { VariantProps } from "class-variance-authority";
@@ -62,6 +62,15 @@ export interface ButtonProps
 export interface MostPopularHeaderProps {
   occasions: Occasion[];
 }
+
+export interface TestimonialsCarouselProps {
+    items: Testimonial[];
+};
+
+export interface TestimonialsCardProps {
+    testimonial: Testimonial
+}
+
 // export interface PhoneInputProps extends Omit<React.ComponentProps<"input">, "onChange" | "value" | "ref">,
 //     Omit<RPNInput.Props<typeof RPNInput.default>, "onChange"> {
 //     onChange?: (value: RPNInput.Value) => void;

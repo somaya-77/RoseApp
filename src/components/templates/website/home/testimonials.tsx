@@ -1,25 +1,28 @@
-import React, { Suspense } from 'react';
-import {Title} from '@/components';
-import TestimonialsCarousel from './testimonials-carousel';
-import TestimonialsContent from './testimonials-content';
-// import TestimonialsContentSkeleton from '@/components/skeletons/testimonials/testimonials-content.skeleton';
+'use client'
+
+import { Suspense } from 'react';
 import { useTranslations } from 'next-intl';
+import { MainTitle, SubTitle } from '@/components';
+import { TestimonialsCarousel, TestimonialsContentSkeleton, TestimonialsContent } from '..';
+
 
 export default function Testimonials() {
     // translation
     const t = useTranslations("testimonials");
 
     return (
-        <section className='flex flex-col gap-10 -mx-20 my-36'>
-            {/* Title */}
-            <Title title={t("title")} heading={t("heading")} />
+        <section className='flex flex-col'>
+            <SubTitle className="text-center" title={t("title")} />
+
+            <header className="text-center mt-2 mb-10">
+                <MainTitle title={t("heading")} />
+            </header>
 
             {/* Carousel */}
             <TestimonialsCarousel>
-                {/* <Suspense fallback={<TestimonialsContentSkeleton />}>
+                <Suspense fallback={<TestimonialsContentSkeleton />}>
                     <TestimonialsContent />
-                </Suspense> */}
-                <div></div>
+                </Suspense>
             </TestimonialsCarousel>
         </section>
     )

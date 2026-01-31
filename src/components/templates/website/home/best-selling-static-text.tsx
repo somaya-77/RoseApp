@@ -17,7 +17,7 @@ export default function BestSellingStaticText() {
       <h2 className="font-bold text-3xl text-maroon-700 capitalize">
         {t.rich("heading", {
           span: (chunks: React.ReactNode) => (
-            <span className="text-softPink-500">{chunks}</span>
+            <span className="text-softPink-500">{t(chunks)}</span>
           ),
         })}
       </h2>

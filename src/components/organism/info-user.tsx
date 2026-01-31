@@ -8,7 +8,7 @@ export default function InfoUser() {
     const session = useSession()
     const token = true;
     const user = session?.data?.user;
-    const firstName = user?.email;
+    const firstName = user?.firstName;
     console.log("session", session)
     return (
         <div>
@@ -16,8 +16,8 @@ export default function InfoUser() {
                 <div className="w-24 cursor-pointer flex justify-between items-center">
                     <div className="">
                         <p className="text-zinc-500 -mb-2.5">Hello</p>
-                        <h3 className="text-softPink-200 flex gap-2">
-                            {firstName}Somaya
+                        <h3 className="text-maroon-600 dark:text-softPink-200 flex gap-2">
+                            {firstName}
                         </h3>
                     </div>
                     <Icon name="ChevronDown" className="text-zinc-500" />

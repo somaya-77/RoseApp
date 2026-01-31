@@ -1,4 +1,7 @@
-import { Sarabun, Tajawal } from "next/font/google";
+import {
+  Playwrite_CA_Guides,
+  Sarabun, Tajawal,
+} from "next/font/google";
 import { hasLocale, Locale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
@@ -11,23 +14,23 @@ import { Providers } from "@/lib/providers";
 import ThemeProvider from "@/lib/providers/theme-provider";
 import ReactQueryProvider from "@/lib/providers/react-query-provider";
 
+const tajawal = Tajawal({
+  subsets: ["arabic"],
+  weight: ["300", "400", "500", "700", "800"],
+  variable: "--font-tajawal",
+});
+
 const sarabun = Sarabun({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
   variable: "--font-sarabun",
 });
 
-const tajawal = Tajawal({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700", "800"],
-  variable: "--font-tajawal",
+const greatVibes = Playwrite_CA_Guides({
+  weight: "400",
+  variable: "--font-playwrite-ca",
+  display: "swap",
 });
-
-// const edwardianScript = localFont({
-//   src: "../fonts/EdwardianScriptITC.ttf", // adjust path as needed
-//   variable: "--font-edwardian",
-//   display: "swap",
-// });
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -38,7 +41,7 @@ type LayoutProps = {
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  
+
   const params = await props.params;
   const locale = params.locale;
 
@@ -47,8 +50,8 @@ export async function generateMetadata(props: {
   });
 
   return {
-    title: t('title'),
-    description: t("description"),
+    title: (t as any)('metadata.root.title'),
+    description: (t as any)('metadata.root.description'),
   };
 }
 
@@ -61,7 +64,7 @@ export default async function LocaleLayout({
   params,
 }: LayoutProps) {
   const { locale } = await params;
-  
+
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
@@ -77,8 +80,10 @@ export default async function LocaleLayout({
         className={cn(
           sarabun.variable,
           tajawal.variable,
-          // edwardianScript.variable,
-          "antialiased",
+          greatVibes.variable,
+          // locale === "ar" ? "font-(family-name:var(--font-tajawal))" : "font-(family-name:var(--font-sarabun))",
+          "antialiased"
+
         )}>
         <ThemeProvider
           attribute="class"
@@ -87,11 +92,11 @@ export default async function LocaleLayout({
           disableTransitionOnChange>
           <ReactQueryProvider>
 
-              <Providers>
-                <main>{children}</main>
+            <Providers>
+              <main>{children}</main>
 
-                <Toaster richColors />
-              </Providers>
+              <Toaster richColors />
+            </Providers>
           </ReactQueryProvider>
         </ThemeProvider>
       </body>

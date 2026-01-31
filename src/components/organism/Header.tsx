@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Notifications } from "../templates/website";
-import { Icon, InfoUser, Location, NavBar, Searchbar } from "@/components";
+import { Icon, InfoUser, Location, ModeToggle, NavBar, Searchbar } from "@/components";
 import LanguageSwitcher from "../molecules/language-switcher";
 
 export default function Header() {
@@ -20,7 +20,6 @@ export default function Header() {
             height={80}
           />
         </Link>
-{/* <ModeToggle /> */}
         {/* location */}
         <Location />
         {/* Search Bar */}
@@ -34,6 +33,7 @@ export default function Header() {
             <Icon name="Heart" className="h-5 w-5" />
             <Icon name="ShoppingCart" className="h-5 w-5" />
             <Notifications notificationCount={5} />
+            <ModeToggle />
           </div>
 
           {/* Language Switcher */}

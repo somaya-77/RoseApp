@@ -6,6 +6,11 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+
+--font-greatVibes: var(--font-playwrite-ca);  
+--font-tajawal: var(--font-tajawal);
+  --font-sarabun: var(--font-sarabun);
+
   /* maroon */
   --color-maroon-50: #FBEAEA;
   --color-maroon-100: #F3C5C7;

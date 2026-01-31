@@ -1,6 +1,6 @@
 /* Swiper pagination customization */
 .swiper-pagination-custom .swiper-pagination-bullet {
-  @apply bg-maroon-50 size-2.5;
+  @apply bg-softPink-200 size-2.5;
 }
 
 .swiper-pagination-custom .swiper-pagination-bullet-active {

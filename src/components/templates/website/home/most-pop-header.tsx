@@ -11,7 +11,7 @@ export default function MostPopularHeader({
 }: MostPopularHeaderProps) {
   //Navigation
   const router = useRouter();
-
+console.log("occasions",occasions)
   const searchParams = useSearchParams();
 
   //translations
@@ -36,7 +36,7 @@ export default function MostPopularHeader({
     <div className="flex items-center justify-between mb-10">
       <MainTitle title={t("title")} />
       <ul className="flex gap-6">
-        {occasions.map((occasion) => (
+        {occasions?.map((occasion) => (
           <li key={occasion._id}>
             <button
               onClick={() => handleOccasionClick(occasion._id)}

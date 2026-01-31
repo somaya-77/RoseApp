@@ -51,7 +51,7 @@ export default function AboutSection() {
 
         <h2 className="font-bold text-3xl pb-2 pt-6 text-maroon-700 dark:text-softPink-200">
           {t.rich("header", {
-            span: (chunk) => (
+            span: (chunk: any) => (
               <span className="text-softPink-500 dark:text-maroon-400">
                 {chunk}
               </span>
@@ -76,7 +76,7 @@ export default function AboutSection() {
             >
               <Icon name="Check"
                 className="text-maroon-700 dark:text-softPink-400"
-                size={20}
+                // size={20}
               />
               {t(feature.textKey)}
             </li>

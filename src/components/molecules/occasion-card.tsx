@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { IOccasionCardProps } from "@/lib/types/interface";
+import { useTranslations } from "next-intl";
 
 function OccasionCard ({ occasion, height, children }: IOccasionCardProps) {
+    const t = useTranslations("home");
     return (
         <div
             className={cn("rounded-lg overflow-hidden relative w-full")}
@@ -15,11 +17,11 @@ function OccasionCard ({ occasion, height, children }: IOccasionCardProps) {
             <div className='bg-black/20 absolute bottom-0 left-0 right-0 h-full'>
                 <div className='absolute bottom-0 left-0 p-6'>
                     {/* badge */}
-                    {occasion.badge && <p className="bg-maroon-200 text-white mb-2 rounded-full text-sm px-1 w-fit">{occasion.badge}</p>}
+                    {occasion.badge && <p className="bg-maroon-200 text-white mb-2 rounded-full text-sm px-1 w-fit">{t(occasion.badge)}</p>}
                     {/* title */}
-                    <p className='text-white font-semibold text-2xl leading-6'>{occasion.title}</p>
+                    <p className='text-white font-semibold text-2xl leading-6'>{t(occasion.title)}</p>
                     {/* description */}
-                    {occasion.description && <p className='text-white '>{occasion.description}</p>}
+                    {occasion.description && <p className='text-white '>{t(occasion.description)}</p>}
                     {/* children */}
                     {children && <div className="mt-4">{children}</div>}
                 </div>

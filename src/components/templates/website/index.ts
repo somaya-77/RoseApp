@@ -24,16 +24,25 @@ import BestSelling from "./home/best-selling";
 import Testimonials from "./home/testimonials";
 import NotificationItem from "./home/notification-item";
 import ContentNotification from "./home/content-notifications";
+import { SingleCardSkeleton } from "./home/product-card.skeleton";
+import TestimonialsCardSkeleton from "./home/testimonials-card.skeleton";
+import TestimonialsContentSkeleton from "./home/testimonials-content.skeleton";
+
+
+
 
 export {
     
     // WEBSITE
     // WEBSITE ==> HOME PAGE
+    TestimonialsContentSkeleton,
+    TestimonialsCardSkeleton,
     BestSellingStaticText,
     TestimonialsCarousel,
     TestimonialsContent,
     ContentNotification,
     BestSellingCarousel,
+    SingleCardSkeleton,
     MostPopularHeader,
     NotificationItem,
     TestimonialsCard,

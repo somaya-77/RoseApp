@@ -1,12 +1,11 @@
-import React from 'react';
-// import { getTestimonialsService } from '../../_services/testimonial.service';
+'use client'
 import Content from './carousel-content';
+import { useTestimonials } from '@/lib/query/website-query/home';
 
-export default async function TestimonialsContent() {
-    // services
-    // const data = await getTestimonialsService();
+export default function TestimonialsContent() {
+    const { data } = useTestimonials();
 
-    // return (
-    //     <Content items={data.testimonials} />
-    // )
+    return (
+        <Content items={data?.testimonials} />
+    )
 }
