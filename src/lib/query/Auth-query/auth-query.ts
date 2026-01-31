@@ -2,22 +2,18 @@
 'use client'
 
 import { useMutation } from "@tanstack/react-query";
-import { RegisterFormValues } from "../schemas/register.schema";
-import { loginFormValues } from "../schemas/login.schema";
-import { createPasswordFormValues } from "../schemas/create-password.schema";
-import { axiosInstance } from "../axios";
-import { Toaster } from "@/components/ui/sonner";
 import { useRouter } from "next/navigation";
-import { ProfileFormValues } from "../schemas/profile.schema";
-import { ForgotPasswordFormValues } from "../schemas/forgot-password.schema";
-import { otpFormValues } from "../schemas/otp.schema";
+
 import { toast } from "sonner";
+import { signOut, useSession } from "next-auth/react";
+import { RegisterSchemaType } from "@/lib/schemas/auth/register.schema";
+import { axiosInstance } from "@/lib/axios";
 
 // React Query mutation hooks
 export const useRegisterMutation = () => {
     const router = useRouter();
     return useMutation({
-        mutationFn: async (data: RegisterFormValues) => {
+        mutationFn: async (data: RegisterSchemaType) => {
             const res = await axiosInstance.post(`auth/signup`, data);
             return res.data;
         },
@@ -30,20 +26,6 @@ export const useRegisterMutation = () => {
         },
     });
 };
-
-// LOGIN
-// export const useLoginMutation = () => {
-//     return useMutation({
-//         mutationFn: async (data: loginFormValues) => {
-//             const { data: res } = await axiosInstance.post("auth/signin", data);
-//             return res;
-//         },
-//         onSuccess: (data) => {
-
-//         },
-//     });
-// };
-
 
 export const useCreatePasswordMutation = () => {
     const router = useRouter();
@@ -60,7 +42,31 @@ export const useCreatePasswordMutation = () => {
         onError: (error: any) => {
             console.log("Error during registration:", error.response?.data || error.message);
 
-             const errorMessage = error.response?.data?.message || "Something went wrong";
+            const errorMessage = error.response?.data?.message || "Something went wrong";
+            toast.error(errorMessage);
+        },
+    });
+};
+
+export const useChangePasswordMutation = () => {
+    const router = useRouter();
+
+    return useMutation({
+        mutationFn: async (data: ChangePasswordFormValues) => {
+            const res = await axiosInstance.patch(`auth/changePassword`, data);
+            return res.data;
+        },
+        onSuccess: async (data) => {
+            toast.success(data?.message);
+            await signOut({
+                redirect: true,
+                callbackUrl: "/login"
+            });
+        },
+        onError: (error: any) => {
+            console.log("Error during registration:", error.response?.data || error.message);
+
+            const errorMessage = error.response?.data?.message || "Something went wrong";
             toast.error(errorMessage);
         },
     });
@@ -106,23 +112,70 @@ export const useOTPMutation = () => {
 
 ///////////////////// PROFILE
 // EDIT PROFILE
-export const useEditProfile = (token: string | undefined) => {
+
+export const useEditProfile = () => {
     const router = useRouter();
+    const { update } = useSession();
+
     return useMutation({
         mutationFn: async (data: ProfileFormValues) => {
-            const res = await axiosInstance.put(`auth/editProfile`, data, {
-                headers: {
-                    token: token
-                }
-            });
+            const res = await axiosInstance.put(`auth/editProfile`, data);
             return res.data;
         },
-        onSuccess: (data) => {
-            console.log("updated successfully:", data);
+        onSuccess: async (data) => {
+            toast.success(data?.message);
+            // Update NextAuth session with the new token and user
+            await update({
+                user: data.user
+            });
             router.push("/");
         },
         onError: (error: any) => {
-            console.log("Error during registration:", error.response?.data || error.message);
+            const errorMessage = error.response?.data?.message || "Something went wrong";
+            toast.error(errorMessage);
+        },
+    });
+};
+
+
+
+// LOGOUT
+export const useLogout = () => {
+    const router = useRouter();
+
+    return useMutation({
+        mutationFn: async () => {
+            const res = await axiosInstance.get(`auth/logout`);
+            return res.data;
+        },
+        onSuccess: async (data) => {
+            await signOut({ redirect: false });
+            toast.success(data?.message);
+            router.push(`/login`);
+        },
+        onError: (error: any) => {
+            const errorMessage = error.response?.data?.message || "Something went wrong";
+            toast.error(errorMessage);
+        },
+    });
+};
+// DELETE ACCOUNT
+export const useDeleteAccount = () => {
+    const router = useRouter();
+    return useMutation({
+        mutationFn: async (data) => {
+            const res = await axiosInstance.delete(`auth/deleteMe`);
+            return res.data;
+        },
+        onSuccess: async (data) => {
+            await signOut({ redirect: false });
+
+            toast.success(data?.message);
+            router.push(`/login`);
+        },
+        onError: (error: any) => {
+            const errorMessage = error.response?.data?.message || "Something went wrong";
+            toast.error(errorMessage);
         },
     });
 };

@@ -1,68 +1,23 @@
 "use client";
 
-import { Controller } from "react-hook-form";
-import { useLoginHook } from "@/hooks/use-login";
-import { Button,Label,Input } from "@/components";
-import Link from "next/link";
+import { Form } from ".";
 import { useTranslations } from "next-intl";
+import { loginInputs } from "@/lib/constants/auth";
+import { useLoginHook } from "@/hooks/auth/use-login-hook";
+import { LoginSchemaType } from "@/lib/schemas/auth/login.schema";
+import GreetingTitle from "@/components/atoms/greeting-title";
 
 export default function LoginForm() {
     // Hook
     const { form, onSubmit } = useLoginHook()
     const t = useTranslations("auth.login");
 
+
     return (
-        <form className="flex flex-col gap-4" onSubmit={form.handleSubmit(onSubmit)}>
-            {/* email */}
-            <div>
-                <Label>
-                    {t("Email")}
-                </Label>
-
-                <Controller
-                    name="email"
-                    control={form.control}
-                    render={({ field }) => <Input {...field} placeholder="user@example.com"
-                    />}
-                />
-                <p className="text-red-600 text-sm mt-1">{form.formState.errors.email?.message}</p>
-            </div>
-
-            {/* password */}
-            <div className="">
-                <div>
-                    <Label>
-                        {t("Password")}
-                    </Label>
-                    <Controller
-                        name="password"
-                        control={form.control}
-                        render={({ field }) =>
-                            <Input
-                                {...field}
-                                type="password"
-                                placeholder="••••••••"
-                            />}
-                    />
-
-                    <p className="text-red-500 text-sm mt-1">{form.formState.errors.password?.message}</p>
-                </div>
-
-                <Link href="/forgot-password" className="mt-2 flex justify-end text-maroon-700 text-sm font-semibold">
-                    {t("forgot_password")}
-                </Link>
-            </div>
-
-            {/* remember me */}
-            <div className="flex items-center gap-2">
-                <input type="checkbox" name="remember" />
-                <Label className="text-zinc-800">
-                    {t("remember")}
-                </Label>
-            </div>
-
-            <Button type="submit" >{t("Login")}</Button>
-        </form>
+        <>
+            <GreetingTitle title={t("welcome")} />
+            <Form<LoginSchemaType> title="Login" data={loginInputs} titleBtn="login" handleSubmit={form.handleSubmit(onSubmit)} path="/forgot-password" form={form} titleLinkPage="Forgot your password?" />
+        </>
     )
 }
 

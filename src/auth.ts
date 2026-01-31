@@ -1,8 +1,7 @@
 
-import { NextAuthOptions, User } from "next-auth";
+import { NextAuthOptions, User, Session } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { JSON_HEADER } from "./lib/constants/api.constance";
-
 
 export const authOptions: NextAuthOptions = {
     pages: {
@@ -45,14 +44,31 @@ export const authOptions: NextAuthOptions = {
     ],
 
     callbacks: {
-        async jwt({ token, user }) {
+        async jwt({ token, user, trigger, session }) {
+            if ((trigger as string) === "signOut") {
+                return {};
+            }
+
             if (user) {
                 token.accessToken = (user as any).token;
                 token.user = (user as any).user;
             }
+
+            if (trigger === "update" && session?.user) {
+                token.user = session.user;
+
+                if (session.token) {
+                    token.accessToken = session.token;
+                }
+            }
+
             return token;
         },
         async session({ session, token }) {
+            if (!token?.accessToken) {
+                return null as unknown as Session;
+            }
+
             session.accessToken = token.accessToken as string;
             session.user = token.user as any;
             return session;

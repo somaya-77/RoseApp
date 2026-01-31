@@ -4,6 +4,7 @@ import * as RPNInput from "react-phone-number-input";
 import { VariantProps } from "class-variance-authority";
 import { badgeVariants } from "@/components/atoms/badge";
 import { buttonVariants } from "@/components/atoms/button";
+import { FieldValues, UseFormReturn } from "react-hook-form";
 
 
 export interface TextareaProps
@@ -66,3 +67,25 @@ export interface MostPopularHeaderProps {
 //     onChange?: (value: RPNInput.Value) => void;
 //     status?: Status;
 // }
+
+export interface Data {
+    id: number;
+    label: string;
+    placeholder?: string | undefined;
+    type: string;
+    name: string;
+}
+
+
+export interface AuthFormProps<T extends FieldValues> {
+    title: "Login" | "Create Account" | "Create a New Password" | "Forgot Password" | "Verify OTP";
+    data: Data[];
+    titleBtn: string;
+    handleSubmit: (e?: React.BaseSyntheticEvent) => void;
+    path: string;
+    form: UseFormReturn<T>;
+    titleLinkPage?: string;
+    description?: string;
+    icon?: boolean;
+    email?: string | null | undefined;
+}

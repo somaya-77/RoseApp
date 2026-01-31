@@ -7,6 +7,10 @@ import {
     Check,
     Trash2,
     Bell,
+    Search,
+    Heart,
+    LocationEdit,
+    User,
 } from "lucide-react";
 
 
@@ -22,7 +26,11 @@ const iconMap: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>
     ClosedCaption,
     X,
     Check,
+    Search,
     ShoppingCart,
+    Heart,
+    LocationEdit,
+    User,
     //
     UserRound,
     GraduationCap,

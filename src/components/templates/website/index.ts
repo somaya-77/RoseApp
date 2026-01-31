@@ -16,14 +16,14 @@ import MostPopularList from "./home/most-pop-list";
 import ControlSlider from "./home/control-slider";
 import Companies from "./home/companies-section";
 import AboutSection from "./home/about-section";
-import Notifications from "./home/notification";
+import Notifications from "./home/notifications";
 import OccasionCard from "./home/occasion-card";
 import HeroSection from "./home/hero-section";
 import Content from "./home/carousel-content";
 import BestSelling from "./home/best-selling";
 import Testimonials from "./home/testimonials";
-
-
+import NotificationItem from "./home/notification-item";
+import ContentNotification from "./home/content-notifications";
 
 export {
     
@@ -32,8 +32,10 @@ export {
     BestSellingStaticText,
     TestimonialsCarousel,
     TestimonialsContent,
+    ContentNotification,
     BestSellingCarousel,
     MostPopularHeader,
+    NotificationItem,
     TestimonialsCard,
     CompaniesSection,
     OccasionsSection,

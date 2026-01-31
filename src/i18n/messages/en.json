@@ -62,6 +62,19 @@
     "occasion_badge": "Staring from 10.99 EGP",
     "occasion_title": "Special Gifts For The People You Love"
   },
+  "footer": {
+    "link_1": "Discover our website",
+    "link_2": "Home",
+    "link_3": "Products",
+    "link_4": "Categories",
+    "link_5": "Occasions",
+    "link_6": "Contact",
+    "link_7": "About",
+    "link_8": "Terms & Conditions",
+    "link_9": "Privacy Policy",
+    "link_10": "FAQs",
+    "message": "By subscribing to our newsletter"
+  },
   "auth": {
     "login": {
       "Email": "Email",

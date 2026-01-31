@@ -23,26 +23,31 @@ const tajawal = Tajawal({
   variable: "--font-tajawal",
 });
 
-const edwardianScript = localFont({
-  src: "../fonts/EdwardianScriptITC.ttf", // adjust path as needed
-  variable: "--font-edwardian",
-  display: "swap",
-});
+// const edwardianScript = localFont({
+//   src: "../fonts/EdwardianScriptITC.ttf", // adjust path as needed
+//   variable: "--font-edwardian",
+//   display: "swap",
+// });
+
 type LayoutProps = {
   children: React.ReactNode;
   params: { locale: Locale };
 };
 
-export async function generateMetadata({
-  params: { locale },
-}: LayoutProps): Promise<Metadata> {
+
+export async function generateMetadata(props: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  
+  const params = await props.params;
+  const locale = params.locale;
+
   const t = await getTranslations({
     locale,
-    namespace: "metadata.root",
   });
 
   return {
-    title: t("title"),
+    title: t('title'),
     description: t("description"),
   };
 }
@@ -51,10 +56,12 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export default function LocaleLayout({
+export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: LayoutProps) {
+  const { locale } = await params;
+  
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
@@ -70,13 +77,13 @@ export default function LocaleLayout({
         className={cn(
           sarabun.variable,
           tajawal.variable,
-          edwardianScript.variable,
+          // edwardianScript.variable,
           "antialiased",
         )}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
+          // enableSystem
           disableTransitionOnChange>
           <ReactQueryProvider>
 

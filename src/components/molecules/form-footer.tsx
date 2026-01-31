@@ -1,22 +1,38 @@
-import { Link } from "@/i18n/navigation";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
-import { cn } from "@/lib/utils/tailwind-merge";
+export default function FormFooter({ title }: { title: string }) {
+  let text = "";
+  let link = "";
+  let path = "";
 
-type Props = {
-  text: string;
-  link: string;
-  linkHref: string;
-  className?: string;
-};
-export default function FormFooter({ text, link, linkHref, className }: Props) {
+  switch (title) {
+    case "Create Account":
+      text = "Already have an account?";
+      link = "Login";
+      path = "/login";
+      break;
+
+    case "Create a New Password":
+    case "Forgot Password":
+    case "Verify OTP":
+    case "Login":
+      text = "Don't have an account?";
+      link = "Create yours";
+      path = "/register";
+      break;
+
+    default:
+      return null;
+  }
+
   return (
     <div
       className={cn(
-        "pt-5 font-medium text-sm text-center border-t-2 mt-9 first-letter:capitalize",
-        className,
+        "pt-5 font-medium text-sm text-center border-t border-t-zinc-200 mt-9 first-letter:capitalize",
       )}>
       {text}
-      <Link className="text-maroon-700 font-bold ms-1" href={linkHref}>
+      <Link className="text-maroon-700 font-bold ms-1" href={path}>
         {link}
       </Link>
     </div>

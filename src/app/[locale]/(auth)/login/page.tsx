@@ -1,5 +1,6 @@
-import Login from "./login";
+import { LoginForm } from "@/components/templates/auth";
+
 
 export default function Page() {
-    return (<Login />)
+    return (<LoginForm />)
 }

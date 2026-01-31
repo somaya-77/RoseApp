@@ -20,7 +20,7 @@ export default function CompaniesSection() {
       </h2>
 
       {/* Company Logos */}
-      <div className="flex gap-11 justify-center items-center mt-10">
+      <div className="flex justify-around items-center mt-10">
         {companiesFeatures.map((company) => (
           <Image
             key={company.id}

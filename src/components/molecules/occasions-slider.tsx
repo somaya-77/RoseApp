@@ -7,9 +7,10 @@ import { Swiper } from 'swiper/react';
 import { useState, useRef } from 'react';
 import OccasionCard from './occasion-card';
 import { SwiperSlide } from 'swiper/react';
-import ControlSlider from './control-slider';
-import { occasionsSliderData } from '@/lib/constants/data';
+
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { occasionsSliderData } from '@/lib/constants/homepage';
+import { ControlSlider } from '../templates/website';
 
 function OccasionsSlider () {
   // states

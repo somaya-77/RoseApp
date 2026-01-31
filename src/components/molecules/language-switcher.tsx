@@ -1,16 +1,11 @@
 "use client";
 
-import React from "react";
-// import { usePathname, useRouter } from "../../../i18n/navigation";
-import { useLocale } from "next-intl";
 import { cn } from "@/lib/utils";
+import { useLocale } from "next-intl";
 import { Button } from "@/components";
 import { usePathname, useRouter } from "@/i18n/navigation";
 
-type Props = {
-  className?: string;
-};
-const LanguageSwitcher = ({ className }: Props) => {
+export default function LanguageSwitcher ({ className }: { className?: string }) {
   // Translation
   const locale = useLocale();
 
@@ -38,7 +33,8 @@ const LanguageSwitcher = ({ className }: Props) => {
       onClick={switchLanguage}
       variant={"ghost"}
       className={cn(
-        "text-zinc-700 dark:text-zinc-50 rounded-none shadow-none",
+        "text-zinc-700 dark:text-zinc-50 rounded-none cursor-pointer shadow-none",
+        //  locale == "ar" ? "ltr" : "rtl",
         className,
       )}>
       {locale == "ar" ? "English" : "العربية"}
@@ -46,4 +42,3 @@ const LanguageSwitcher = ({ className }: Props) => {
   );
 };
 
-export default LanguageSwitcher;

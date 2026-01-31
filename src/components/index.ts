@@ -1,4 +1,5 @@
 // ATOMS
+import AuthLanguageSwitcher from "./atoms/auth-language-switcher";
 import { Badge } from "./atoms/badge"
 import {
     Breadcrumb, BreadcrumbList,
@@ -42,6 +43,7 @@ import {
 import EmptyProductState from "./atoms/empty-products";
 import GreetingTitle from "./atoms/greeting-title";
 import Icon from "./atoms/icon";
+import { Input } from "./atoms/input";
 import { FileInput } from "./atoms/input-file";
 import {
     InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator
@@ -69,30 +71,28 @@ import { Toaster } from "./atoms/sonner";
 import SubTitle from "./atoms/sub-title";
 import { Textarea } from "./atoms/textarea";
 import Title from "./atoms/title";
+import AuthInfoPanel from "./molecules/auth-info-panel";
+import AuthLayoutForm from "./molecules/auth-layout-form";
 
 
 // MOLECULES
 import EmptyNotifications from "./molecules/empty-notifications";
 import FormFooter from "./molecules/form-footer";
 import LanguageSwitcher from "./molecules/language-switcher";
+import Location from "./molecules/location";
 import ModeToggle from "./molecules/mode-toggle";
 import OccasionCard from "./molecules/occasion-card";
 import OccasionsSlider from "./molecules/occasions-slider";
+import OTPTimer from "./molecules/otp-timer";
+import Searchbar from "./molecules/search-bar";
 
 
 // ORGANISM
 import Footer from "./organism/Footer";
 import Header from "./organism/Header";
+import InfoUser from "./organism/info-user";
 import NavBar from "./organism/NavBar";
-
-
-
-
-
-
-
-
-
+import TypeInputs from "./organism/type-inputs";
 
 
 
@@ -100,6 +100,7 @@ import NavBar from "./organism/NavBar";
 export {
     // ATOMS
     Icon,
+    Input,
     Label,
     Title,
     Badge,
@@ -115,7 +116,8 @@ export {
     GreetingTitle,
     LabelFileInput,
     EmptyProductState,
-    
+    AuthLanguageSwitcher,
+    // Breadcrumb
     Breadcrumb,
     BreadcrumbList,
     BreadcrumbItem,
@@ -123,7 +125,7 @@ export {
     BreadcrumbPage,
     BreadcrumbSeparator,
     BreadcrumbEllipsis,
-    
+    // Dialog
     Dialog,
     DialogPortal,
     DialogOverlay,
@@ -134,48 +136,50 @@ export {
     DialogFooter,
     DialogTitle,
     DialogDescription,
-    
-    DropdownMenu,
-    DropdownMenuTrigger,
-    DropdownMenuContent,
-    DropdownMenuItem,
+    // DropdownMenu
     DropdownMenuCheckboxItem,
-    DropdownMenuRadioItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuShortcut,
-    DropdownMenuGroup,
-    DropdownMenuPortal,
-    DropdownMenuSub,
     DropdownMenuSubContent,
     DropdownMenuSubTrigger,
     DropdownMenuRadioGroup,
-    
-    InputOTP,
+    DropdownMenuSeparator,
+    DropdownMenuRadioItem,
+    DropdownMenuShortcut,
+    DropdownMenuTrigger,
+    DropdownMenuContent,
+    DropdownMenuPortal,
+    DropdownMenuLabel,
+    DropdownMenuGroup,
+    DropdownMenuItem,
+    DropdownMenuSub,
+    DropdownMenu,
+    // InputOTP
+    InputOTPSeparator,
     InputOTPGroup,
     InputOTPSlot,
-    InputOTPSeparator,
-    
-    Pagination,
+    InputOTP,
+    // Pagination
+    PaginationEllipsis,
+    PaginationPrevious,
     PaginationContent,
+    PaginationFirst,
     PaginationItem,
     PaginationLink,
-    PaginationPrevious,
     PaginationNext,
-    PaginationFirst,
     PaginationLast,
-    PaginationEllipsis,
-    
-    Popover, 
+    Pagination,
+    // Popover
     PopoverTrigger, 
     PopoverContent, 
     PopoverAnchor,
-    
+    Popover, 
+    // Scroll
     ScrollArea, 
     ScrollBar,
-    
-
-    Card, CardContent, CardFooter, CardHeader,
+    // Card
+    CardContent, 
+    CardFooter, 
+    CardHeader,
+    Card, 
     
     
     
@@ -185,9 +189,16 @@ export {
     EmptyNotifications,
     LanguageSwitcher,
     OccasionsSlider,
+    AuthLayoutForm,
+    AuthInfoPanel,
     OccasionCard,
     ModeToggle,
     FormFooter,
+    TypeInputs,
+    Searchbar,
+    OTPTimer,
+    InfoUser,
+    Location,
     
     // ORGANISM
     Header,

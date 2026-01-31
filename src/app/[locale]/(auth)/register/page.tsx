@@ -1,10 +1,5 @@
+import { RegisterForm } from "@/components/templates/auth";
 
-const page = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+export default function Page() {
+  return (<RegisterForm />)
 }
-
-export default page

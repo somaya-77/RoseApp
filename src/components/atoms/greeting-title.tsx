@@ -1,6 +1,4 @@
-import React from "react";
-
-import { cn } from "@/lib/utils/tailwind-merge";
+import { cn } from "@/lib/utils";
 
 type Props = {
   title: string;
@@ -9,12 +7,14 @@ type Props = {
 
 export default function GreetingTitle({ title, className }: Props) {
   return (
-    <h3
-      className={cn(
-        "text-maroon-700 text-5xl font-edwardian border-b-2 pb-4 mb-6 first-letter:capitalize",
-        className,
-      )}>
-      {title}
-    </h3>
+    <div className="border-b border-b-zinc-200 pb-4 text-center">
+      <h3
+        className={cn(
+          "text-maroon-700 text-5xl font-edwardian",
+          className,
+        )}>
+        {title}
+      </h3>
+    </div>
   );
 }

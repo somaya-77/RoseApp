@@ -1,5 +1,12 @@
 // imports
-import { Headset, RefreshCw, ShieldCheck, Truck } from 'lucide-react';
+import {
+    RefreshCw, ShieldCheck, Truck, Home,
+    Info,
+    Gift,
+    ClipboardList,
+    PartyPopper,
+    Headset,
+} from 'lucide-react';
 import { IBenefitsSection, IOccasionsSection } from '../types/interface';
 
 // Feature items displayed in the About section
@@ -101,3 +108,76 @@ export const occasion = {
     badge: "occasion_badge",
     title: "occasion_title"
 };
+
+
+export const navLinks = [
+    { href: "/", label: "Home", icon: <Home className="h-5 w-5" /> },
+    {
+        href: "/products",
+        label: "Products",
+        icon: <Gift className="h-5 w-5" />,
+    },
+    {
+        href: "/categories",
+        label: "Categories",
+        icon: <ClipboardList className="h-5 w-5" />,
+    },
+    {
+        href: "/occasions",
+        label: "Occasions",
+        icon: <PartyPopper className="h-5 w-5" />,
+    },
+    {
+        href: "/contact",
+        label: "Contact",
+        icon: <Headset className="h-5 w-5" />,
+    },
+    {
+        href: "/about",
+        label: "About",
+        icon: <Info className="h-5 w-5" />,
+    },
+];
+
+export const footerLinks = [
+    {
+        href: "/",
+        label: "link_1",
+    },
+    {
+        href: "/",
+        label: "link_2",
+    },
+    {
+        href: "/products",
+        label: "link_3",
+    },
+    {
+        href: "/categories",
+        label: "link_4",
+    },
+    {
+        href: "/occasions",
+        label: "link_5",
+    },
+    {
+        href: "/contact",
+        label: "link_6",
+    },
+    {
+        href: "/about",
+        label: "link_7",
+    },
+    {
+        href: "/about",
+        label: "link_8",
+    },
+    {
+        href: "/about",
+        label: "link_9",
+    },
+    {
+        href: "/about",
+        label: "link_10",
+    },
+];

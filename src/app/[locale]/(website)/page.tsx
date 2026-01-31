@@ -16,25 +16,27 @@ export default function Home({ searchParams }: HomeProps) {
 
         {/* Benefits section */}
         <BenefitsSection />
+
+
+        {/* Best Selling Section */}
+        {/* <BestSellingIndex /> */}
+
+        {/* Most Popular Section */}
+        {/* <MostPopularIndex searchParams={searchParams as { occasion?: string }} /> */}
+
+
+        {/* About Section */}
+        <AboutSection />
+
+        {/* Gallery Section */}
+        <GallerySection />
+        
+        {/* Testimonials Section */}
+        <Testimonials />
+
+        {/* Companies Section */}
+        <Companies />
       </div>
-
-      {/* Best Selling Section */}
-      {/* <BestSellingIndex /> */}
-
-      {/* Most Popular Section */}
-      {/* <MostPopularIndex searchParams={searchParams as { occasion?: string }} /> */}
-
-      {/* Testimonials Section */}
-      <Testimonials />
-
-      {/* About Section */}
-      <AboutSection />
-
-      {/* Gallery Section */}
-      <GallerySection />
-
-      {/* Companies Section */}
-      <Companies />
     </>
   );
 }
