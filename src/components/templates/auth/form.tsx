@@ -2,17 +2,17 @@
 
 import { FieldValues } from "react-hook-form";
 import { AuthFormProps } from "@/lib/types/interface";
-import { useForgotPasswordMutation } from "@/lib/query/Auth-query/auth-query";
+// import { useForgotPasswordMutation } from "@/lib/query/Auth-query/auth-query";
 import { ForgotPasswordFormValues } from "@/lib/schemas/auth/forgot-password.schema";
 import { FormFooter, TypeInputs, Button, OTPTimer } from "@/components";
 import { ModeToggle } from "@/components";
 
 export default function Form<T extends FieldValues>({ title, data, titleBtn, handleSubmit, path, form, titleLinkPage, icon, email }: AuthFormProps<T>) {
 
-    const forgotPasswordMutation = useForgotPasswordMutation();
+    // const forgotPasswordMutation = useForgotPasswordMutation();
 
     const handleResendOTP = (email: ForgotPasswordFormValues) => {
-        forgotPasswordMutation.mutate(email);
+        // forgotPasswordMutation.mutate(email);
     };
 
     return (

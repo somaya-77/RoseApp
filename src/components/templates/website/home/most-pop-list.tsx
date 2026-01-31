@@ -32,19 +32,19 @@ export default async function MostPopularList({
 
 
   return
-  return (
-    <>
-      <div className="grid grid-cols-4 gap-6 min-h-96">
-        {results.data.map((result) => (
-          <BestSellingCard data={result} key={result._id} />
-        ))}
-      </div>
-      <Link
-        className="text-maroon-700 font-medium w-full justify-end  relative inline-flex items-center gap-2 mt-14 hover:text-maroon-800 transition-colors"
-        href={"/products"}>
-        {t("view-more")}
-        <ArrowRight className="w-5 h-5" />
-      </Link>
-    </>
-  );
+  // return (
+  //   <>
+  //     <div className="grid grid-cols-4 gap-6 min-h-96">
+  //       {results.data.map((result) => (
+  //         <BestSellingCard data={result} key={result._id} />
+  //       ))}
+  //     </div>
+  //     <Link
+  //       className="text-maroon-700 font-medium w-full justify-end  relative inline-flex items-center gap-2 mt-14 hover:text-maroon-800 transition-colors"
+  //       href={"/products"}>
+  //       {t("view-more")}
+  //       <ArrowRight className="w-5 h-5" />
+  //     </Link>
+  //   </>
+  // );
 }

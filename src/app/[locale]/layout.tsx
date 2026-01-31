@@ -34,7 +34,7 @@ const greatVibes = Playwrite_CA_Guides({
 
 type LayoutProps = {
   children: React.ReactNode;
-  params: { locale: Locale };
+  params: Promise<{ locale: string }>;
 };
 
 

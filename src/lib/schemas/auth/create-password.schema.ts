@@ -1,10 +1,10 @@
 import { z } from "zod";
-import { passwordSchema } from "./login.schema";
+import { PasswordSchema } from "..";
 
 export const createPasswordSchema = z
     .object({
         email: z.email(),
-        newPassword: passwordSchema,
+        newPassword: PasswordSchema,
     })
 
 export const createPasswordDefaultValues: createPasswordFormValues = {

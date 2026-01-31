@@ -10,7 +10,7 @@ export default function Sidebar () {
     <aside className='fixed left-0 top-0 h-screen w-80 flex flex-col justify-between gap-12 bg-blue-50 p-8 z-50 '>
       <div className='flex flex-col gap-12'>
         <Logo />
-        <SidebarLinks />
+        {/* <SidebarLinks /> */}
       </div>
 
       <div>

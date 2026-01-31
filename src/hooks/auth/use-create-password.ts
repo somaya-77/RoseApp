@@ -2,12 +2,12 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useCreatePasswordMutation } from "@/lib/query/Auth-query/auth-query";
+// import { useCreatePasswordMutation } from "@/lib/query/Auth-query/auth-query";
 import { createPasswordDefaultValues, createPasswordFormValues, createPasswordSchema } from "@/lib/schemas/auth/create-password.schema";
 
 
 export function useCreatePasswordHook() {
-    const createPasswordMutation = useCreatePasswordMutation();
+    // const createPasswordMutation = useCreatePasswordMutation();
     
     const form = useForm<createPasswordFormValues>({
         resolver: zodResolver(createPasswordSchema),
@@ -15,7 +15,7 @@ export function useCreatePasswordHook() {
     });
 
     const onSubmit = (data: createPasswordFormValues) => {
-        createPasswordMutation.mutate(data);
+        // createPasswordMutation.mutate(data);
     };
 
     return {

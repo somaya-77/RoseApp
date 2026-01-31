@@ -41,7 +41,7 @@ export default function BestSellingCarousel({
       }}
       className="w-full max-w-7xl mx-auto">
       <CarouselContent className="-ml-6">
-        {result?.data?.map((product) => (
+        {result?.data?.map((product: any) => (
           <CarouselItem
             key={product._id}
             className="pl-6 md:basis-1/2 lg:basis-1/3">
