@@ -1,21 +1,23 @@
 
 
 export const registerInputs = [
-    { id: 1, label: "First Name", type: "text", name: "firstName", placeholder: "Ahmed" },
-    { id: 2, label: "Last Name", type: "text", name: "lastName", placeholder: "Abdullah" },
-    { id: 3, label: "username", type: "text", name: "username", placeholder: "user123" },
-    { id: 4, label: "Email", type: "text", name: "email", placeholder: "user@example.com" },
-    { id: 5, label: "Phone", type: "phone", name: "phone", placeholder: "1012345678" },
-    { id: 6, label: "Password", type: "password", name: "password" },
-    { id: 7, label: "Confirm Password", type: "password", name: "rePassword" }
+    { id: 1, label: "firstName-label", type: "text", name: "firstName", placeholder: "Ahmed" },
+    { id: 2, label: "lastName-label", type: "text", name: "lastName", placeholder: "Abdullah" },
+    
+    { id: 3, label: "email-label", type: "text", name: "email", placeholder: "user@example.com" },
+    { id: 4, label: "phone-label", type: "phone", name: "phone", placeholder: "1012345678" },
+    { id: 5, label: "gender-label", type: "gender", name: "gender", placeholder: "gender-placeholder" },
+
+    { id: 6, label: "password-label", type: "password", name: "password" },
+    { id: 7, label: "confirmPassword-label", type: "password", name: "rePassword" }
 ];
 
 export const profileInputs = [
-    { id: 1, label: "First Name", type: "text", name: "firstName", placeholder: "Ahmed" },
-    { id: 2, label: "Last Name", type: "text", name: "lastName", placeholder: "Abdullah" },
-    { id: 3, label: "username", type: "text", name: "username", placeholder: "user123" },
-    { id: 4, label: "Email", type: "text", name: "email", placeholder: "user@example.com" },
-    { id: 5, label: "Phone", type: "phone", name: "phone", placeholder: "1012345678" },
+    { id: 1, label: "firstname-label", type: "text", name: "firstName", placeholder: "Ahmed" },
+    { id: 2, label: "lastname-label", type: "text", name: "lastName", placeholder: "Abdullah" },
+    
+    { id: 4, label: "email-label", type: "text", name: "email", placeholder: "user@example.com" },
+    { id: 5, label: "phone-label", type: "phone", name: "phone", placeholder: "1012345678" },
 ];
 
 export const changePasswordInputs = [
@@ -25,12 +27,12 @@ export const changePasswordInputs = [
 ];
 
 export const loginInputs = [
-    { id: 1, label: "Email", placeholder: "user@example.com", type: "text", name: "email" },
-    { id: 2, label: "Password", type: "password", name: "password" }
+    { id: 1, label: "email-label", placeholder: "user@example.com", type: "text", name: "email" },
+    { id: 2, label: "password", type: "password", name: "password" }
 ];
 
 export const forgotPasswordInputs = [
-    { id: 1, label: "Email", placeholder: "user@example.com", type: "text", name: "email" },
+    { id: 1, label: "email-label", placeholder: "user@example.com", type: "text", name: "email" },
 
 ];
 

@@ -2,7 +2,7 @@
 import AuthLanguageSwitcher from "./atoms/auth-language-switcher";
 import { Badge } from "./atoms/badge"
 import {
-    Breadcrumb, 
+    Breadcrumb,
     BreadcrumbList,
     BreadcrumbItem,
     BreadcrumbLink,
@@ -74,7 +74,19 @@ import { PhoneInput } from "./atoms/phone-inputs";
 import { Popover, PopoverTrigger, PopoverContent, PopoverAnchor } from "./atoms/popover";
 import { ScrollArea, ScrollBar } from "./atoms/scroll";
 import { SearchInput } from "./atoms/search-input";
-import { Select } from "./atoms/select";
+import {
+    Select,
+    SelectGroup,
+    SelectValue,
+    SelectTrigger,
+    SelectContent,
+    SelectLabel,
+    SelectItem,
+    SelectSeparator,
+    SelectScrollUpButton,
+    SelectScrollDownButton
+} from "./atoms/select";
+
 import { Toaster } from "./atoms/sonner";
 import SubTitle from "./atoms/sub-title";
 import { Textarea } from "./atoms/textarea";
@@ -104,7 +116,6 @@ import NavBar from "./organism/NavBar";
 import PhoneHeader from "./organism/phone-header";
 import TypeInputs from "./organism/type-inputs";
 
-
 export {
     // ATOMS
     Icon,
@@ -112,7 +123,6 @@ export {
     Label,
     Title,
     Badge,
-    Select,
     Button,
     Toaster,
     Textarea,
@@ -195,8 +205,18 @@ export {
     CarouselItem,
     CarouselPrevious,
     CarouselNext,
-    
-    
+
+    // select
+    Select,
+    SelectGroup,
+    SelectValue,
+    SelectTrigger,
+    SelectContent,
+    SelectLabel,
+    SelectItem,
+    SelectSeparator,
+    SelectScrollUpButton,
+    SelectScrollDownButton,
 
     // MOLECULES
     EmptyNotifications,
@@ -212,7 +232,7 @@ export {
     OTPTimer,
     InfoUser,
     Location,
-    
+
     // ORGANISM
     DesktopHeader,
     PhoneHeader,

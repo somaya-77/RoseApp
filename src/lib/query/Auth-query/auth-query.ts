@@ -8,9 +8,11 @@ import { toast } from "sonner";
 import { signOut, useSession } from "next-auth/react";
 import { RegisterSchemaType } from "@/lib/schemas/auth/register.schema";
 import { axiosInstance } from "@/lib/axios";
+import { useTranslations } from "next-intl";
 
 // React Query mutation hooks
 export const useRegisterMutation = () => {
+    const t = useTranslations("auth");
     const router = useRouter();
     return useMutation({
         mutationFn: async (data: RegisterSchemaType) => {
@@ -19,9 +21,11 @@ export const useRegisterMutation = () => {
         },
         onSuccess: (data) => {
             console.log("Registered successfully:", data);
+            toast.success(t("register-success"));
             router.push("/login");
         },
         onError: (error: any) => {
+            toast.error(error.response?.data || error.message);
             console.log("Error during registration:", error.response?.data || error.message);
         },
     });

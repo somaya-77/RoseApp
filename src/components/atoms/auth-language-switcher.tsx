@@ -1,22 +1,11 @@
 "use client";
 
-import { usePathname } from "@/i18n/navigation";
-
-import {LanguageSwitcher} from "@/components";
-
 import { cn } from "@/lib/utils";
+import { LanguageSwitcher } from "@/components";
+import useCalculateMargins from "@/hooks/auth/use-calculate-margins";
 
 export default function AuthLanguageSwitcher() {
-  const pathname = usePathname();
-
-  const getMarginTop = () => {
-    switch (true) {
-      case pathname.includes("/register"):
-        return "";
-      default:
-        return "";
-    }
-  };
+  const { getMarginTop } = useCalculateMargins();
 
   return (
     <LanguageSwitcher className={cn("ms-auto block", getMarginTop())} />

@@ -1,38 +1,43 @@
 import { z } from "zod";
 import { PasswordSchema, PhoneSchema } from "..";
+import { Translations } from "@/lib/types/global";
 
-export const RegisterSchema = z
-    .object({
-        firstName: z
-            .string()
-            .min(2, "First name must be at least 2 characters"),
+export const RegisterSchema =z.object({
+            firstName: z
+                .string("auth.validations.firstName-required")
+                .min(2, "validations.firstName-min")
+                .max(20, "validations.firstName-max"),
+            lastName: z
+                .string("validations.lastName-required")
+                .min(2, "validations.lastName-min")
+                .max(20, "validations.lastName-max"),
+            email: z.email("validations.email-required"),
+            phone: z
+                .string()
+                .regex(
+                    /^(\+201|01|00201)[0-2,5]{1}[0-9]{8}/,
+                    "validations.phoneNumber-valid"),
+                
+            gender: z.enum(["male", "female"], "validations.gender-required"),
+            password: PasswordSchema,
+            rePassword: z.string().min(1, "validations.confirmPassword-required"),
+        })
+        .refine((data) => data.password === data.rePassword, {
+            path: ["rePassword"],
+            message: "validations.confirmPassword-error",
+        });
 
-        lastName: z
-            .string()
-            .min(2, "Last name must be at least 2 characters"),
 
-        username: z
-            .string()
-            .min(3, "Username must be at least 3 characters"),
 
-        email: z.email("Invalid email address"),
-        phone: PhoneSchema,
-        password: PasswordSchema,
-        rePassword: z.string().min(1, "Please confirm your password"),
-    })
-    .refine((data) => data.password === data.rePassword, {
-        message: "Passwords do not match",
-        path: ["rePassword"], // Points the error to the rePassword field
-    });
 
 export const RegisterDefaultValue = {
     firstName: "",
     lastName: "",
     email: "",
+    phone: "",
+    gender: undefined,
     password: "",
     rePassword: "",
-    phone: "",
-    gender: "",
 }
 
 export type RegisterSchemaType = z.infer<typeof RegisterSchema>;

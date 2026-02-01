@@ -96,4 +96,5 @@ export interface AuthFormProps<T extends FieldValues> {
     description?: string;
     icon?: boolean;
     email?: string | null | undefined;
+    generalErrorMessage?: string;
 }

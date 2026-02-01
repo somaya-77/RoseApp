@@ -1,15 +1,18 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 export default function FormFooter({ title }: { title: string }) {
+
+  const t = useTranslations("auth")
   let text = "";
   let link = "";
   let path = "";
 
   switch (title) {
     case "Create Account":
-      text = "Already have an account?";
-      link = "Login";
+      text = t("form-footer");
+      link = t("form-footer-link");
       path = "/login";
       break;
 
@@ -17,8 +20,8 @@ export default function FormFooter({ title }: { title: string }) {
     case "Forgot Password":
     case "Verify OTP":
     case "Login":
-      text = "Don't have an account?";
-      link = "Create yours";
+      text = t("account");
+      link = t("create-account");
       path = "/register";
       break;
 

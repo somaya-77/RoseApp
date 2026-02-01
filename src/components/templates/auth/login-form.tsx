@@ -10,7 +10,7 @@ import GreetingTitle from "@/components/atoms/greeting-title";
 export default function LoginForm() {
     // Hook
     const { form, onSubmit } = useLoginHook()
-    const t = useTranslations("auth.login");
+    const t = useTranslations("auth");
 
 
     return (

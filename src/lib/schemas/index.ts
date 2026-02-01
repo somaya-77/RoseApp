@@ -10,6 +10,9 @@ export const PasswordSchema = z
     .regex(/[0-9]/, "Password must contain at least one number")
     .regex(/[^A-Za-z0-9]/, "Password must contain at least one special character (e.g., @, $, !, %)");
 
+
 export const PhoneSchema = z
     .string()
     .regex(/^\+201[0125][0-9]{8}$/, "Invalid Egyptian phone number");
+
+    

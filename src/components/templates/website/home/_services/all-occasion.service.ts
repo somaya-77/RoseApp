@@ -1,4 +1,4 @@
-import { Occasion, OccasionResponse } from "@/lib/types/occasions.types";
+import { Occasion, OccasionResponse } from "@/lib/types";
 
 export async function allOccasionsService(): Promise<Occasion[]> {
   const response = await fetch(`${process.env.API_URL}/occasions?limit=4`);
