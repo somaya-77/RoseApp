@@ -17,9 +17,8 @@ export default function Form<T extends FieldValues>({ title, data, titleBtn, han
 
     return (
         <>
-            <ModeToggle />
             <form onSubmit={handleSubmit} >
-                <div className="flex flex-col gap-6 justify-center items-center w-full">
+                <div className="flex flex-col gap-6 justify-center items-center w-full ">
                     <div className="flex gap-6 w-full">
                         {data
                             .filter(item => item.name === "firstName" || item.name === "lastName")

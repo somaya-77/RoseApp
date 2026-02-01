@@ -4,11 +4,11 @@ import { cn } from "@/lib/utils";
 import {MainTitle} from "@/components";
 import { useTranslations } from "next-intl";
 import { useRouter, useSearchParams } from "next/navigation";
-import { MostPopularHeaderProps } from "@/lib/types/interface";
+import { Occasion } from "@/lib/types";
 
 export default function MostPopularHeader({
   occasions,
-}: MostPopularHeaderProps) {
+}: {  occasions: Occasion[]}) {
   //Navigation
   const router = useRouter();
 console.log("occasions",occasions)

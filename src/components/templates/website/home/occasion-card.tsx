@@ -13,7 +13,7 @@ export default function OccasionCard ({ occasion, height, children }: IOccasionC
      
     return (
         <div
-            className={cn("rounded-lg overflow-hidden relative w-full",height === 440 ? "h-110" : "h-67.5" )}
+            className={cn("rounded-lg overflow-hidden relative w-full col-span-6 md:col-span-3 lg:col-span-2 ",height === 440 ? "h-110" : "h-67.5" )}
         >
             {/* image */}
             <Image src={occasion.image} alt={t(occasion.title)} fill
@@ -23,7 +23,7 @@ export default function OccasionCard ({ occasion, height, children }: IOccasionC
                 <div className={cn('absolute  bottom-0 p-6', locale === "ar"? "right-0" : "left-0" )}>
                     {/* badge */}
                     
-                    {occasion.badge && <Badge variant="secondary">{t(occasion.badge)}</Badge>}
+                    {occasion.badge && <Badge variant="primary">{t(occasion.badge)}</Badge>}
                     {/* title */}
                     <p className='text-white font-semibold text-2xl leading-6'>{t(occasion.title)}</p>
                     {/* description */}

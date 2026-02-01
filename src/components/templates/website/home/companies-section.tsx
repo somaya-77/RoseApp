@@ -7,9 +7,9 @@ export default function CompaniesSection() {
   const t = useTranslations("companies");
 
   return (
-    <section className="bg-maroon-50 rounded-2xl py-10 text-center mb-72 dark:bg-zinc-700">
+    <section className="bg-maroon-50 overflow-x-auto rounded-2xl py-10 text-center mb-72 dark:bg-zinc-700">
       {/* Section Title */}
-      <h2 className="text-4xl text-maroon-700 font-bold dark:text-softPink-200">
+      <h2 className="text-4xl text-center text-maroon-700 font-bold dark:text-softPink-200">
         {t.rich("header", {
           span: (chunk: any) => (
             <span className="text-softPink-500 dark:text-maroon-400">

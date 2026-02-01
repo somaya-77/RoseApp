@@ -1,4 +1,4 @@
-import {Icon, SubTitle, Button} from "@/components";
+import { Icon, SubTitle, Button } from "@/components";
 import { aboutFeatures } from "@/lib/constants/homepage";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -9,7 +9,7 @@ export default function AboutSection() {
   const t = useTranslations("about");
 
   return (
-    <section className="flex gap-20 mb-16 justify-center items-center">
+    <section className="flex flex-col lg:flex-row gap-20 mb-16 justify-center items-center">
       {/* Images */}
       <div className="flex gap-2">
         {/* Main Image with Decorative Border */}
@@ -76,7 +76,7 @@ export default function AboutSection() {
             >
               <Icon name="Check"
                 className="text-maroon-700 dark:text-softPink-400"
-                // size={20}
+              // size={20}
               />
               {t(feature.textKey)}
             </li>

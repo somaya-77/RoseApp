@@ -1,4 +1,4 @@
-import {Icon} from "@/components";
+import {Button, Icon} from "@/components";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
@@ -17,18 +17,19 @@ export default function BestSellingStaticText() {
       <h2 className="font-bold text-3xl text-maroon-700 capitalize">
         {t.rich("heading", {
           span: (chunks: React.ReactNode) => (
-            <span className="text-softPink-500">{t(chunks)}</span>
+            <span className="text-softPink-500">{chunks}</span>
           ),
         })}
       </h2>
 
       <p className="mt-2 text-zinc-500">{t("paragraph")}</p>
 
-      <Link
-        className="bg-maroon-600 mt-16 text-white py-2 px-6 pr-10 rounded-xl relative inline-flex items-center gap-2 w-fit hover:bg-maroon-700 transition-colors"
-        href={"/products"}>
-        {t("explore-gifts")} <Icon name="ArrowRight" className="w-5 h-5" />
-      </Link>
+    <Link href="/products">
+          <Button className="my-6 bg-maroon-600 hover:bg-maroon-700 dark:bg-softPink-200 dark:text-zinc-800">
+            {t("explore-gifts")}
+            <Icon name="ArrowRight" size={16} />
+          </Button>
+        </Link>
     </section>
   );
 }

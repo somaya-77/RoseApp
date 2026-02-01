@@ -1,7 +1,4 @@
-import {
-  Playwrite_CA_Guides,
-  Sarabun, Tajawal,
-} from "next/font/google";
+import {Sarabun, Tajawal} from "next/font/google";
 import { hasLocale, Locale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
@@ -26,9 +23,9 @@ const sarabun = Sarabun({
   variable: "--font-sarabun",
 });
 
-const greatVibes = Playwrite_CA_Guides({
-  weight: "400",
-  variable: "--font-playwrite-ca",
+const edwardianScript = localFont({
+  src: "../fonts/EdwardianScriptITC.ttf",
+  variable: "--font-edwardian",
   display: "swap",
 });
 
@@ -80,14 +77,14 @@ export default async function LocaleLayout({
         className={cn(
           sarabun.variable,
           tajawal.variable,
-          greatVibes.variable,
+          edwardianScript.variable,
           // locale === "ar" ? "font-(family-name:var(--font-tajawal))" : "font-(family-name:var(--font-sarabun))",
           "antialiased"
 
         )}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="system"
           // enableSystem
           disableTransitionOnChange>
           <ReactQueryProvider>

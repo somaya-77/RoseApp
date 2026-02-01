@@ -1,7 +1,5 @@
-import React, { Suspense } from "react";
-
+import { Suspense } from "react";
 import BestSellingStaticText from "./best-selling-static-text";
-// import BestSellingCarouselSkeleton from "@/components/skeletons/best-selling-carousel.skeleton";
 import BestSellingCarousel from "./best-selling-carousel";
 import BestSellingCarouselSkeleton from "./best-selling-carousel.skeleton";
 

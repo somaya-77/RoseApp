@@ -1,5 +1,3 @@
-'use client'
-
 import {
   Carousel,
   CarouselContent,
@@ -10,19 +8,15 @@ import {
 } from "@/components";
 
 import BestSellingCard from "./best-selling-card";
+import { getBestSelling } from "@/lib/api/website/get-best-selling";
+import { BestSellingProduct, ParamsProps } from "@/lib/types";
 
-import { useBestSelling } from "@/lib/query/website-query/home";
-
-interface BestSellingCarouselProps {
-  params?: { locale: string };
-}
-
-export default function BestSellingCarousel({
+export default async function BestSellingCarousel({
   params,
-}: BestSellingCarouselProps) {
+}: ParamsProps) {
   //get best selling function
-  const result = useBestSelling();
 
+const result = await getBestSelling({ limit: 6 });
 
   console.log("result", result?.data)
   //handling empty state
@@ -41,7 +35,7 @@ export default function BestSellingCarousel({
       }}
       className="w-full max-w-7xl mx-auto">
       <CarouselContent className="-ml-6">
-        {result?.data?.map((product: any) => (
+        {result?.data?.map((product: BestSellingProduct) => (
           <CarouselItem
             key={product._id}
             className="pl-6 md:basis-1/2 lg:basis-1/3">

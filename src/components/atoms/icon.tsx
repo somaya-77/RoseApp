@@ -13,6 +13,7 @@ import {
     User,
     Sun,
     Moon,
+    ArrowLeft,
 } from "lucide-react";
 
 
@@ -35,6 +36,7 @@ const iconMap: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>
     Heart,
     LocationEdit,
     User,
+    ArrowLeft,
     //
     UserRound,
     GraduationCap,

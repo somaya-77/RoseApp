@@ -29,7 +29,7 @@ export default function FormFooter({ title }: { title: string }) {
   return (
     <div
       className={cn(
-        "pt-5 font-medium text-sm text-center border-t border-t-zinc-200 mt-9 first-letter:capitalize",
+        "pt-5 font-medium text-sm text-center border-t border-t-zinc-200 mt-6 first-letter:capitalize",
       )}>
       {text}
       <Link className="text-maroon-700 dark:text-softPink-300 font-bold ms-1" href={path}>

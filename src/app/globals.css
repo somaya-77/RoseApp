@@ -7,9 +7,9 @@
 
 @theme {
 
---font-greatVibes: var(--font-playwrite-ca);  
---font-tajawal: var(--font-tajawal);
-  --font-sarabun: var(--font-sarabun);
+  --font-sarabun: "var(--font-sarabun)", "sarabun";
+  --font-tajawal: "var(--font-tajawal)", "tajawal";
+  --font-edwardian: "var(--font-edwardian)", "edwardian";
 
   /* maroon */
   --color-maroon-50: #FBEAEA;
@@ -102,5 +102,3 @@
     color: var(--text-color);
   }
 }
-
-

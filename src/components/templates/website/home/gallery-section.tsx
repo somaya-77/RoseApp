@@ -16,7 +16,7 @@ export default function GallerySection() {
       </header>
 
       {/* Masonry Gallery */}
-      <div className="columns-3 gap-3 space-y-3.5">
+      <div className="lg:columns-3 gap-3 space-y-3.5">
         {galleryFeatures.map((image) => (
           <div
             key={image.id}

@@ -93,6 +93,7 @@ import OccasionCard from "./molecules/occasion-card";
 import OccasionsSlider from "./molecules/occasions-slider";
 import OTPTimer from "./molecules/otp-timer";
 import Searchbar from "./molecules/search-bar";
+import DesktopHeader from "./organism/desktop-header";
 
 
 // ORGANISM
@@ -100,9 +101,8 @@ import Footer from "./organism/Footer";
 import Header from "./organism/Header";
 import InfoUser from "./organism/info-user";
 import NavBar from "./organism/NavBar";
+import PhoneHeader from "./organism/phone-header";
 import TypeInputs from "./organism/type-inputs";
-
-Breadcrumb
 
 
 export {
@@ -195,8 +195,8 @@ export {
     CarouselItem,
     CarouselPrevious,
     CarouselNext,
-
-
+    
+    
 
     // MOLECULES
     EmptyNotifications,
@@ -212,8 +212,10 @@ export {
     OTPTimer,
     InfoUser,
     Location,
-
+    
     // ORGANISM
+    DesktopHeader,
+    PhoneHeader,
     Header,
     NavBar,
     Footer,

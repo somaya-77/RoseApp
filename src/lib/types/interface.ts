@@ -59,10 +59,9 @@ export interface ButtonProps
 }
 
 
-export interface MostPopularHeaderProps {
-  occasions: Occasion[];
+export interface MostPopularListProps {
+  searchParams?: { occasion?: string; limit?: number };
 }
-
 export interface TestimonialsCarouselProps {
     items: Testimonial[];
 };

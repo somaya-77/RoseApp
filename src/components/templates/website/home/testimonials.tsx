@@ -11,7 +11,7 @@ export default function Testimonials() {
     const t = useTranslations("testimonials");
 
     return (
-        <section className='flex flex-col'>
+        <section className='flex flex-col -mx-20'>
             <SubTitle className="text-center" title={t("title")} />
 
             <header className="text-center mt-2 mb-10">

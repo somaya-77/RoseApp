@@ -7,10 +7,10 @@ export default function BenefitsSection() {
         const t = useTranslations("home");
 
     return (
-        <section className="bg-maroon-50 dark:bg-zinc-700 rounded-2xl flex justify-around p-9">
+        <section className="bg-maroon-50 overflow-x-auto dark:bg-zinc-700 rounded-2xl gap-4 flex justify-around p-9">
             {/* Benefits Section */}
             {benefitsData.map((benefit, index) => (
-                <div key={index} className="flex items-center gap-4">
+                <div key={index} className="flex items-center min-w-60 gap-4">
                     <div className="bg-maroon-600 dark:bg-softPink-200 rounded-full size-16 flex items-center justify-center text-white dark:text-zinc-500">
                         {benefit.icon}
                     </div>

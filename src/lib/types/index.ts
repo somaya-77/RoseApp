@@ -11,6 +11,14 @@ export type CountrySelectProps = {
     status?: Status;
 };
 
+export interface SearchParamsProps {
+  searchParams?: { occasion?: string };
+}
+
+export interface ParamsProps {
+  params?: { locale: string };
+}
+
 export type PaginationLinkProps = {
   isActive?: boolean;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
@@ -78,6 +86,7 @@ export type NotificationsResponse = {
   data: Notification[];
 }
 
+// BEST SELLING PRODUCT
 export type BestSellingProduct = {
   _id: string;
   title: string;
@@ -99,7 +108,7 @@ export type BestSellingResponse = {
   products: BestSellingProduct[];
 };
 
-export interface GetBestSellingParams {
+export type GetBestSellingParams = {
   filter?: string;
   occasion?: string;
 
@@ -107,4 +116,17 @@ export interface GetBestSellingParams {
 }
 
 
+export type Result<T> =
+  | {
+      success: true;
+      data: T[];
+    }
+  | {
+      success: false;
+      error: string;
+      data: [];
+    };
+
+
+// 
 

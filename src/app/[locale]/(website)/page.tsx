@@ -18,9 +18,8 @@ export default function Home({ searchParams }: HomeProps) {
         {/* Benefits section */}
         <BenefitsSection />
 
-
         {/* Best Selling Section */}
-        {/* <BestSelling /> */}
+        <BestSelling />
 
         {/* Most Popular Section */}
         <MostPopularIndex searchParams={searchParams as { occasion?: string }} />

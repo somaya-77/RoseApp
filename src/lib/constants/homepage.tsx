@@ -140,10 +140,10 @@ export const navLinks = [
 ];
 
 export const footerLinks = [
-    {
-        href: "/",
-        label: "link_1",
-    },
+    // {
+    //     href: "/",
+    //     label: "link_1",
+    // },
     {
         href: "/",
         label: "link_2",
