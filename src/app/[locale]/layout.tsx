@@ -24,7 +24,7 @@ const sarabun = Sarabun({
 });
 
 const edwardianScript = localFont({
-  src: "../fonts/EdwardianScriptITC.ttf",
+src: "../../fonts/EdwardianScriptITC.ttf",
   variable: "--font-edwardian",
   display: "swap",
 });
