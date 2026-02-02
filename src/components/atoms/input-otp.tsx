@@ -1,17 +1,27 @@
 "use client";
 
 import * as React from "react";
-import { cn } from "@/lib/utils";
-import { Minus } from "lucide-react";
-import { Status } from "@/lib/types";
 import { OTPInput, OTPInputContext } from "input-otp";
-import { InputOTPProps } from "@/lib/types/interface";
+import { Minus } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+type OTPStatus = "default" | "error" | "disabled";
+
+interface InputOTPProps {
+  status?: OTPStatus;
+  className?: string;
+  containerClassName?: string;
+  value?: string;
+  onChange?: (value: string) => void;
+  disabled?: boolean;
+  maxLength?: number;
+}
 
 
 const InputOTP = React.forwardRef<
-  HTMLInputElement,
+  React.ElementRef<typeof OTPInput>,
   InputOTPProps
->(({ className, containerClassName, status = "default", ...props }, ref) => {
+>(({ className, containerClassName, status = "default", maxLength = 6, ...props }, ref) => {
   const statusStyles = {
     default:
       "border-zinc-300 dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-400",
@@ -24,33 +34,33 @@ const InputOTP = React.forwardRef<
   return (
     <OTPInput
       ref={ref}
+      maxLength={maxLength}
       disabled={status === "disabled"}
       containerClassName={cn(
-        "flex items-center gap-2",
+        "flex items-center justify-center gap-2",
         status === "disabled" && "opacity-50 cursor-not-allowed",
         containerClassName
       )}
-      render={({ slots }) => (
-        <div
-          className={cn(
-            "flex h-11 w-full bg-white px-3 py-2 border rounded-xl placeholder:text-zinc-400 focus:outline-none focus:border focus:border-maroon-600 dark:focus:border-softPink-400",
-            statusStyles[status],
-            className
-          )}
-        >
-          {slots.map((slot, idx) => (
-            <div key={idx} {...slot} />
-          ))}
-        </div>
+      className={cn(
+        "flex h-11 w-full bg-white px-3 py-2 border rounded-xl placeholder:text-zinc-400 focus:outline-none focus:border focus:border-maroon-600 dark:focus:border-softPink-400",
+        statusStyles[status],
+        className
       )}
       {...props}
-    />
+    >
+      {Array.from({ length: maxLength }).map((_, i) => (
+        <React.Fragment key={i}>
+          <InputOTPSlot index={i} status={status} />
+          {i < maxLength - 1 && <InputOTPSeparator />}
+        </React.Fragment>
+      ))}
+    </OTPInput>
   );
 });
 InputOTP.displayName = "InputOTP";
 
 const InputOTPGroup = React.forwardRef<
-  HTMLDivElement,
+  React.ElementRef<"div">,
   React.ComponentPropsWithoutRef<"div">
 >(({ className, ...props }, ref) => (
   <div
@@ -62,8 +72,8 @@ const InputOTPGroup = React.forwardRef<
 InputOTPGroup.displayName = "InputOTPGroup";
 
 const InputOTPSlot = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentPropsWithoutRef<"div"> & { index: number; status?: Status }
+  React.ElementRef<"div">,
+  React.ComponentPropsWithoutRef<"div"> & { index: number; status?: OTPStatus }
 >(({ index, className, status = "default", ...props }, ref) => {
   const inputOTPContext = React.useContext(OTPInputContext);
   const { char, hasFakeCaret, isActive } = inputOTPContext.slots[index];
@@ -84,8 +94,8 @@ const InputOTPSlot = React.forwardRef<
         "relative flex h-11 w-11 items-center justify-center rounded-xl text-sm shadow-sm transition-all border",
         statusStyles[status],
         isActive &&
-          status !== "disabled" &&
-          "z-10 ring-1 ring-maroon-600 dark:ring-softpink-400",
+        status !== "disabled" &&
+        "z-10 ring-1 ring-maroon-600 dark:ring-softpink-400",
         status === "disabled" && "opacity-50 cursor-not-allowed",
         className
       )}
@@ -103,7 +113,7 @@ const InputOTPSlot = React.forwardRef<
 InputOTPSlot.displayName = "InputOTPSlot";
 
 const InputOTPSeparator = React.forwardRef<
-  HTMLDivElement,
+  React.ElementRef<"div">,
   React.ComponentPropsWithoutRef<"div">
 >(({ ...props }, ref) => (
   <div ref={ref} role="separator" {...props}>

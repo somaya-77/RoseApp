@@ -32,7 +32,7 @@ export function useLoginHook() {
                 toast.success("Login successful!", {
                     duration: 2000,
                     onAutoClose: () => {
-                        router.push("/overview");
+                        router.push("/dashboard");
                     }
                 });
             } else {

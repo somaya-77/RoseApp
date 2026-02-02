@@ -6,13 +6,15 @@ import { ForgotPasswordFormValues } from "@/lib/schemas/auth/forgot-password.sch
 import { FormFooter, TypeInputs, Button, OTPTimer } from "@/components";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { useForgotPasswordMutation } from "@/lib/query/Auth-query/auth-query";
 
 export default function Form<T extends FieldValues>({ title, data, titleBtn, handleSubmit, path, form, titleLinkPage, icon, email }: AuthFormProps<T>) {
     const t = useTranslations("auth");
-    // const forgotPasswordMutation = useForgotPasswordMutation();
+    const forgotPasswordMutation = useForgotPasswordMutation();
 
     const handleResendOTP = (email: ForgotPasswordFormValues) => {
-        // forgotPasswordMutation.mutate(email);
+        console.log(email)
+        forgotPasswordMutation.mutate(email);
     };
 
     return (

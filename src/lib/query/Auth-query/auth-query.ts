@@ -9,6 +9,8 @@ import { signOut, useSession } from "next-auth/react";
 import { RegisterSchemaType } from "@/lib/schemas/auth/register.schema";
 import { axiosInstance } from "@/lib/axios";
 import { useTranslations } from "next-intl";
+import { ForgotPasswordFormValues } from "@/lib/schemas/auth/forgot-password.schema";
+import { otpFormValues } from "@/lib/schemas/auth/otp.schema";
 
 // React Query mutation hooks
 export const useRegisterMutation = () => {
@@ -77,42 +79,42 @@ export const useRegisterMutation = () => {
 // };
 
 // // forgot password mutation
-// export const useForgotPasswordMutation = () => {
-//     const router = useRouter();
-//     return useMutation({
-//         mutationFn: async (data: ForgotPasswordFormValues) => {
-//             const res = await axiosInstance.post(`auth/forgotPassword`, data);
-//             return res.data;
-//         },
-//         onSuccess: (data, variable) => {
-//             toast.success(data?.message);
-//             router.push(`/otp?email=${variable.email}`);
-//         },
-//         onError: (error: any) => {
-//             const errorMessage = error.response?.data?.message || "Something went wrong";
-//             toast.error(errorMessage);
-//         },
-//     });
-// };
+export const useForgotPasswordMutation = () => {
+    const router = useRouter();
+    return useMutation({
+        mutationFn: async (data: ForgotPasswordFormValues) => {
+            const res = await axiosInstance.post(`/auth/forgotPassword`, data);
+            return res.data;
+        },
+        onSuccess: (data, variable) => {
+            toast.success(data?.message);
+            router.push(`/otp?email=${variable.email}`);
+        },
+        onError: (error: any) => {
+            const errorMessage = error.response?.data?.message || "Something went wrong";
+            toast.error(errorMessage);
+        },
+    });
+};
 
-// // otp mutation
-// export const useOTPMutation = () => {
-//     const router = useRouter();
-//     return useMutation({
-//         mutationFn: async (data: otpFormValues) => {
-//             const res = await axiosInstance.post(`auth/verifyResetCode`, data);
-//             return res.data;
-//         },
-//         onSuccess: (data) => {
-//             toast.success(data?.message || "Code verified successfully!");
-//             router.push(`/create-password`);
-//         },
-//         onError: (error: any) => {
-//             const errorMessage = error.response?.data?.message || "Something went wrong";
-//             toast.error(errorMessage);
-//         },
-//     });
-// };
+// otp mutation
+export const useOTPMutation = () => {
+    const router = useRouter();
+    return useMutation({
+        mutationFn: async (data: otpFormValues) => {
+            const res = await axiosInstance.post(`auth/verifyResetCode`, data);
+            return res.data;
+        },
+        onSuccess: (data) => {
+            toast.success(data?.message || "Code verified successfully!");
+            router.push(`/create-password`);
+        },
+        onError: (error: any) => {
+            const errorMessage = error.response?.data?.message || "Something went wrong";
+            toast.error(errorMessage);
+        },
+    });
+};
 
 // ///////////////////// PROFILE
 // // EDIT PROFILE
@@ -144,6 +146,7 @@ export const useRegisterMutation = () => {
 
 
 // LOGOUT
+
 export const useLogout = () => {
     const router = useRouter();
 

@@ -32,7 +32,7 @@ export const loginInputs = [
 ];
 
 export const forgotPasswordInputs = [
-    { id: 1, label: "email-label", placeholder: "user@example.com", type: "text", name: "email" },
+    { id: 1, label: "email-label", type: "text", name: "email" },
 
 ];
 
@@ -42,7 +42,7 @@ export const confirmInputs = [
 ];
 
 export const otpInputs = [
-    { id: 1, label: "OTP Code", type: "otp", name: "resetCode" },
+    { id: 1, label: "otp-label", type: "otp", name: "resetCode" },
 ];
 
 

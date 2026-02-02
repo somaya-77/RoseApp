@@ -14,6 +14,11 @@ import {
     Sun,
     Moon,
     ArrowLeft,
+    Flower,
+    LayoutDashboard,
+    ClipboardList,
+    CalendarHeart,
+    Package,
 } from "lucide-react";
 
 
@@ -37,7 +42,7 @@ const iconMap: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>
     LocationEdit,
     User,
     ArrowLeft,
-    //
+    Flower,
     UserRound,
     GraduationCap,
     LogOut,
@@ -50,6 +55,10 @@ const iconMap: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>
     CheckCheck,
     Trash2,
     Bell,
+    LayoutDashboard,
+    ClipboardList,
+    CalendarHeart,
+    Package,
 }
 // Types
 export type IconName = keyof typeof iconMap;

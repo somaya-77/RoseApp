@@ -22,19 +22,19 @@ export default function OTPTimer({ initialSeconds = 60, onResend,email }: { init
     };
 
     return (
-        <div className="text-sm w-full mb-4 flex flex-col items-center justify-center gap-2">
+        <div className="text-sm w-full mt-5 flex ةف-5 flex-col items-center justify-center gap-2">
             {seconds > 0 ? (
                 <p>
-                    <span className="text-gray-500">You can request another code in: </span>
-                    <span className="font-semibold text-blue-600">{seconds}s</span>
+                    <span className="">You can request another code in: </span>
+                    <span className="font-semibold text-maroon-600 dark:text-softPink-400">{seconds}s</span>
                 </p>
             ) : (
                 <p>
-                    <span className="text-gray-500">Didn't receive the code? </span>
+                    <span className="">Didn't receive the code? </span>
                     <button 
                         type="button" 
                         onClick={handleResend}
-                        className="text-blue-600 font-semibold hover:underline cursor-pointer"
+                        className="text-maroon-600 dark:text-softPink-400 font-semibold hover:underline cursor-pointer"
                     >
                         Resend
                     </button>

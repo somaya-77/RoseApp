@@ -17,11 +17,11 @@ export default function UserInfo() {
             </Avatar> */}
 
             <div className="flex-1">
-                <h3 className="text-blue-500">{user?.firstName}</h3>
-                <p className="text-gray-500 text-sm">{user?.email}</p>
+                <h3 className="">{user?.firstName}</h3>
+                <p className=" text-sm">{user?.email}</p>
             </div>
             <div>
-                <Icon className="text-gray-500" name="EllipsisVertical" />
+                <Icon className="" name="EllipsisVertical" />
             </div>
         </div>
     )

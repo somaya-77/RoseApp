@@ -100,6 +100,7 @@
     "gender-placeholder": "النوع",
     "password-label": "الرقم السري",
     "confirmPassword-label": "تأكيد الرقم السري",
+    "otp-label": "OTP Code",
     "validations": {
       "firstName-required": "الاسم الأول مطلوب",
       "firstName-min": "يجب أن يكون الاسم الأول مكونًا من حرفين على الأقل",
