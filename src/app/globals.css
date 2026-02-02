@@ -5,11 +5,16 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* @font-face {
+  font-family: "Edwardianscriptitc";
+  src: url("/fonts/Edwardianscriptitc.ttf") format("truetype");
+  font-display: swap;
+} */
+.font-playwrite {
+  font-family: var(--font-playwrite);
+}
 @theme {
-
-  --font-sarabun: "var(--font-sarabun)", "sarabun";
-  --font-tajawal: "var(--font-tajawal)", "tajawal";
-  --font-edwardian: "var(--font-edwardian)", "edwardian";
+  /* --font-edwardian: "Edwardianscriptitc", serif; */
 
   /* maroon */
   --color-maroon-50: #FBEAEA;
@@ -40,6 +45,7 @@
 
 @layer base {
   :root {
+    /* --font-edwardian: "Edwardianscriptitc", serif; */
     --bg-color: #FFFFFF;
     --text-color: #27272a;
     --maroon-50: #FBEAEA;
@@ -69,6 +75,7 @@
   }
 
   .dark {
+    /* --font-edwardian: "Edwardianscriptitc", serif; */
     --bg-color: #27272a;
     --text-color: #f9fafb;
     --maroon-50: #FBEAEA;
@@ -97,8 +104,21 @@
     --softPink-950: #590414;
   }
 
+  .authFont {
+  font-family: var(--font-playwrite), sans-serif;
+}
+
   body {
     background-color: var(--bg-color);
     color: var(--text-color);
   }
+
+  body[lang="ar"] {
+    font-family: var(--font-tajawal);
+  }
+
+  body[lang="en"] {
+    font-family: var(--font-sarabun);
+  }
+
 }

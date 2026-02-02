@@ -82,31 +82,31 @@ export default function TypeInputs({ form, ...props }: any) {
                 </div>
             )
 
-        case "otp":
-            return (
-                <div className="flex flex-col items-center w-full">
+        // case "otp":
+        //     return (
+        //         <div className="flex flex-col items-center w-full">
 
-                    <Controller
-                        control={form.control}
-                        name={props.name}
-                        render={({ field }) => (
-                            <div className="flex flex-col gap-2">
-                                <InputOTP
-                                    maxLength={6}
-                                    {...field}
-                                >
-                                    <div className="flex  gap-8">
-                                        {Array.from({ length: 6 }).map((_, index) => (
-                                            <InputOTPSlot key={index} index={index} />
-                                        ))}
-                                    </div>
-                                </InputOTP>
-                            </div>
-                        )}
-                    />
-                    <p className="text-sm text-red-600">{form.formState.errors[props.name]?.message}</p>
-                </div>
-            )
+        //             <Controller
+        //                 control={form.control}
+        //                 name={props.name}
+        //                 render={({ field }) => (
+        //                     <div className="flex flex-col gap-2">
+        //                         <InputOTP
+        //                             maxLength={6}
+        //                             {...field}
+        //                         >
+        //                             <div className="flex  gap-8">
+        //                                 {Array.from({ length: 6 }).map((_, index) => (
+        //                                     <InputOTPSlot key={index} index={index} />
+        //                                 ))}
+        //                             </div>
+        //                         </InputOTP>
+        //                     </div>
+        //                 )}
+        //             />
+        //             <p className="text-sm text-red-600">{form.formState.errors[props.name]?.message}</p>
+        //         </div>
+        //     )
 
         case "gender":
             return (

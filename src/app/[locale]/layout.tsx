@@ -1,4 +1,4 @@
-import {Sarabun, Tajawal} from "next/font/google";
+import { Sarabun, Tajawal,Ballet   } from "next/font/google";
 import { hasLocale, Locale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
@@ -23,11 +23,18 @@ const sarabun = Sarabun({
   variable: "--font-sarabun",
 });
 
-const edwardianScript = localFont({
-src: "../../fonts/EdwardianScriptITC.ttf",
-  variable: "--font-edwardian",
+const playwriteFont = Ballet ({
+  weight: "400",          // اختاري الوزن اللي محتاجاه
+  // subsets: ["latin"],     // الأحرف المطلوبة
   display: "swap",
+  variable: "--font-playwrite",
 });
+
+// const edwardianScript = localFont({
+//   src: "/fonts/Edwardianscriptitc.ttf",
+//   variable: "--font-edwardian",
+//   display: "swap",
+// });
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -77,7 +84,7 @@ export default async function LocaleLayout({
         className={cn(
           sarabun.variable,
           tajawal.variable,
-          edwardianScript.variable,
+          playwriteFont.variable,
           // locale === "ar" ? "font-(family-name:var(--font-tajawal))" : "font-(family-name:var(--font-sarabun))",
           "antialiased"
 
