@@ -4,7 +4,7 @@ import { Testimonials } from "@/lib/types";
 
 // import { Testimonials } from "@/lib/types/testimonials";
 
-const BASE_AUTH_URL = `${process.env.API_URL!}/testimonials`;
+const BASE_AUTH_URL = `${process.env.NEXT_PUBLIC_BASE_URL!}/testimonials`;
 
 export async function getTestimonialsService() {
     const response = await fetch(`${BASE_AUTH_URL}`, {

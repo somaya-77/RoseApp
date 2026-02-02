@@ -19,9 +19,9 @@ export default async function MostPopularIndex({
   return (
     <div className="my-36">
       <MostPopularHeader occasions={allOccasions?.data} />
-      <Suspense fallback={<ProductCardSkeleton count={12} />}>
+      {/* <Suspense fallback={<ProductCardSkeleton count={12} />}> */}
         <MostPopularList searchParams={searchParams} />
-      </Suspense>
+      {/* </Suspense> */}
     </div>
   );
 }

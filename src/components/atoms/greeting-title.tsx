@@ -10,9 +10,7 @@ export default function GreetingTitle({ title, className }: Props) {
     <div className="border-b border-b-zinc-200 pb-4 text-center">
       <h3
         className={cn(
-          "text-maroon-700 font-semibold dark:text-softPink-300 text-5xl authFont  capitalize",
-          // font-playwriteFont 
-          
+          "text-maroon-700 mt-4 font-semibold dark:text-softPink-300 text-5xl authFont  capitalize",
           className,
         )}>
         {title}

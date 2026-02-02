@@ -5,6 +5,14 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+
+
+/* import { auth } from "@/auth";
+
+const session = await auth(); */
+
+
+
 /* @font-face {
   font-family: "Edwardianscriptitc";
   src: url("/fonts/Edwardianscriptitc.ttf") format("truetype");
