@@ -12,7 +12,7 @@ console.log("authsss",  token)
         method: "GET",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`
+            "Authorization": `Bearer ${session?.accessToken}`
         },
     });
 

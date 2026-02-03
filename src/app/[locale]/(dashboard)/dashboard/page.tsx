@@ -17,7 +17,7 @@ export default function Page() {
             {/* third row=> selling & low stock */}
             <div className="grid grid-cols-2 gap-6">
                 <div className="classes col-span-2 lg:col-span-1"><TopSelling /></div>
-                <div className="classes col-span-2 lg:col-span-1"><LowStock /></div>
+                {/* <div className="classes col-span-2 lg:col-span-1"><LowStock /></div> */}
             </div>
         </div>
     )
