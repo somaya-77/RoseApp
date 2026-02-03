@@ -5,7 +5,7 @@ import MostPopularHeader from "../most-pop-header";
 import MostPopularList from "../most-pop-list";
 import ProductCardSkeleton from "../product-card.skeleton";
 import { SearchParamsProps } from "@/lib/types";
-import { getAllOccasions } from "@/lib/api/website/get-all-occasions";
+import { getAllOccasions } from "@/lib/api/get-all-occasions";
 
 
 

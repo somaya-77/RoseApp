@@ -19,6 +19,9 @@ import {
     ClipboardList,
     CalendarHeart,
     Package,
+    CircleDollarSign,
+    ClipboardListIcon,
+    ReceiptText,
 } from "lucide-react";
 
 
@@ -37,6 +40,9 @@ const iconMap: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>
     Moon,
     Check,
     Search,
+    ReceiptText,
+    ClipboardListIcon,
+    CircleDollarSign,
     ShoppingCart,
     Heart,
     LocationEdit,

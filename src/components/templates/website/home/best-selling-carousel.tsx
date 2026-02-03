@@ -8,7 +8,7 @@ import {
 } from "@/components";
 
 import BestSellingCard from "./best-selling-card";
-import { getBestSelling } from "@/lib/api/website/get-best-selling";
+import { getBestSelling } from "@/lib/api/get-best-selling";
 import { BestSellingProduct, ParamsProps } from "@/lib/types";
 
 export default async function BestSellingCarousel({

@@ -1,5 +1,5 @@
 import { Occasion, Result } from "@/lib/types";
-import { allOccasionsService } from "@/components/templates/website/home/_services/all-occasion.service";
+import { allOccasionsService } from "@/lib/_services/all-occasion.service";
 
 
 export async function getAllOccasions(): Promise<Result<Occasion>> {

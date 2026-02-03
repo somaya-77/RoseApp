@@ -40,18 +40,3 @@ export const useAllOccasions = () => {
     });
 };
 
-// // في ملف الـ Service (الكود الثاني مطور)
-// export async function getTestimonialsService() {
-//     const response = await fetch(`https://flower.elevateegy.com/api/v1/testimonials`);
-//     if (!response.ok) throw new Error('Failed to fetch');
-//     return response.json();
-// }
-
-// // في ملف الـ Hook (الكود الأول)
-// export const useTestimonials = () => {
-//     return useQuery({
-//         queryKey: ["testimonials"],
-//         queryFn: () => getTestimonialsService(), // استدعاء الخدمة هنا
-//         staleTime: 1000 * 60 * 5, // كاش لمدة 5 دقائق
-//     });
-// };

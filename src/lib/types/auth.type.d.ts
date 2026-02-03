@@ -14,6 +14,7 @@ declare module "next-auth" {
             photo: string;
             role: "user" | "admin";
             gender: "male" | "female" | "other";
+            accessToken: string;
         };
     }
 

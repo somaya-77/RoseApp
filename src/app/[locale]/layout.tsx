@@ -1,16 +1,22 @@
-import { Sarabun, Tajawal,Ballet   } from "next/font/google";
-import { hasLocale, Locale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Toaster } from "sonner";
+import { cn } from "@/lib/utils";
+import type { Metadata } from "next";
+import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import type { Metadata } from "next";
-import { cn } from "@/lib/utils";
-import { Toaster } from "sonner";
-import localFont from "next/font/local";
 import { Providers } from "@/lib/providers";
 import ThemeProvider from "@/lib/providers/theme-provider";
+import { Sarabun, Tajawal, Ballet } from "next/font/google";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import ReactQueryProvider from "@/lib/providers/react-query-provider";
 
+// types
+type LayoutProps = {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+};
+
+// fonts
 const tajawal = Tajawal({
   subsets: ["arabic"],
   weight: ["300", "400", "500", "700", "800"],
@@ -23,23 +29,11 @@ const sarabun = Sarabun({
   variable: "--font-sarabun",
 });
 
-const playwriteFont = Ballet ({
-  weight: "400",          // اختاري الوزن اللي محتاجاه
-  // subsets: ["latin"],     // الأحرف المطلوبة
+const playwriteFont = Ballet({
+  weight: "400",
   display: "swap",
   variable: "--font-playwrite",
 });
-
-// const edwardianScript = localFont({
-//   src: "/fonts/Edwardianscriptitc.ttf",
-//   variable: "--font-edwardian",
-//   display: "swap",
-// });
-
-type LayoutProps = {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-};
 
 
 export async function generateMetadata(props: {
@@ -85,14 +79,12 @@ export default async function LocaleLayout({
           sarabun.variable,
           tajawal.variable,
           playwriteFont.variable,
-          // locale === "ar" ? "font-(family-name:var(--font-tajawal))" : "font-(family-name:var(--font-sarabun))",
           "antialiased"
 
         )}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
-          // enableSystem
           disableTransitionOnChange>
           <ReactQueryProvider>
 

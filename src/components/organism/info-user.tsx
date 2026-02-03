@@ -1,34 +1,53 @@
 'use client'
 
 import Link from "next/link";
-import { useSession } from "next-auth/react"
-import { Icon } from "@/components";
+import { useSession } from "next-auth/react";
+import { ChevronDown, User } from "lucide-react";
 
+import {
+    HoverCard,
+    HoverCardContent,
+    HoverCardTrigger,
+} from "@/components"
+import { useTranslations } from "next-intl";
+import LoginPopover from "../molecules/login-popover";
 
 export default function InfoUser() {
-    const session = useSession()
-    const token = session?.data?.accessToken;
-    const user = session?.data?.user;
+    const t = useTranslations("auth.login")
+    const { data: session } = useSession();
+    const token = session?.accessToken;
+    const user = session?.user;
     const firstName = user?.firstName;
-    console.log("session", session)
+
     return (
-        <div>
-            {!token ?
-                <Link href="/login" className="flex items-center gap-1 text-sm">
-                    <Icon name="User" className="h-5 w-5" />
-                    Login
-                </Link>
-                :
-                <div className="w-24 cursor-pointer flex justify-between items-center">
-                    <div className="">
-                        <p className="text-zinc-500 -mb-2.5">Hello</p>
-                        <h3 className="text-maroon-600 dark:text-softPink-200 flex gap-2">
-                            {firstName}
-                        </h3>
+        <HoverCard openDelay={100} closeDelay={40000}>
+            <div className="inline-block cursor-pointer">
+                {!token ? (
+                    <HoverCardTrigger asChild>
+                        <Link href="/login" className="flex items-center gap-1 text-sm py-1">
+                            <User className="h-5 w-5" />
+                            {t("Login")}
+                        </Link>
+                    </HoverCardTrigger>
+                ) : (
+                    <div className="w-24 flex justify-between items-center py-1">
+                        <div>
+                            <p className="text-zinc-500 -mb-2.5 text-xs">{t("Hello")}</p>
+                            <h3 className="text-maroon-600 dark:text-softPink-200">
+                                {firstName}
+                            </h3>
+                        </div>
+                        <ChevronDown className="text-zinc-500" />
                     </div>
-                    <Icon name="ChevronDown" className="text-zinc-500" />
-                </div>
-            }
-        </div>
+                )}
+            </div>
+
+            {!token && (
+                <HoverCardContent align="start" className="w-100 p-0 shadow-2xl rounded-lg overflow-hidden">
+                    <LoginPopover />
+                </HoverCardContent>
+            )}
+        </HoverCard>
     )
 }
+

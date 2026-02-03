@@ -3,7 +3,7 @@ import BestSellingCard from "./best-selling-card";
 import { getTranslations } from "next-intl/server";
 import {EmptyProductState, Icon} from "@/components";
 import { MostPopularListProps } from "@/lib/types/interface";
-import { getBestSelling } from "@/lib/api/website/get-best-selling";
+import { getBestSelling } from "@/lib/api/get-best-selling";
 
 
 export default async function MostPopularList({

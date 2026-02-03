@@ -1,5 +1,4 @@
-// import { Navbar } from "@/components";
-import { Breadcrumb } from "@/components/atoms/breadcrumb";
+
 import DashboardNavbar from "@/components/molecules/dashboard-navbar";
 import Sidebar from "@/components/organism/sidebar";
 
@@ -14,7 +13,7 @@ export default function DashboardLayout({
       <Sidebar />
       <div className="ml-80 flex-1">
         <DashboardNavbar />
-        <main>{children}</main>
+        <main className="bg-gray-50 p-4 h-screen">{children}</main>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { bestSellingService } from "@/components/templates/website/home/_services/best-selling.service";
+import { bestSellingService } from "@/lib/_services/best-selling.service";
 import {  BestSellingProduct, GetBestSellingParams, Result } from "@/lib/types";
 
 

@@ -6,24 +6,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 
-
-/* import { auth } from "@/auth";
-
-const session = await auth(); */
-
-
-
-/* @font-face {
-  font-family: "Edwardianscriptitc";
-  src: url("/fonts/Edwardianscriptitc.ttf") format("truetype");
-  font-display: swap;
-} */
-.font-playwrite {
-  font-family: var(--font-playwrite);
-}
 @theme {
-  /* --font-edwardian: "Edwardianscriptitc", serif; */
-
   /* maroon */
   --color-maroon-50: #FBEAEA;
   --color-maroon-100: #F3C5C7;
@@ -53,7 +36,10 @@ const session = await auth(); */
 
 @layer base {
   :root {
-    /* --font-edwardian: "Edwardianscriptitc", serif; */
+    --scrollbar-thumb: #b03030; /* maroon-600 */
+    --scrollbar-track: #f3f4f6; /* gray-100 */
+
+    /* colors */
     --bg-color: #FFFFFF;
     --text-color: #27272a;
     --maroon-50: #FBEAEA;
@@ -83,7 +69,10 @@ const session = await auth(); */
   }
 
   .dark {
-    /* --font-edwardian: "Edwardianscriptitc", serif; */
+    --scrollbar-thumb: #f472b6; /* softPink-400 */
+    --scrollbar-track: #1f2937; /* gray-800 */
+
+    /* colors */
     --bg-color: #27272a;
     --text-color: #f9fafb;
     --maroon-50: #FBEAEA;
@@ -112,9 +101,30 @@ const session = await auth(); */
     --softPink-950: #590414;
   }
 
-  .authFont {
-  font-family: var(--font-playwrite), sans-serif;
-}
+  /* scroll */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    filter: brightness(0.8); 
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
+
 
   body {
     background-color: var(--bg-color);

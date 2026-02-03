@@ -1,6 +1,6 @@
 import * as RPNInput from "react-phone-number-input";
 
-
+/////////////////////
 export type Status = "default" | "error" | "disabled";
 
 export type CountrySelectProps = {
@@ -128,5 +128,15 @@ export type Result<T> =
     };
 
 
-// 
+//  CATEGORIES
+export type Category = {
+  _id: string;
+  name: string;
+  productsCount: number;
+  Image: string;
+};
+
+export type Categories = {
+  categories: Category[]
+}
 

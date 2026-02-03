@@ -36,6 +36,7 @@ export const authOptions: NextAuthOptions = {
                 return {
                     id: payload.user._id,
                     token: payload.token,
+                    accessToken: payload.token,
                     user: payload.user,
                 }
             }
@@ -50,7 +51,7 @@ export const authOptions: NextAuthOptions = {
             // }
 
             if (user) {
-                token.accessToken = (user as any).token;
+                token.accessToken = (user as any).accessToken;
                 token.user = (user as any).user;
             }
 

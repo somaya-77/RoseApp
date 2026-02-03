@@ -50,6 +50,7 @@ import {
 } from "./atoms/dropdown-menu";
 import EmptyProductState from "./atoms/empty-products";
 import GreetingTitle from "./atoms/greeting-title";
+import { HoverCard, HoverCardTrigger, HoverCardContent } from "./atoms/hover-card";
 import Icon from "./atoms/icon";
 import { Input } from "./atoms/input";
 import { FileInput } from "./atoms/input-file";
@@ -89,6 +90,7 @@ import {
 
 import { Toaster } from "./atoms/sonner";
 import SubTitle from "./atoms/sub-title";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./atoms/tabs";
 import { Textarea } from "./atoms/textarea";
 import Title from "./atoms/title";
 import AuthInfoPanel from "./molecules/auth-info-panel";
@@ -115,6 +117,9 @@ import InfoUser from "./organism/info-user";
 import NavBar from "./organism/NavBar";
 import PhoneHeader from "./organism/phone-header";
 import TypeInputs from "./organism/type-inputs";
+
+
+
 
 export {
     // ATOMS
@@ -217,6 +222,16 @@ export {
     SelectSeparator,
     SelectScrollUpButton,
     SelectScrollDownButton,
+
+
+    // hover card
+    HoverCard, 
+    HoverCardTrigger, HoverCardContent,
+
+    // tab
+    Tabs, 
+    TabsContent, 
+    TabsList, TabsTrigger,
 
     // MOLECULES
     EmptyNotifications,

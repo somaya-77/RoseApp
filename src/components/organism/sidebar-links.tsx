@@ -11,16 +11,27 @@ import { dashboardLinks } from "@/lib/constants/dashboard";
 export default function SidebarLinks() {
   const pathname = usePathname();
 
+  const getStrippedPath = (path: string) => {
+    return path.replace(/^\/(en|ar)/, "") || "/";
+  };
 
   return (
     <div>
       {dashboardLinks.map((item, i) => {
         const { href, icon, label } = item;
+        const cleanPathname = getStrippedPath(pathname);
+        const cleanHref = getStrippedPath(href);
 
         const isActive =
-          href === "/"
-            ? pathname === "/" || pathname.startsWith("/dashboard")
-            : pathname === href || pathname.startsWith(href + "/");
+          cleanHref === "/"
+            ? cleanPathname === "/"
+            : cleanPathname === cleanHref || cleanPathname.startsWith(cleanHref + "/");
+            
+// const isActive = pathname === href || (href !== "/" && pathname.startsWith(href));
+        // const isActive =
+        //   href === "/"
+        //     ? pathname === "/" || pathname.startsWith("/dashboard")
+        //     : pathname === href || pathname.startsWith(href + "/");
 
 
         console.log("pathname", pathname, isActive, href)
@@ -30,29 +41,17 @@ export default function SidebarLinks() {
             key={i}
             className={cn(
               "flex gap-2 text-lg font-bold items-center p-3 h-14 transition-colors rounded-md mb-4",
-              // isActive
-              //   ?
-              "text-maroon-600 bg-maroon-50"
-              // : "text-zinc-800 dark:text-zinc-400"
+             isActive
+                ? "bg-maroon-50 text-maroon-600 dark:bg-zinc-800 dark:text-softPink-400" 
+                : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800/50"
             )}
           >
             <Icon
               size="13"
               name={icon}
-              className={cn(
-                // isActive
-                //   ? 
-                "text-maroon-600 bg-maroon-50"
-                // : "text-zinc-800 dark:text-zinc-400"
-              )}
+              
             />
             <span
-              className={cn(
-                // isActive
-                //   ? 
-                "text-maroon-600 bg-maroon-50"
-                // : "text-zinc-800 dark:text-zinc-400"
-              )}
             >
               {label}
             </span>
