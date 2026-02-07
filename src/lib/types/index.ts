@@ -1,22 +1,10 @@
-import * as RPNInput from "react-phone-number-input";
-
 /////////////////////
 export type Status = "default" | "error" | "disabled";
 
-export type CountrySelectProps = {
-    disabled?: boolean;
-    value: RPNInput.Country;
-    options: { label: string; value: RPNInput.Country |undefined }[];
-    onChange: (country: RPNInput.Country) => void;
-    status?: Status;
-};
 
-export interface SearchParamsProps {
-  searchParams?: { occasion?: string };
-}
 
-export interface ParamsProps {
-  params?: { locale: string };
+export type SearchParams = {
+searchParams: Promise<{ [key: string]: string | string[] | undefined }>; 
 }
 
 export type PaginationLinkProps = {
@@ -35,45 +23,9 @@ export type InputProps = React.ComponentProps<"input"> & {
   status?: Status;
 };
 
-export enum TestimonialStatus {
-    PENDING = "pending",
-    APPROVED = "approved",
-    REJECTED = "rejected",
-}
 
-export type Testimonial = {
-    _id: string,
-    user: {
-        _id: string,
-        firstName: string,
-        lastName: string,
-        photo: string,
-    },
-    rating: number,
-    content: string,
-    status: TestimonialStatus,
-    featured: boolean,
-    createdAt: string,
-    updatedAt: string,
-    __v: number,
-}
 
-export type Testimonials = {
-    testimonials: Testimonial[]
-}
 
-export type Occasion = {
-  _id: string;
-  name: string;
-  slug: string;
-  image: string;
-
-  productsCount: number;
-};
-
-export type OccasionResponse = {
-  occasions: Occasion[];
-};
 
 export type Notification = {
   id: number;
@@ -86,34 +38,7 @@ export type NotificationsResponse = {
   data: Notification[];
 }
 
-// BEST SELLING PRODUCT
-export type BestSellingProduct = {
-  _id: string;
-  title: string;
-  slug: string;
-  description: string;
-  imgCover: string;
-  images: string[];
-  price: number;
-  priceAfterDiscount: number;
-  quantity: number;
-  category: string;
-  occasion: string;
 
-  sold: number;
-  rateAvg: number;
-  rateCount: number;
-};
-export type BestSellingResponse = {
-  products: BestSellingProduct[];
-};
-
-export type GetBestSellingParams = {
-  filter?: string;
-  occasion?: string;
-
-  limit?: number;
-}
 
 
 export type Result<T> =
@@ -128,15 +53,22 @@ export type Result<T> =
     };
 
 
-//  CATEGORIES
-export type Category = {
-  _id: string;
-  name: string;
-  productsCount: number;
-  Image: string;
-};
 
-export type Categories = {
-  categories: Category[]
+
+
+
+
+
+
+// CATEGORIES
+
+export type MetaData = {
+  currentPage: number;
+    totalPages: number;
+    limit: number;
+    totalItems: number;
 }
+
+
+
 

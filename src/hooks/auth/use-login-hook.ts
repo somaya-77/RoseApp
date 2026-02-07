@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
-import { LoginSchema, defaultValue, LoginSchemaType } from "@/lib/schemas/auth/login.schema";
+import { defaultValue, LoginSchema, LoginSchemaType } from "@/lib/schemas/login.schema";
 
 export function useLoginHook() {
     // navigation

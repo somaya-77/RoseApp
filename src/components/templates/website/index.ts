@@ -29,6 +29,17 @@ import TestimonialsCardSkeleton from "./home/testimonials-card.skeleton";
 import TestimonialsContentSkeleton from "./home/testimonials-content.skeleton";
 
 
+// WEBSITE ==> PRODUCTS PAGE
+import FiltersProducts from "./products/filters-products";
+import CategoryFilter from "./products/category-filter";
+import OccasionsFilter from "./products/occasions-filter";
+import RatingFilter from "./products/rating-filter";
+import PriceFilter from "./products/price-filter";
+import ResetAllFilters from "./products/reset-all-filters";
+import ProductGrid from "./products/product-grid";
+import HeaderFilter from "./products/header-filter";
+import ResetFilter from "./products/reset-filter";
+import OccasionsCard from "./products/occasions-card";
 
 
 export {
@@ -62,5 +73,17 @@ export {
     BestSelling,
     Companies,
     Content,
-
+    
+    
+    // WEBSITE ==> PRODUCTS PAGE
+    OccasionsFilter,
+    ResetAllFilters,
+    FiltersProducts,
+    CategoryFilter,
+    OccasionsCard,
+    RatingFilter,
+    HeaderFilter,
+    ProductGrid,
+    ResetFilter,
+    PriceFilter,
 }

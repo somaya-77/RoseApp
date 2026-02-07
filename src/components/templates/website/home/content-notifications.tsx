@@ -2,7 +2,7 @@
 
 import NotificationItem from "./notification-item";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { UseNotificationsHook } from "@/hooks/website/use-notifications-hook";
+import { UseNotificationsHook } from "@/hooks/website/use-notifications.hook";
 import { DropdownMenuLabel } from "@/components/atoms/dropdown-menu";
 import Icon from "@/components/atoms/icon";
 

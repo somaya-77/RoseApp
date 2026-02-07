@@ -2,7 +2,7 @@ import { useMutation } from "@tanstack/react-query";
 import { axiosInstance } from "../../axios";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { ChangePasswordSchemaType } from "@/lib/schemas/dashboard/change-password.schema";
+import { ChangePasswordSchemaType } from "@/lib/schemas/change-password.schema";
 
 // change password
 export const useChangePasswordMutation = () => {

@@ -4,11 +4,14 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-images: {
+    images: {
+        unoptimized: true,
+        qualities: [75, 85],
         remotePatterns: [
             {
                 protocol: "https",
                 hostname: "flower.elevateegy.com",
+                pathname: '/uploads/**',
             } as const,
         ],
     },

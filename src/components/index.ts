@@ -90,6 +90,7 @@ import {
 
 import { Toaster } from "./atoms/sonner";
 import SubTitle from "./atoms/sub-title";
+import SubmissionFeedback from "./atoms/submission-feedback";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./atoms/tabs";
 import { Textarea } from "./atoms/textarea";
 import Title from "./atoms/title";
@@ -120,7 +121,6 @@ import TypeInputs from "./organism/type-inputs";
 
 
 
-
 export {
     // ATOMS
     Icon,
@@ -139,7 +139,11 @@ export {
     GreetingTitle,
     LabelFileInput,
     EmptyProductState,
+    SubmissionFeedback,
     AuthLanguageSwitcher,
+
+
+    
     // Breadcrumb
     Breadcrumb,
     BreadcrumbList,

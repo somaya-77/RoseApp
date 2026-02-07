@@ -1,6 +1,7 @@
 import { z } from "zod";
-import { PasswordSchema, PhoneSchema } from "..";
+// import { PasswordSchema, PhoneSchema } from "..";
 import { Translations } from "@/lib/types/global";
+import { PasswordSchema } from ".";
 
 export const RegisterSchema =z.object({
             firstName: z

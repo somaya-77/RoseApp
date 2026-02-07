@@ -1,7 +1,8 @@
-import { Categories } from "@/lib/types";
+import { Categories, LimitProps } from "@/lib/types";
 
-export async function getAllCategoriesService() {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/categories`, {
+export async function getAllCategoriesService( params: LimitProps = {},) {
+    const { page = 1, limit = 10 } = params;
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/categories?limit=${limit}&page=${page}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

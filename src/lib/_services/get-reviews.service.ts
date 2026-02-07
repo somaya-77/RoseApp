@@ -1,0 +1,23 @@
+// import { Reviews } from "@/lib/types/reviews";
+
+import { Reviews } from "../types";
+
+export async function getProductsReviewService(productId: string) {
+    const response = await fetch(`${process.env.API_URL!}/products/${productId}/reviews`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        next: {
+            tags: ["reviews"],
+        },
+    });
+
+    const data: ApiResponse<PaginationData<Reviews>> = await response.json();
+
+    if ("error" in data) {
+        throw new Error(data.error);
+    }
+
+    return data;
+}

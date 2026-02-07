@@ -1,10 +1,9 @@
-import { Occasion, Status, Testimonial } from ".";
 import { OTPInputProps } from "input-otp";
-import * as RPNInput from "react-phone-number-input";
 import { VariantProps } from "class-variance-authority";
 import { badgeVariants } from "@/components/atoms/badge";
 import { buttonVariants } from "@/components/atoms/button";
 import { FieldValues, UseFormReturn } from "react-hook-form";
+import { Status } from ".";
 
 
 export interface TextareaProps
@@ -38,19 +37,6 @@ export interface IBenefitsSection {
     icon: React.ReactNode;
 };
 
-export interface IOccasionsSection {
-    image: string;
-    badge?: string;
-    description?: string;
-    title: string;
-};
-
-export interface IOccasionCardProps {
-    occasion: IOccasionsSection,
-    height: number,
-    children?: React.ReactNode
-}
-
 export interface ButtonProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
@@ -62,19 +48,6 @@ export interface ButtonProps
 export interface MostPopularListProps {
   searchParams?: { occasion?: string; limit?: number };
 }
-export interface TestimonialsCarouselProps {
-    items: Testimonial[];
-};
-
-export interface TestimonialsCardProps {
-    testimonial: Testimonial
-}
-
-// export interface PhoneInputProps extends Omit<React.ComponentProps<"input">, "onChange" | "value" | "ref">,
-//     Omit<RPNInput.Props<typeof RPNInput.default>, "onChange"> {
-//     onChange?: (value: RPNInput.Value) => void;
-//     status?: Status;
-// }
 
 export interface Data {
     id: number;
@@ -83,7 +56,6 @@ export interface Data {
     type: string;
     name: string;
 }
-
 
 export interface AuthFormProps<T extends FieldValues> {
     title: "Login" | "Create Account" | "Create a New Password" | "Forgot Password" | "Verify OTP";

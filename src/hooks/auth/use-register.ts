@@ -3,8 +3,9 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRegisterMutation } from "@/lib/query/Auth-query/auth-query";
-import { RegisterDefaultValue, RegisterSchema, RegisterSchemaType } from "@/lib/schemas/auth/register.schema";
+
 import { useTranslations } from "next-intl";
+import { RegisterDefaultValue, RegisterSchema, RegisterSchemaType } from "@/lib/schemas/register.schema";
 
 
 export default function useRegisterHook() {

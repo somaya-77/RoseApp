@@ -13,7 +13,7 @@ import { useTranslations } from "next-intl";
 import LoginPopover from "../molecules/login-popover";
 
 export default function InfoUser() {
-    const t = useTranslations("auth.login")
+    const t = useTranslations("auth")
     const { data: session } = useSession();
     const token = session?.accessToken;
     const user = session?.user;

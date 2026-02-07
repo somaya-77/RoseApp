@@ -10,7 +10,7 @@ import {
   Button,
   Icon
 } from "@/components";
-import { UseNotificationsHook } from "@/hooks/website/use-notifications-hook";
+import { UseNotificationsHook } from "@/hooks/website/use-notifications.hook";
 import { ContentNotification } from "@/components/templates/website";
 
 
