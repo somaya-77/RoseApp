@@ -1,16 +1,12 @@
 
 import Image from "next/image";
-import { BestSellingProduct } from "@/lib/types";
 import { renderStars } from "@/lib/constants/render-stars";
 import {Icon} from "@/components";
+import { BestSellingProduct } from "@/lib/types/product.type";
 
-// import { renderStars } from "@/lib/utils/render-stars";
 
-type BestSellingCardProps = {
-  data: BestSellingProduct;
-};
 
-export default function BestSellingCard({ data }: BestSellingCardProps) {
+export default function BestSellingCard({ data }: {data: BestSellingProduct}) {
   return (
     <article className="w-full relative">
       <div className="relative h-72 rounded-2xl overflow-hidden">

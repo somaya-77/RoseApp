@@ -1,69 +1,12 @@
 "use client";
 
-import { useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useQueryClient } from "@tanstack/react-query";
-// import { useProducts } from "@/hooks/useProducts";
-// import { useWishlist } from "@/hooks/useWishlist";
 import ProductCardSkeleton from "../../skeletons/product-card.skeleton";
 import BestSellingCard from "../home/best-selling-card";
 import { AppPagination } from "@/components/organism/pagination";
-import { useProducts } from "@/hooks/website/use-products.hook";
-import { useWishlist } from "@/hooks/website/use-wishlist.hook";
-
-interface Props {
-  initialPage: number;
-  initialData: any;
-}
+import { Props, useProductCardHook } from "@/hooks/website/use-product-card.hook";
 
 export default function ProductGrid({ initialPage, initialData }: Props) {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const queryClient = useQueryClient();
-
-  const { toggleWishlist, getGuestWishlist } = useWishlist();
-
-  const page = Number(searchParams.get("page") ?? initialPage);
-  const filters = Object.fromEntries(
-    [...searchParams.entries()].filter(([k]) => k !== "page")
-  );
-
-  const { data, isLoading, isFetching, error } = useProducts({
-    page,
-    filters,
-    initialData,
-  });
-
-  const products = data?.products ?? [];
-  const totalPages = data?.metadata?.totalPages ?? 1;
-
-  /* ================= Apply Cookies Wishlist ================= */
-  useEffect(() => {
-    const guestWishlist = getGuestWishlist();
-    if (!guestWishlist.length) return;
-
-    queryClient.setQueriesData(
-      { queryKey: ["products"], exact: false },
-      (old: any) => {
-        if (!old) return old;
-
-        return {
-          ...old,
-          products: old.products.map((p: any) => ({
-            ...p,
-            isInWishlist: guestWishlist.includes(p._id),
-          })),
-        };
-      }
-    );
-  }, [queryClient, getGuestWishlist]);
-  /* ========================================================== */
-
-  const handlePageChange = (p: number) => {
-    const params = new URLSearchParams(searchParams.toString());
-    params.set("page", String(p));
-    router.push(`?${params.toString()}`);
-  };
+  const { error, isLoading, products, totalPages, page, handlePageChange, isFetching } = useProductCardHook({ initialPage, initialData })
 
   if (error)
     return (
@@ -74,18 +17,19 @@ export default function ProductGrid({ initialPage, initialData }: Props) {
 
   return (
     <div className="space-y-10">
-      <div className="flex flex-wrap">
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 min-h-96">
         {isLoading
           ? Array.from({ length: 12 }).map((_, i) => (
-              <ProductCardSkeleton key={i} />
-            ))
+            <ProductCardSkeleton key={i} />
+          ))
           : products.map((product) => (
-              <BestSellingCard
-                key={product._id}
-                data={product}
-                onWishlistToggle={() => toggleWishlist(product._id)}
-              />
-            ))}
+            <BestSellingCard
+              key={product._id}
+              data={product}
+            // onWishlistToggle={() => toggleWishlist(product._id)}
+            />
+          ))}
       </div>
 
       {totalPages > 1 && (

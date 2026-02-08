@@ -1,8 +1,8 @@
 "use client";
 
+import { TestimonialsCarouselProps } from "@/lib/types/testimonials.type";
 import TestimonialsCard from "./testimonials-card";
 import { CarouselContent, CarouselItem } from "@/components";
-import { TestimonialsCarouselProps } from "@/lib/types/interface";
 
 
 export default function Content({ items }: TestimonialsCarouselProps) {

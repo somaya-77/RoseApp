@@ -1,14 +1,11 @@
-import { Toaster } from "sonner";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { Providers } from "@/lib/providers";
-import ThemeProvider from "@/lib/providers/theme-provider";
 import { Sarabun, Tajawal, Ballet } from "next/font/google";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import ReactQueryProvider from "@/lib/providers/react-query-provider";
 
 // types
 type LayoutProps = {
@@ -80,21 +77,10 @@ export default async function LocaleLayout({
           tajawal.variable,
           playwriteFont.variable,
           "antialiased"
-
         )}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          disableTransitionOnChange>
-          <ReactQueryProvider>
-
-            <Providers>
-              <main>{children}</main>
-
-              <Toaster richColors />
-            </Providers>
-          </ReactQueryProvider>
-        </ThemeProvider>
+        <Providers>
+          <main>{children}</main>
+        </Providers>
       </body>
     </html>
   );

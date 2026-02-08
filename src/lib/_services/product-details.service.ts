@@ -1,6 +1,5 @@
-// import { ProductDetails } from "@/lib/types/product-details";
+import { ProductDetails } from "../types/product.type";
 
-import { ProductDetails } from "../types";
 
 export async function getProductDetails(id: string): Promise<ProductDetails> {
   // Fetch product details by ID

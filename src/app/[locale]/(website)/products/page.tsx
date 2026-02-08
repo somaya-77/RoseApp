@@ -30,13 +30,13 @@ export default async function ProductsPage({ searchParams }: SearchParams) {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-col-3 lg:grid-cols-4 gap-8">
+      <div className="flex flex-col md:flex-row md:items-start gap-8">
         {/* filters */}
-        <div className="col-span-1">
+        <div className="">
           <FiltersProducts />
         </div>
         {/* products */}
-        <div className="col-span-1 md:col-span-2 /lg:col-span-3">
+        <div className="flex-1">
           <ProductGrid
             initialPage={initialPage}
             initialData={initialData}

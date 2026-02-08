@@ -5,6 +5,7 @@ import { DEFAULT_OCCASIONS_LIMIT } from "@/lib/constants";
 import { allOccasionsService } from "@/lib/_services/all-occasion.service";
 import { useSearchParams } from "next/navigation";
 import { useMemo } from "react";
+import { MetaData } from "@/lib/types";
 
 export function useOccasions(limit: number = DEFAULT_OCCASIONS_LIMIT) {
   const occasionParams = useSearchParams();

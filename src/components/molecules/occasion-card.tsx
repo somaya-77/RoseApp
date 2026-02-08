@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { IOccasionCardProps } from "@/lib/types/interface";
 import { useTranslations } from "next-intl";
+import { IOccasionCardProps } from "@/lib/types/occasion.type";
 
 function OccasionCard ({ occasion, height, children }: IOccasionCardProps) {
     const t = useTranslations("home");

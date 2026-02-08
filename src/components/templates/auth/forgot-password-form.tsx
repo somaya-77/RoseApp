@@ -2,8 +2,8 @@
 
 import { useForgotPasswordHook } from "@/hooks/auth/use-forgot-password"
 import Form from "./form"
-import { ForgotPasswordFormValues } from "@/lib/schemas/auth/forgot-password.schema"
 import { forgotPasswordInputs } from "@/lib/constants/auth"
+import { ForgotPasswordFormValues } from "@/lib/schemas/forgot-password.schema"
 
 export default function ForgotPasswordForm() {
     const { form, onSubmit } = useForgotPasswordHook()

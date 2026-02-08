@@ -6,18 +6,14 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components";
-import { ProductDetails } from "@/lib/types";
-import RelatedProductCard from "./related-products-card";
-// import RelatedProductCard from "./related-product-card";
-// import { Product } from "@/lib/types/products";
 
-type TestimonialsCarouselProps = {
-    items: ProductDetails[];
-};
+import RelatedProductCard from "./related-products-card";
+import { BestSellingProduct, BestSellingResponse, ProductDetails } from "@/lib/types/product.type";
+
 
 export default function Content({
     items,
-}: TestimonialsCarouselProps) {
+}: {items: BestSellingProduct[]}) {
     return (
         <div className="relative">
             <CarouselContent className="flex gap-4 p-2.5">

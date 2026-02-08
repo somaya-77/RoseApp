@@ -13,15 +13,20 @@ export function useCategories(limit: number = 6) {
   const searchParams = useSearchParams();
 
   const { data: categories, isLoading, error, fetchNextPage, hasNextPage } = useInfiniteQuery({
-    queryFn: ({ pageParam }) =>
-      getAllCategoriesService({
+    queryFn: async ({ pageParam }) => {
+      const response = await getAllCategoriesService({
         page: pageParam,
         limit,
-      }),
+      });
+      return {
+        metadata: { currentPage: pageParam, totalPages: Math.ceil(response.length / limit) },
+        categories: response,
+      };
+    },
     initialPageParam: 1,
     queryKey: ["categories", limit],
     // 
-    getNextPageParam: (lastPage) => {
+    getNextPageParam: (lastPage: { metadata: { currentPage: number; totalPages: number }; categories: Category[] }) => {
       const { currentPage, totalPages } = lastPage.metadata;
       return currentPage < totalPages ? currentPage + 1 : undefined;
     },

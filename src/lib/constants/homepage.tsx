@@ -7,7 +7,8 @@ import {
     PartyPopper,
     Headset,
 } from 'lucide-react';
-import { IBenefitsSection, IOccasionsSection } from '../types/interface';
+import { IBenefitsSection } from '../types/interface';
+import { IOccasionsSection } from '../types/occasion.type';
 
 // Feature items displayed in the About section
 export const aboutFeatures = [

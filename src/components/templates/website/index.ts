@@ -40,7 +40,7 @@ import ProductGrid from "./products/product-grid";
 import HeaderFilter from "./products/header-filter";
 import ResetFilter from "./products/reset-filter";
 import OccasionsCard from "./products/occasions-card";
-
+import RatingStars from "./products/rating-stars";
 
 export {
     
@@ -86,4 +86,5 @@ export {
     ProductGrid,
     ResetFilter,
     PriceFilter,
+    RatingStars,
 }

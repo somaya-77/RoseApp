@@ -1,16 +1,10 @@
-//TODO: Remove test component
-import { ProductDetails } from "@/lib/types";
+
 import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import { renderStars } from "./render-stars";
-// import { renderStars } from "@/lib/utils/render-stars";
-// import { Product } from "@/lib/types/products";
+import { BestSellingProduct, ProductDetails } from "@/lib/types/product.type";
 
-type BestSellingCardProps = {
-    data: ProductDetails;
-};
-
-export default function RelatedProductCard({ data }: BestSellingCardProps) {
+export default function RelatedProductCard({ data }: {data: BestSellingProduct}) {
     return (
         <article className="w-full relative">
             <div className="relative h-72 rounded-2xl overflow-hidden">

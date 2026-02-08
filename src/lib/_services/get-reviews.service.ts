@@ -1,6 +1,5 @@
-// import { Reviews } from "@/lib/types/reviews";
+import { Reviews } from "../types/reviews.type";
 
-import { Reviews } from "../types";
 
 export async function getProductsReviewService(productId: string) {
     const response = await fetch(`${process.env.API_URL!}/products/${productId}/reviews`, {

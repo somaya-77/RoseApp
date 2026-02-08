@@ -1,7 +1,4 @@
-// import { ProductsResponse } from "@/lib/types/products";
 
-// const BASE_AUTH_URL = `${process.env.API_URL!}/products`;
-const BASE_AUTH_URL = `${process.env.NEXT_PUBLIC_BASE_URL}/products`;
 
 export async function getProducts(
   page: number,
@@ -15,7 +12,7 @@ export async function getProducts(
     limit: String(limit),
     ...filters,
   }).toString();
-  const response = await fetch(`${BASE_AUTH_URL}?${searchParams}`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/products?${searchParams}`, {
     cache: "no-store",
     headers: {
       ...(token && {

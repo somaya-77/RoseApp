@@ -1,7 +1,7 @@
 "use client";
 
+import {HeaderFilter, RatingStars} from "..";
 import { useRouter, useSearchParams } from "next/navigation";
-import RatingStars from "./rating-stars";
 
 export default function RatingFilter() {
   const router = useRouter();
@@ -21,6 +21,7 @@ export default function RatingFilter() {
   return (
     <>
     {/* header to do */}
+      <HeaderFilter filter="rating" />
 
     {/* rating stars */}
       <RatingStars

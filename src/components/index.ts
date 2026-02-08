@@ -118,6 +118,12 @@ import InfoUser from "./organism/info-user";
 import NavBar from "./organism/NavBar";
 import PhoneHeader from "./organism/phone-header";
 import TypeInputs from "./organism/type-inputs";
+import {   Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage, } from "./atoms/form";
 
 
 
@@ -235,7 +241,16 @@ export {
     // tab
     Tabs, 
     TabsContent, 
-    TabsList, TabsTrigger,
+    TabsList, 
+    TabsTrigger,
+
+    // form
+      Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
 
     // MOLECULES
     EmptyNotifications,

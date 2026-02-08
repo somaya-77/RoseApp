@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { ProductDetails } from "@/lib/types";
+import { ProductDetails } from "@/lib/types/product.type";
 
 export default function ProductGallery({
   images,
@@ -13,14 +13,14 @@ export default function ProductGallery({
   const [active, setActive] = useState(imgCover);
 
   return (
-    <div className="grid gap-2.5 max-h-[523px]">
+    <div className="grid gap-2.5 max-h-130.75">
       {/* Main Image */}
       <Image
         src={active}
         alt="Product image"
         width={605}
         height={402}
-        className="object-cover transition duration-300 rounded-xl max-w-[605px] max-h-[402px]"
+        className="object-cover transition duration-300 rounded-xl max-w-151.25 max-h-100.5"
       />
 
       {/* Thumbnails */}
@@ -34,7 +34,7 @@ export default function ProductGallery({
               "before:absolute before:inset-0 before:bg-black/30 before:transition-colors before:duration-200",
               "hover:before:bg-black/10",
               active === img &&
-                "ring-2 rounded-md ring-maroon-600 before:bg-black/10 max-w-[91px] max-h-[111px]",
+                "ring-2 rounded-md ring-maroon-600 before:bg-black/10 max-w-22.75 max-h-27.75",
             )}
           >
             <Image
@@ -42,7 +42,7 @@ export default function ProductGallery({
               alt={"Thumbnail product image"}
               width={91}
               height={111}
-              className="object-cover rounded-md max-w-[91px] max-h-[111px]"
+              className="object-cover rounded-md max-w-22.75 max-h-27.75"
             />
           </button>
         ))}

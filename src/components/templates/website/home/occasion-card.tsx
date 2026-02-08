@@ -5,7 +5,8 @@ import { cn } from "@/lib/utils";
 // import { IOccasionCardProps } from "@/lib/types";
 import { useLocale, useTranslations } from "next-intl";
 import { Badge } from "@/components";
-import { IOccasionCardProps } from "@/lib/types/interface";
+import { IOccasionCardProps } from "@/lib/types/occasion.type";
+
 
 export default function OccasionCard ({ occasion, height, children }: IOccasionCardProps) {
     const t = useTranslations("home");

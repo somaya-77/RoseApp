@@ -38,3 +38,7 @@ export type OccasionCardProps = {
     item: Occasion
     isActive: boolean;
 };
+export type PriceFilterForm = {
+  priceFrom?: number;
+  priceTo?: number;
+};

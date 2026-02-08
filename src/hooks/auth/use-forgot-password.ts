@@ -4,7 +4,7 @@ import { useForgotPasswordMutation } from './../../lib/query/Auth-query/auth-que
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { forgotPasswordDefaultValues, ForgotPasswordFormValues, forgotPasswordSchema } from "@/lib/schemas/auth/forgot-password.schema";
+import { forgotPasswordDefaultValues, ForgotPasswordFormValues, forgotPasswordSchema } from '@/lib/schemas/forgot-password.schema';
 
 export function useForgotPasswordHook() {
     const forgotPasswordMutation = useForgotPasswordMutation();

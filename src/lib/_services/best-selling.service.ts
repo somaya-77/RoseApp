@@ -1,4 +1,4 @@
-import { BestSellingProduct, BestSellingResponse, GetBestSellingParams } from "@/lib/types";
+import { BestSellingProduct, BestSellingResponse, GetBestSellingParams } from "../types/product.type";
 
 export async function bestSellingService(
   params?: GetBestSellingParams

@@ -1,11 +1,9 @@
 "use server";
 
-
-// import { getToken } from "@/lib/utils/manage-token";
 import { revalidateTag } from "next/cache";
 import { AddReviewFields } from "../schemas/reviews.schema";
 import { getToken } from "../manage-token";
-import { AddReview } from "../types";
+import { AddReview } from "../types/reviews.type";
 
 export async function AddReviewAction(fields: {
     product: string;
@@ -26,14 +24,14 @@ export async function AddReviewAction(fields: {
             rating: fields.reset.rating,
         }),
         headers: {
-            Authorization: `Bearer ${token.accessToken}`,
+            // Authorization: `Bearer ${token.accessToken}`,
             "Content-Type": "application/json"
         },
     });
 
     const payload: ApiResponse<AddReview> = await response.json();
 
-    revalidateTag("reviews");
+    // revalidateTag("reviews");
 
     return payload;
 }

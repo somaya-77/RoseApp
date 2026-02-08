@@ -1,7 +1,7 @@
 'use client';
 
 
-import { ForgotPasswordFormValues } from '@/lib/schemas/auth/forgot-password.schema';
+import { ForgotPasswordFormValues } from '@/lib/schemas/forgot-password.schema';
 import { useState, useEffect } from 'react';
 
 export default function OTPTimer({ initialSeconds = 60, onResend,email }: { initialSeconds?: number, onResend: (email: ForgotPasswordFormValues) => void, email: string | null | undefined}) {

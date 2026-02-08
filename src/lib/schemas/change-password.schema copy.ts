@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { PasswordSchema } from "..";
+import { PasswordSchema } from ".";
 // import { passwordSchema } from "./login.schema";
 
 export const changePasswordSchema = z

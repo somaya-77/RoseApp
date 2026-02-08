@@ -1,6 +1,4 @@
 
-// ⚠️ This page is only for testing/debugging the cart functionality.
-// It will be removed later before marge.
 
 "use client";
 

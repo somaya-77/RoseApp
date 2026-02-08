@@ -1,4 +1,5 @@
-import { Testimonials } from "@/lib/types";
+import { Testimonials } from "../types/testimonials.type";
+
 
 export async function getTestimonialsService() {
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL!}/testimonials`, {

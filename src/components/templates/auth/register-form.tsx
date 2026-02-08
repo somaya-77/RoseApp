@@ -2,7 +2,7 @@
 
 import useRegisterHook from "@/hooks/auth/use-register";
 import { Form } from ".";
-import { RegisterSchemaType } from "@/lib/schemas/auth/register.schema";
+import { RegisterSchemaType } from "@/lib/schemas/register.schema";
 import { registerInputs } from "@/lib/constants/auth";
 import GreetingTitle from "@/components/atoms/greeting-title";
 import { useTranslations } from "next-intl";

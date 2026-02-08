@@ -5,11 +5,11 @@ export async function getToken() {
     const cookieName = process.env.NODE_ENV == "production" ?
         "__Secure-next-auth.session-token"
         : "next-auth.session-token";
-    const tokenCookie = cookies().get(cookieName)?.value;
+    // const tokenCookie = cookies().get(cookieName)?.value;
 
     try {
         const jwt = await decode({
-            token: tokenCookie,
+            // token: tokenCookie,
             secret: process.env.NEXTAUTH_SECRET!,
         });
 

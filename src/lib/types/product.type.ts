@@ -1,3 +1,5 @@
+import { MetaData } from ".";
+
 // PRODUCTS
 export type ProductDetails = {
     _id: string;
@@ -36,6 +38,7 @@ export type BestSellingProduct = {
 };
 export type BestSellingResponse = {
     products: BestSellingProduct[];
+    metadata?: MetaData | undefined;
 };
 
 export type GetBestSellingParams = {

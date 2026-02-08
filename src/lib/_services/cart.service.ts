@@ -1,8 +1,6 @@
 "use client";
 
-import { CartResponse } from "../types";
-
-
+import { CartResponse } from "../types/cart.type";
 
 export async function fetchServerCart() {
   // Fetch the user's cart from the server

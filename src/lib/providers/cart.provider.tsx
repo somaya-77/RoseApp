@@ -8,12 +8,11 @@ import React, {
   useState,
 } from "react";
 import { useSession } from "next-auth/react";
-
 import { toast } from "sonner";
-import { CartContextType, CartItem, ProductDetails } from "../types";
+
 import { addProductToServerCart, fetchServerCart } from "../_services/cart.service";
-// import { CartContextType, CartItem } from "@/lib/types/cart";
-// import { ProductDetails } from "@/lib/types/product-details";
+import { CartContextType, CartItem } from "../types/cart.type";
+import { ProductDetails } from "../types/product.type";
 
 // Create Cart Context
 const CartContext = createContext<CartContextType | null>(null);

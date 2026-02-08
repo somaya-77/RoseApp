@@ -1,12 +1,8 @@
 
-import { getSimilarProductService } from '@/lib/_services/similar-products.service';
 import Content from './carousel-content';
+import { getSimilarProductService } from '@/lib/_services/similar-products.service';
 
-type RelatedProductsContentProps = {
-    categoryId: string,
-}
-
-export default async function RelatedProductsContent({categoryId}: RelatedProductsContentProps) {
+export default async function RelatedProductsContent({categoryId}: {categoryId: string}) {
     // services
     const data = await getSimilarProductService(categoryId);
 

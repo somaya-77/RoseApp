@@ -1,6 +1,6 @@
-import { Category } from "@/lib/types";
+
+import { Category } from "@/lib/types/category.type";
 import Image from "next/image";
-// import { Category } from "@/lib/types/categories";
 
 type Props = {
   category: Category;

@@ -3,7 +3,7 @@
 import { useOTPHook } from "@/hooks/auth/use-otp"
 import Form from "./form"
 import { otpInputs } from "@/lib/constants/auth"
-import { otpFormValues } from "@/lib/schemas/auth/otp.schema";
+import { otpFormValues } from "@/lib/schemas/otp.schema";
 
 
 export default function OTPForm({email}: {email?: string | undefined | null}) {

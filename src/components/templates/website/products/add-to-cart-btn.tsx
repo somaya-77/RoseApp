@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import { Button } from "@/components";
 import { ShoppingCart } from "lucide-react";
-import { ProductDetails } from "@/lib/types";
 import { useCart } from "@/lib/providers/cart.provider";
+import { ProductDetails } from "@/lib/types/product.type";
 
 
 type AddToCartButtonProps = {

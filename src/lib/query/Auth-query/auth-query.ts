@@ -6,11 +6,11 @@ import { useRouter } from "next/navigation";
 
 import { toast } from "sonner";
 import { signOut, useSession } from "next-auth/react";
-import { RegisterSchemaType } from "@/lib/schemas/auth/register.schema";
+import { RegisterSchemaType } from "@/lib/schemas/register.schema";
 import { axiosInstance } from "@/lib/axios";
 import { useTranslations } from "next-intl";
-import { ForgotPasswordFormValues } from "@/lib/schemas/auth/forgot-password.schema";
-import { otpFormValues } from "@/lib/schemas/auth/otp.schema";
+import { ForgotPasswordFormValues } from "@/lib/schemas/forgot-password.schema";
+import { otpFormValues } from "@/lib/schemas/otp.schema";
 
 // React Query mutation hooks
 export const useRegisterMutation = () => {

@@ -2,8 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-// import { useCreatePasswordMutation } from "@/lib/query/Auth-query/auth-query";
-import { createPasswordDefaultValues, createPasswordFormValues, createPasswordSchema } from "@/lib/schemas/auth/create-password.schema";
+import { createPasswordDefaultValues, createPasswordFormValues, createPasswordSchema } from "@/lib/schemas/create-password.schema";
 
 
 export function useCreatePasswordHook() {

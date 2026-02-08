@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { useFormatter } from "next-intl";
 import { renderStars } from "@/lib/constants/render-stars";
-import { TestimonialsCardProps } from "@/lib/types/interface";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components";
+import { TestimonialsCardProps } from "@/lib/types/testimonials.type";
 
 export default function TestimonialsCard({ testimonial }: TestimonialsCardProps) {
     //translation

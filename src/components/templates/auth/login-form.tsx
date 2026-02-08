@@ -4,8 +4,8 @@ import { Form } from ".";
 import { useTranslations } from "next-intl";
 import { loginInputs } from "@/lib/constants/auth";
 import { useLoginHook } from "@/hooks/auth/use-login-hook";
-import { LoginSchemaType } from "@/lib/schemas/auth/login.schema";
 import GreetingTitle from "@/components/atoms/greeting-title";
+import { LoginSchemaType } from "@/lib/schemas/login.schema";
 
 export default function LoginForm() {
     // Hook

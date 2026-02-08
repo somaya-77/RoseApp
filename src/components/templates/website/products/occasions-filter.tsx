@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { OccasionsCard, HeaderFilter } from "..";
-import { Occasion } from "@/lib/types/occasion.type";
+import { Occasion, OccasionResponse } from "@/lib/types/occasion.type";
 import { SKELETON_ITEMS_COUNT } from "@/lib/constants";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useOccasions } from "@/hooks/website/use-occasions.hook";
@@ -30,7 +30,7 @@ export default function OccasionsFilter() {
 
   //Error state
   if (error) return <div>{t("occasions-error")}</div>;
-
+console.log("allOccasions",allOccasions)
   return (
     <div>
       <HeaderFilter filter="occasion" />
@@ -54,12 +54,12 @@ export default function OccasionsFilter() {
           </p>
         }>
         <div className="grid grid-cols-2 gap-2  ">
-          {allOccasions.map((occ: Occasion) => (
+          {/* {allOccasions.map((occ: Occasion) => (
             <OccasionsCard
               item={occ}
               isActive={activeOccasions.has(occ._id)}
             />
-          ))}
+          ))} */}
         </div>
       </InfiniteScroll>
     </div>

@@ -11,8 +11,9 @@ import { Popover, PopoverContent, PopoverTrigger } from "./popover";
 // import {
 //   Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList
 // } from "./Command";
-import { CountrySelectProps, Status } from "@/lib/types";
+import {  Status } from "@/lib/types";
 import { Input } from "./input";
+import { CountrySelectProps } from "@/lib/types/props.type";
 // import { PhoneInputProps } from "@/lib/types/interface";
 
 
@@ -157,7 +158,7 @@ const CountrySelect = ({
 
       <PopoverContent
         align="start"
-        className="w-[300px] p-0 shadow-xl border-zinc-200 dark:border-zinc-800"
+        className="w-75 p-0 shadow-xl border-zinc-200 dark:border-zinc-800"
       >
         {/* <Command>
           <CommandInput placeholder="Search country..." className="h-10" />

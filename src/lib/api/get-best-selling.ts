@@ -1,9 +1,9 @@
 import { bestSellingService } from "@/lib/_services/best-selling.service";
-import {  BestSellingProduct, GetBestSellingParams, Result } from "@/lib/types";
+import { BestSellingProduct, GetBestSellingParams } from "../types/product.type";
+import { Result } from "../types";
 
 
-
-export async function getBestSelling(params?: GetBestSellingParams,): Promise<Result<BestSellingProduct>> {
+export async function getBestSelling(params?: GetBestSellingParams): Promise<Result<BestSellingProduct>> {
   try {
     const data = await bestSellingService(params);
     return { success: true, data };

@@ -1,14 +1,12 @@
 import { getProducts } from "@/lib/_services/all-products.service";
+import { BestSellingResponse, ProductDetails } from "@/lib/types/product.type";
 import { useQuery } from "@tanstack/react-query";
-// import { ProductsResponse } from "@/lib/types/products";
-// import { getProducts } from "@/app/[locale]/(site)/(homepage)/_services/products.service";
 
-// Define the parameters for the custom hook
 interface ProductsParams {
   page: number; // Current page number for pagination
   limit?: number; // Number of products per page (optional, default will be set)
   filters?: Record<string, any>; // Optional filters to apply (e.g., category, brand, price)
-  initialData?: any; // Optional initial data for SSR or prefetching
+  initialData?: BestSellingResponse; // Optional initial data for SSR or prefetching
 //   initialData?: ProductsResponse; // Optional initial data for SSR or prefetching
 }
 // Custom hook to fetch products using React Query
@@ -18,7 +16,7 @@ export function useProducts({
   filters = {}, // Default filters is an empty object
   initialData,
 }: ProductsParams) {
-  const productData = useQuery<any>({
+  const productData = useQuery<BestSellingResponse>({
 //   const productData = useQuery<ProductsResponse>({
     // Unique key for caching: depends on page number and filters
     queryKey: ["products", page, filters],

@@ -1,5 +1,5 @@
 import { getToken } from "../manage-token";
-import { ProductDetails } from "../types";
+import { BestSellingResponse, ProductDetails } from "../types/product.type";
 
 
 export async function getSimilarProductService(categoryId: string) {
@@ -12,12 +12,13 @@ export async function getSimilarProductService(categoryId: string) {
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL!}/products?category=${categoryId}`, {
         method: "GET",
         headers: {
-            Authorization: `Bearer ${token.accessToken}`,
-            "Content-Type": "application/json"
+            ...(token && {
+                Authorization: `Bearer ${token}`,
+            }),
         },
     });
 
-    const data: ApiResponse<ProductDetails> = await response.json();
+    const data: ApiResponse<BestSellingResponse> = await response.json();
 
     if ("error" in data) {
         throw new Error(data.error);

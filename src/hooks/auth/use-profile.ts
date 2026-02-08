@@ -7,7 +7,7 @@ import { useSession } from "next-auth/react";
 import { useDeleteAccount, 
     // useEditProfile
  } from "@/lib/query/Auth-query/auth-query";
-import { profileDefaultValues, ProfileFormValues, profileSchema } from "@/lib/schemas/auth/profile.schema";
+import { profileDefaultValues, ProfileFormValues, profileSchema } from "@/lib/schemas/profile.schema";
 
 export function useProfileHook() {
     const { data: session } = useSession();

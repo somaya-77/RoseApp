@@ -1,4 +1,7 @@
-import { Categories, LimitProps } from "@/lib/types";
+// import { Categories, LimitProps } from "@/lib/types";
+
+import { Categories } from "../types/category.type";
+import { LimitProps } from "../types/props.type";
 
 export async function getAllCategoriesService( params: LimitProps = {},) {
     const { page = 1, limit = 10 } = params;
@@ -15,5 +18,5 @@ export async function getAllCategoriesService( params: LimitProps = {},) {
         throw new Error(data.error);
     }
 
-    return data;
+    return data.categories;
 }

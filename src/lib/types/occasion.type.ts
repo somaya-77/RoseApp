@@ -6,6 +6,9 @@ export type Occasion = {
     slug: string;
     image: string;
     productsCount: number;
+
+    currentPage?: number;
+    totalPages?: number;
 };
 
 export type OccasionResponse = {

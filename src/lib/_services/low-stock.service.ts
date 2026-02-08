@@ -1,13 +1,13 @@
 
 import { authOptions } from "@/auth";
-import { Categories } from "@/lib/types";
 import { getServerSession } from "next-auth/next";
+import { Categories } from "../types/category.type";
 
 
 export async function getLowStockService() {
 const session = await getServerSession(authOptions);    
 const token = session?.accessToken;
-console.log("authsss",  token)
+
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/inventory/reports/low-stock`, {
         method: "GET",
         headers: {

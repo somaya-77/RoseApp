@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { PasswordSchema } from "..";
+import { PasswordSchema } from ".";
 
 export const createPasswordSchema = z
     .object({
