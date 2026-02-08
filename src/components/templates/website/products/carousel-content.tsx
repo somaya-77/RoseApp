@@ -1,6 +1,7 @@
 "use client";
 
 import {
+    Carousel,
     CarouselContent,
     CarouselItem,
     CarouselNext,
@@ -16,6 +17,7 @@ export default function Content({
 }: {items: BestSellingProduct[]}) {
     return (
         <div className="relative">
+            <Carousel>
             <CarouselContent className="flex gap-4 p-2.5">
                 {items.map((item, index) => (
                     <CarouselItem
@@ -40,6 +42,7 @@ export default function Content({
                 bg-maroon-600 hover:bg-maroon-700 text-zinc-50 hover:border-maroon-700
             dark:bg-softPink-200 dark:hover:bg-softPink-300 dark:text-zinc-800"
             />
+            </Carousel>
         </div>
     );
 }
