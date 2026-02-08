@@ -1,10 +1,11 @@
 'use client';
 
 import { TestimonialsCardSkeleton } from '..';
-import { CarouselContent, CarouselItem } from '@/components';
+import { Carousel, CarouselContent, CarouselItem } from '@/components';
 
 export default function TestimonialsContentSkeleton() {
     return (
+        <Carousel>
         <CarouselContent>
             {Array.from({ length: 6 }).map((_, index) => (
                 <CarouselItem
@@ -15,6 +16,7 @@ export default function TestimonialsContentSkeleton() {
                 </CarouselItem>
             ))}
         </CarouselContent>
+        </Carousel>
     );
 }
 

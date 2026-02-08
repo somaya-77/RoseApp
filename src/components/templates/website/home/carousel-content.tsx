@@ -2,12 +2,13 @@
 
 import { TestimonialsCarouselProps } from "@/lib/types/testimonials.type";
 import TestimonialsCard from "./testimonials-card";
-import { CarouselContent, CarouselItem } from "@/components";
+import { Carousel, CarouselContent, CarouselItem } from "@/components";
 
 
 export default function Content({ items }: TestimonialsCarouselProps) {
 
     return (
+        <Carousel>
         <CarouselContent>
             {Array.isArray(items) && [...items, ...items].map((item, index) => (
                 <CarouselItem
@@ -21,5 +22,6 @@ export default function Content({ items }: TestimonialsCarouselProps) {
                 </CarouselItem>
             ))}
         </CarouselContent>
+        </Carousel>
     );
 }
