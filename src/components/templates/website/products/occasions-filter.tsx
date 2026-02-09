@@ -54,12 +54,13 @@ console.log("allOccasions",allOccasions)
           </p>
         }>
         <div className="grid grid-cols-2 gap-2  ">
-          {/* {allOccasions.map((occ: Occasion) => (
+          {allOccasions.map((occ: Occasion) => (
             <OccasionsCard
+            key={occ._id}
               item={occ}
               isActive={activeOccasions.has(occ._id)}
             />
-          ))} */}
+          ))}
         </div>
       </InfiniteScroll>
     </div>

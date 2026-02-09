@@ -24,7 +24,7 @@ export default function ResetAllFilters() {
       variant="secondary"
       onClick={handleResetAll}
       disabled={isDisabled}
-      className="w-full flex items-center gap-2"
+      className="w-full flex items-center gap-2 cursor-pointer disabled:cursor-not-allowed"
     >
       <RotateCcwIcon size={18} />
       {t("reset-all")}

@@ -16,7 +16,7 @@ export default function SiteLayout({
             <Header />
 
             {/** main component */}
-            <div className="px-5 md:px-20 pt-10">
+            <div className="px-5 md:px-20 py-10">
                 {children}
             </div>
 

@@ -5,14 +5,14 @@ export default function Header() {
     <header className="w-full bg-white shadow-sm dark:bg-zinc-800">
       
       {/* Phone Header*/}
-      <div className="block lg:hidden">
+      {/* <div className="block lg:hidden">
         <PhoneHeader />
-      </div>
+      </div> */}
 
       {/* Desktop Header*/}
-      <div className="hidden lg:block">
+      {/* <div className="hidden lg:block"> */}
         <DesktopHeader />
-      </div>
+      {/* </div> */}
 
     </header>
   );

@@ -1,9 +1,6 @@
-import InfiniteScroll from "react-infinite-scroll-component";
 import CategoryItem from "./category-item";
-import { Category } from "@/lib/types/category.type";
+import InfiniteScroll from "react-infinite-scroll-component";
 import { FilterCategoryProps } from "@/lib/types/props.type";
-
-
 
 export default function CategoryList({
   categories,

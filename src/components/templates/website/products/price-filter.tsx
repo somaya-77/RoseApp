@@ -1,9 +1,10 @@
 "use client";
 
-import FilterTitle from "./filter-title";
 import { Controller } from "react-hook-form";
-import { Input, Form, FormMessage, Label } from "@/components";
+import { Input, Form, Label } from "@/components";
 import { useFilterPriceHook } from "@/hooks/website/use-filter-price.hook";
+import {HeaderFilter} from "..";
+import FilterTitle from "./filter-title";
 
 
 export default function PriceFilter() {
@@ -12,7 +13,8 @@ export default function PriceFilter() {
 
   return (
     <div>
-      <FilterTitle
+      <HeaderFilter filter="price" />
+      {/* <FilterTitle
         title={t("price-title")}
         isFilterSelected={hasPriceFilter}
         paramsToReset={["price[gte]", "price[lte]"]}
@@ -22,10 +24,10 @@ export default function PriceFilter() {
             { keepDefaultValues: false },
           );
         }}
-      />
+      /> */}
 
       <Form {...form}>
-        <form className="flex gap-2 pb-5 border-b">
+        <form className="flex gap-2">
           <Controller
             control={form.control}
             name="priceFrom"
@@ -64,7 +66,7 @@ export default function PriceFilter() {
                     value={field.value || ""}
                     onChange={(e) => {
                       field.onChange(e);
-                      trigger("priceFrom"); // re-validate PriceTo when PriceFrom changes
+                      trigger("priceFrom"); 
                     }}
                   />
 

@@ -4,16 +4,17 @@ import RelatedProducts from "@/components/templates/website/products/related-pro
 import React from "react";
 // import ProductDetails from "./_components/product-details";
 
-export default function Page({ params }: { params: { id: string } }) {
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+  const {id} = await params
   return <>
-  <ProductDetails id={params.id} />;
+    <ProductDetails id={id} />;
 
-   {/* // TODO: pass a real data */}
-            {/* Product's Reviews */}
-            <ProductReviews productId={params.id} rateAvg={3.5} rateCount={2} />
+    {/* // TODO: pass a real data */}
+    {/* Product's Reviews */}
+    {/* <ProductReviews productId={id} rateAvg={3.5} rateCount={2} /> */}
 
-            {/* Related Products */}
-            {/* //TODO: pass real categoryId */}
-            <RelatedProducts categoryId={"673c46fd1159920171827c85"} />
+    {/* Related Products */}
+    {/* //TODO: pass real categoryId */}
+    {/* <RelatedProducts categoryId={"673c46fd1159920171827c85"} /> */}
   </>
 }

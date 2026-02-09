@@ -1,12 +1,13 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components";
 // import { toReadableQueryString } from "@/lib/utils/query-string";
 import { useRouter } from "@/i18n/navigation";
 import { toReadableQueryString } from "@/lib/utils";
-import { XIcon } from "lucide-react";
+import { X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
+import { HeaderFilter } from "..";
 
 type FilterTypeProps = {
   title: string;
@@ -41,20 +42,19 @@ export default function FilterTitle({
     });
   };
   return (
-    <div className="flex justify-between items-center  border-t mb-2">
+    <div className="flex justify-between items-center">
       {/* Filter Title */}
-      <h3 className="font-semibold text-lg mt-2">{title}</h3>
-
+      
       {/* Reset Button */}
-      {isFilterSelected && (
+      {/* {isFilterSelected && (
         <Button
           onClick={handleReset}
           variant={"ghost"}
           className="text-red-600 hover:bg-transparent p-0 font-normal mt-2">
-          <XIcon width={15} height={15} />
+          <X width={15} height={15} />
           {t("reset")}
         </Button>
-      )}
+      )} */}
     </div>
   );
 }

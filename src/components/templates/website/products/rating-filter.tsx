@@ -7,13 +7,13 @@ export default function RatingFilter() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const selectedRating = Number(searchParams.get("rating")) || null;
+  const selectedRating = Number(searchParams.get("rateAvg")) || null;
 
   const updateRating = (rating?: number) => {
     const params = new URLSearchParams(searchParams.toString());
 
-    if (rating) params.set("rating", rating.toString());
-    else params.delete("rating");
+    if (rating) params.set("rateAvg[gte]", rating.toString());
+    else params.delete("rateAvg[gte]");
 
     router.replace(`?${params.toString()}`, { scroll: false });
   };

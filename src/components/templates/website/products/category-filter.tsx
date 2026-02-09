@@ -18,7 +18,7 @@ export default function CategoryFilter() {
   if (error) return <p className="text-sm text-red-600">{t("error")}</p>;
 
   return (
-    <>
+    <div>
       {/* header to do */}
       <HeaderFilter filter="category" />
       {/* categories list */}
@@ -31,6 +31,6 @@ export default function CategoryFilter() {
         loadingLabel={t("loading")}
         endLabel={t("end-of-list")}
       />
-    </>
+    </div>
   );
 }

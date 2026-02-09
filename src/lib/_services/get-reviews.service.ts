@@ -2,7 +2,7 @@ import { Reviews } from "../types/reviews.type";
 
 
 export async function getProductsReviewService(productId: string) {
-    const response = await fetch(`${process.env.API_URL!}/products/${productId}/reviews`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL!}/products/${productId}/reviews`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

@@ -13,10 +13,9 @@ export default function CategoryItem({ category, isActive, onClick }: Props) {
     <div
       onClick={onClick}
       className={`w-full flex items-center gap-2.5 rounded-sm transition cursor-pointer
-        ${
-          isActive
-            ? "bg-maroon-50 dark:bg-softPink-100 dark:text-zinc-800"
-            : "bg-zinc-200 text-zinc-800 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-50 dark:hover:bg-zinc-600"
+        ${isActive
+          ? "bg-maroon-50 dark:bg-softPink-100 dark:text-zinc-800"
+          : "bg-zinc-200 text-zinc-800 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-50 dark:hover:bg-zinc-600"
         }
       `}
     >
@@ -29,7 +28,10 @@ export default function CategoryItem({ category, isActive, onClick }: Props) {
           src={category?.image || ""}
           alt={category?.name}
           fill
-          className="object-contain py-1"
+          className={`object-contain py-1 transition-all 
+            brightness-0 invert               
+            dark:invert-[0.1] dark:brightness-[0.1] 
+          `}
         />
       </div>
 

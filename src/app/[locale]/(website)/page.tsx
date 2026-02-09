@@ -1,16 +1,13 @@
-import { AboutSection, BenefitsSection, BestSelling, Companies, GallerySection, HeroSection, OccasionsSection, Testimonials } from "@/components/templates/website";
+import { Suspense } from "react";
+import { SearchParams } from "@/lib/types";
 import MostPopularIndex from "@/components/templates/website/home/most-popular";
 import ProductCardSkeleton from "@/components/templates/website/home/product-card.skeleton";
-import { Suspense } from "react";
+import { AboutSection, BenefitsSection, BestSelling, Companies, GallerySection, HeroSection, OccasionsSection, Testimonials } from "@/components/templates/website";
 
-interface HomeProps {
-  searchParams: { [key: string]: string | string[] | undefined };
-}
-
-export default function Home({ searchParams }: HomeProps) {
+export default function Home({ searchParams }: SearchParams) {
   return (
-    <>
-      <div className="flex flex-col gap-16">
+    <div className="flex flex-col gap-12">
+      <div className=" flex flex-col gap-8">
         {/* Hero section */}
         <HeroSection />
 
@@ -20,27 +17,26 @@ export default function Home({ searchParams }: HomeProps) {
         {/* Benefits section */}
         <BenefitsSection />
 
+      </div>
         {/* Best Selling Section */}
         <BestSelling />
+      {/* Most Popular Section */}
+      <Suspense fallback={<ProductCardSkeleton count={12} />}>
+        <MostPopularIndex searchParams={searchParams as { occasion?: string }} />
+      </Suspense>
 
-        {/* Most Popular Section */}
-        {/* <MostPopularIndex searchParams={searchParams as { occasion?: string }} /> */}
-<Suspense fallback={<ProductCardSkeleton count={12} />}>
-  <MostPopularIndex searchParams={searchParams as { occasion?: string }} />
-</Suspense>
+      {/* About Section */}
+      <AboutSection />
 
-        {/* About Section */}
-        <AboutSection />
+      {/* Gallery Section */}
+      <GallerySection />
 
-        {/* Gallery Section */}
-        <GallerySection />
-        
-        {/* Testimonials Section */}
-        <Testimonials />
+      {/* Testimonials Section */}
+      <Testimonials />
 
-        {/* Companies Section */}
-        <Companies />
-      </div>
-    </>
+      {/* Companies Section */}
+      <Companies />
+
+    </div>
   );
 }

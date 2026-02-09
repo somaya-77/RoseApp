@@ -31,7 +31,7 @@ export function useOccasions(limit: number = DEFAULT_OCCASIONS_LIMIT) {
     });
 
   const allOccasions = useMemo(
-    () => occasions?.pages?.flatMap((page) => page) ?? [],
+    () => occasions?.pages?.flatMap((page) => page.occasions) ?? [],
     [occasions],
   );
 

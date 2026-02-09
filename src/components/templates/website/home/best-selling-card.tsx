@@ -3,12 +3,14 @@ import Image from "next/image";
 import { renderStars } from "@/lib/constants/render-stars";
 import {Icon} from "@/components";
 import { BestSellingProduct } from "@/lib/types/product.type";
+import Link from "next/link";
 
 
 
 export default function BestSellingCard({ data }: {data: BestSellingProduct}) {
   return (
     <article className="w-full relative">
+   <Link href={`products/${data?._id}`}>
       <div className="relative h-72 rounded-2xl overflow-hidden">
         <Image
           src={data.imgCover}
@@ -29,9 +31,11 @@ export default function BestSellingCard({ data }: {data: BestSellingProduct}) {
           </div>
         )}
       </div>
+      
       <h3 className="mt-2 text-maroon-700 text-lg font-medium">
         {data.title.split(" ").slice(0, 4).join(" ")}
       </h3>
+   </Link>
       <div className="flex items-center justify-between">
         <div>
           <div className="flex gap-1 my-1">{renderStars(data.rateAvg)}</div>

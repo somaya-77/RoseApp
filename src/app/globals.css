@@ -69,8 +69,8 @@
   }
 
   .dark {
-    --scrollbar-thumb: #f472b6; /* softPink-400 */
-    --scrollbar-track: #1f2937; /* gray-800 */
+    --scrollbar-thumb: #faafc1; /* softPink-400 */
+    --scrollbar-track: #1c222b; /* gray-800 */
 
     /* colors */
     --bg-color: #27272a;

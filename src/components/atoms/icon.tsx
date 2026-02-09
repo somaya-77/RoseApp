@@ -22,6 +22,7 @@ import {
     CircleDollarSign,
     ClipboardListIcon,
     ReceiptText,
+    Star,
 } from "lucide-react";
 
 
@@ -35,6 +36,7 @@ const iconMap: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>
     MoveLeft,
     CheckIcon,
     ClosedCaption,
+    Star,
     X,
     Sun,
     Moon,

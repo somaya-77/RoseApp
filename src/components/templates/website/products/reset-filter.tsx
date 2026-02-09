@@ -20,7 +20,7 @@ export default function ResetFilter({ filter }: { filter: string }) {
     };
 
     return (
-        <button className="text-red-600 flex items-center gap-1 p-1 cursor-pointer hover:bg-red-50/80 transition-all" onClick={handleClearFilter}>
+        <button className="text-red-600 rounded-lg flex items-center gap-1 p-1 cursor-pointer hover:bg-softPink-100/80 transition-all" onClick={handleClearFilter}>
             <Icon name="X" />
             <span>Reset</span>
         </button>
