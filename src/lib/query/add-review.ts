@@ -2,14 +2,17 @@
 
 import { revalidateTag } from "next/cache";
 import { AddReviewFields } from "../schemas/reviews.schema";
-import { getToken } from "../manage-token";
 import { AddReview } from "../types/reviews.type";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/auth";
 
 export async function AddReviewAction(fields: {
     product: string;
     reset: AddReviewFields;
 }) {
-    const token = await getToken();
+    const session = await getServerSession(authOptions);
+    
+    const token = session?.accessToken;
 
     if (!token) {
         throw new Error("No token available")

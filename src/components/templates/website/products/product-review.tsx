@@ -3,21 +3,12 @@ import AddReview from "./add-review";
 import AllReviews from "./all-reviews";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
-// import MainTitle from "@/components/shared/main-title";
-// import { renderStars } from "@/lib/utils/render-stars";
 import { getTranslations } from "next-intl/server";
-// import AllReviewsSkeleton from "@/components/skeletons/product-review/all-reviews.skeleton";
 import MainTitle from "@/components/atoms/main-title";
 import { renderStars } from "./render-stars";
 import AllReviewsSkeleton from "../../skeletons/all-reviews.skeleton";
 
-type ProductReviewsProps = {
-    productId: string;
-    rateCount: number,
-    rateAvg: number,
-};
-
-export default async function ProductReviews({ productId, rateAvg, rateCount }: ProductReviewsProps) {
+export default async function ProductReviews({ productId}: {productId: string;}) {
     //auth
     const session = await getServerSession(authOptions);
 
@@ -25,41 +16,33 @@ export default async function ProductReviews({ productId, rateAvg, rateCount }: 
     const t = await getTranslations("review");
 
     return (
-        <div className="my-13">
+        <div className="my-6">
             {/* Title */}
             <MainTitle title={t("title")} />
 
             {/* General rating */}
-            <div className="flex flex-col gap-1 leading-100 text-zinc-800 dark:text-zinc-50">
+            <div className="flex flex-col gap-1 text-zinc-800 dark:text-zinc-50 border-b pb-6 border-zinc-200">
                 {/*General rating title */}
                 <span className="font-semibold text-xl">{t("general-rating")}:</span>
                 {/** Rating number */}
                 <div>
-                    <span className="font-bold text-2xl">{rateAvg} </span>
-                    <span className="font-medium text-sm text-zinc-500"> ({rateCount} {t("ratings")})</span>
+                    <span className="font-bold text-2xl">{3} </span>
+                    <span className="font-medium text-sm text-zinc-500"> ({5} {t("ratings")})</span>
                 </div>
                 {/** Rating stars */}
                 <span className="flex gap-1">{renderStars(4)}</span>
             </div>
 
-            <div className="flex gap-5 mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-700">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4  dark:border-zinc-700 max-h-96">
                 {/* All product reviews*/}
-                <div className="
-                    flex flex-col gap-2.5 pt-4 pe-5
-                    h-367 w-742 overflow-y-auto
-                    scrollbar-thin
-                    scrollbar-thumb-zinc-400
-                    scrollbar-track-transparent
-                    [scrollbar-width:thin]
-                    [scrollbar-color:#a1a1aa_transparent]
-                ">
+                <div className="flex flex-col overflow-y-auto lg:col-span-2 p-4 pl-0 border-r border-zinc-200 ">
                     <Suspense fallback={<AllReviewsSkeleton />} >
                         <AllReviews productId={productId} />
                     </Suspense>
                 </div>
 
                 {/* Add review */}
-                <div className="relative p-4 w-[484px]">
+                <div className="py-4">
                     <div className={`${!session ? "blur-sm pointer-events-none select-none" : ""}`}>
                         <AddReview productId={productId} />
                     </div>

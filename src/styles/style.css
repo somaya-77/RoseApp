@@ -9,7 +9,7 @@
 
 /* BADGE COMPONENT */
 .badge_variants {
-  @apply inline-flex items-center rounded-md border px-2.5 py-0.5 font-medium text-xs transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-zinc-800;
+  @apply inline-flex items-center rounded-xl px-2.5 py-0.5 font-medium text-xs transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-zinc-800;
 }
 
 .badge_subtle {
@@ -17,11 +17,11 @@
 }
 
 .badge_secondary {
-  @apply bg-maroon-50 text-maroon-600 border-maroon-200 hover:bg-maroon-100 dark:bg-zinc-700 dark:text-softPink-300 dark:hover:text-softPink-300 dark:hover:bg-zinc-600;
+  @apply bg-maroon-50 text-maroon-600 hover:bg-maroon-100 dark:bg-zinc-700 dark:text-softPink-300 dark:hover:text-softPink-300 dark:hover:bg-zinc-600;
 }
 
 .badge_primary {
-  @apply bg-maroon-600 text-white border-maroon-600 hover:bg-maroon-700 dark:bg-softPink-300 dark:text-zinc-800 dark:hover:text-zinc-800 dark:hover:bg-softPink-400;
+  @apply bg-maroon-600 text-white hover:bg-maroon-700 dark:bg-softPink-300 dark:text-zinc-800 dark:hover:text-zinc-800 dark:hover:bg-softPink-400;
 }
 
 /* LABEL */

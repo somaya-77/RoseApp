@@ -1,23 +1,17 @@
-
-// import MainTitle from "@/components/shared/main-title";
 import RelatedProductsCarousel from "./related-products-carousel";
 import RelatedProductsContent from "./related-products-content";
 import { useTranslations } from "next-intl";
 import { Suspense } from "react";
-// import { SingleCardSkeleton } from "@/components/skeletons/product-card.skeleton";
 import MainTitle from "@/components/atoms/main-title";
 import { SingleCardSkeleton } from "../../skeletons/product-card.skeleton";
 
-type RelatedProductsProps = {
-    categoryId: string,
-}
 
-export default function RelatedProducts({ categoryId }: RelatedProductsProps) {
+export default function RelatedProducts({categoryId}:{categoryId: string|null}) {
     // Translation
     const t = useTranslations("related-products");
 
     return (
-        <div className="mb-[433px]">
+        <div className="mb-108.25">
             {/* Title */}
             <MainTitle title={t("title")} />
 
@@ -31,7 +25,7 @@ export default function RelatedProducts({ categoryId }: RelatedProductsProps) {
                             ))}
                         </div>
                     } >
-                    <RelatedProductsContent categoryId={categoryId} />
+                    <RelatedProductsContent categoryId={categoryId}/>
                 </Suspense>
             </RelatedProductsCarousel>
         </div>

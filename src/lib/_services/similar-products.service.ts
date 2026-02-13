@@ -1,10 +1,12 @@
-import { getToken } from "../manage-token";
-import { BestSellingResponse, ProductDetails } from "../types/product.type";
+import { authOptions } from "@/auth";
+import { BestSellingResponse } from "../types/product.type";
+import { getServerSession } from "next-auth";
 
 
-export async function getSimilarProductService(categoryId: string) {
-    const token = await getToken();
-
+export async function getSimilarProductService(categoryId: string | null) {
+const session = await getServerSession(authOptions);
+    
+    const token = session?.accessToken;
     if (!token) {
         throw new Error("No token available")
     }

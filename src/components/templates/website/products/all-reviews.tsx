@@ -1,13 +1,8 @@
-import { getTranslations } from "next-intl/server";
-// import { getProductsReviewService } from "../../_services/reviews/get-reviews.services";
 import Review from "./review";
+import { getTranslations } from "next-intl/server";
 import { getProductsReviewService } from "@/lib/_services/get-reviews.service";
 
-type AllReviewsProps = {
-    productId: string
-};
-
-export default async function AllReviews({ productId }: AllReviewsProps) {
+export default async function AllReviews({ productId }: {productId: string}) {
     //Translation
     const t = await getTranslations("review");
 

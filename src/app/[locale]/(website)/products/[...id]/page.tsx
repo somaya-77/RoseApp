@@ -1,20 +1,21 @@
 import ProductDetails from "@/components/templates/website/products/product-details";
 import ProductReviews from "@/components/templates/website/products/product-review";
 import RelatedProducts from "@/components/templates/website/products/related-products";
+import { SearchParams } from "@/lib/types";
 import React from "react";
 // import ProductDetails from "./_components/product-details";
 
-export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+export default async function Page({ params, searchParams }: { params: Promise<{ id: string }>,searchParams:  Promise<{ category: string }>}) {
   const {id} = await params
+  const sParams = await searchParams; 
+  const categoryId = sParams.category;
   return <>
-    <ProductDetails id={id} />;
+    <ProductDetails id={id} />
 
-    {/* // TODO: pass a real data */}
     {/* Product's Reviews */}
-    {/* <ProductReviews productId={id} rateAvg={3.5} rateCount={2} /> */}
+    <ProductReviews productId={id}  />
 
     {/* Related Products */}
-    {/* //TODO: pass real categoryId */}
-    {/* <RelatedProducts categoryId={"673c46fd1159920171827c85"} /> */}
+    <RelatedProducts categoryId={categoryId}/>
   </>
 }

@@ -10,7 +10,7 @@ import Link from "next/link";
 export default function BestSellingCard({ data }: {data: BestSellingProduct}) {
   return (
     <article className="w-full relative">
-   <Link href={`products/${data?._id}`}>
+   <Link href={`products/${data?._id}?category=${data?.category}`}>
       <div className="relative h-72 rounded-2xl overflow-hidden">
         <Image
           src={data.imgCover}
