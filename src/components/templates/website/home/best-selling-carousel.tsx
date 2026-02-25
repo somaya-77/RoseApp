@@ -19,7 +19,6 @@ export default async function BestSellingCarousel({
 
 const result = await getBestSelling({ limit: 6 });
 
-  console.log("result", result?.data)
   //handling empty state
   if (!result?.data || result.data.length === 0) {
     return <EmptyProductState />;

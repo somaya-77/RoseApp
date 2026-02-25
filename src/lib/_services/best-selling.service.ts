@@ -13,7 +13,7 @@ export async function bestSellingService(
     });
   }
 
-  const response = await fetch(url.toString(), {});
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/products`);
 
   const data: BestSellingResponse = await response.json();
   return data.products;

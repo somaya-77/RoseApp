@@ -42,6 +42,14 @@ import ResetFilter from "./products/reset-filter";
 import OccasionsCard from "./products/occasions-card";
 import RatingStars from "./products/rating-stars";
 
+
+// WEBSITE ==> ORDERS PAGE
+import SummaryOrderItem from "./orders/summary-order-item";
+import HeaderOrderItem from "./orders/header-order-item";
+import OrderCard from "./orders/order-card";
+import OrderItems from "./orders/order-item";
+import OrderList from "./orders/order-list";
+
 export {
     
     // WEBSITE
@@ -87,4 +95,12 @@ export {
     ResetFilter,
     PriceFilter,
     RatingStars,
+    
+    
+    // WEBSITE ==> ORDERS PAGE
+    SummaryOrderItem,
+    HeaderOrderItem,
+    OrderItems,
+    OrderList,
+    OrderCard,
 }

@@ -1,29 +1,9 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import {
-    GraduationCap, UserRound, ChevronDown, Timer, CircleQuestionMark, LogOut, Lock, CircleUserRound, ArrowRight, ChevronLeft, ChevronRight, MoveLeft, CheckIcon, ClosedCaption, X, ShoppingCart, BrushCleaning,
-    CheckCheck,
-    EllipsisVertical,
-    Check,
-    Trash2,
-    Bell,
-    Search,
-    Heart,
-    LocationEdit,
-    User,
-    Sun,
-    Moon,
-    ArrowLeft,
-    Flower,
-    LayoutDashboard,
-    ClipboardList,
-    CalendarHeart,
-    Package,
-    CircleDollarSign,
-    ClipboardListIcon,
-    ReceiptText,
-    Star,
+    GraduationCap, UserRound, ChevronDown, Timer, CircleQuestionMark, LogOut, Lock, CircleUserRound, ArrowRight, ChevronLeft, ChevronRight, MoveLeft, CheckIcon, ClosedCaption, X, ShoppingCart, BrushCleaning, CheckCheck, EllipsisVertical, Check, Trash2, Bell, Search, Heart, LocationEdit, User, Sun, Moon, ArrowLeft, Flower, LayoutDashboard, ClipboardList, CalendarHeart, Package, CircleDollarSign, ClipboardListIcon, ReceiptText, Star,
 } from "lucide-react";
+import { StarIcon } from "@/lib/svg";
 
 
 
@@ -67,6 +47,9 @@ const iconMap: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>
     ClipboardList,
     CalendarHeart,
     Package,
+
+
+    StarIcon,
 }
 // Types
 export type IconName = keyof typeof iconMap;
