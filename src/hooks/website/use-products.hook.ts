@@ -1,4 +1,4 @@
-import { getProducts } from "@/lib/_services/all-products.service";
+import { getProducts } from "@/lib/services/all-products.service";
 import { BestSellingResponse, ProductDetails } from "@/lib/types/product.type";
 import { useQuery } from "@tanstack/react-query";
 

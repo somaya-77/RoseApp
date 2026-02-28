@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import { Category } from "@/lib/types/category.type";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useRouter, useSearchParams } from "next/navigation";
-import { getAllCategoriesService } from "@/lib/_services/all-categories.service";
+import { getAllCategoriesService } from "@/lib/services/all-categories.service";
 
 
 export function useCategories(limit: number = 6) {

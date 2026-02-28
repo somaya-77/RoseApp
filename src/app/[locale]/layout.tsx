@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";

@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 import { Banknote, Check, CheckCheck, CreditCard, TriangleAlert, Truck } from "lucide-react";
 
 // interface

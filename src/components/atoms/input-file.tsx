@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 import LabelFileInput from "./label-file-input";
 import { FileInputProps } from "@/lib/types/interface";
 

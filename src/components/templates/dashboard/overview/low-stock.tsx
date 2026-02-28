@@ -1,4 +1,4 @@
-import { getLowStockService } from "@/lib/_services/low-stock.service"
+import { getLowStockService } from "@/lib/services/low-stock.service"
 
 
 export default async function LowStock(){

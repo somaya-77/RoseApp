@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 import { useLocale } from "next-intl";
 import { Button } from "@/components";
 import { usePathname, useRouter } from "@/i18n/navigation";

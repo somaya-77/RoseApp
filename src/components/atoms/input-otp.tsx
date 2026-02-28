@@ -3,7 +3,7 @@
 import * as React from "react";
 import { OTPInput, OTPInputContext } from "input-otp";
 import { Minus } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 
 type OTPStatus = "default" | "error" | "disabled";
 

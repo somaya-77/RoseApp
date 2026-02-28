@@ -1,4 +1,4 @@
-import { toReadableQueryString } from "@/lib/utils";
+import { toReadableQueryString } from "@/lib/utils/utils";
 import { useRouter } from "@/i18n/navigation";
 import { useSearchParams } from "next/navigation";
 import { useCallback } from "react";

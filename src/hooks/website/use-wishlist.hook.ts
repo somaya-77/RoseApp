@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useQueryClient, useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { useSession } from "next-auth/react";
-import { addToWishlist, removeFromWishlist } from "@/lib/_services/wishlist.service";
+import { addToWishlist, removeFromWishlist } from "@/lib/services/wishlist.service";
 
 
 const WISHLIST_KEY = "guest_wishlist";

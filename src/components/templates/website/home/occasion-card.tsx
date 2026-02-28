@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 // import { IOccasionCardProps } from "@/lib/types";
 import { useLocale, useTranslations } from "next-intl";
 import { Badge } from "@/components";

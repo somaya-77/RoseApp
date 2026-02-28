@@ -1,5 +1,5 @@
 import { SearchParams } from "@/lib/types";
-import { getProducts } from "@/lib/_services/all-products.service";
+import { getProducts } from "@/lib/services/all-products.service";
 import { FiltersProducts, ProductGrid } from "@/components/templates/website";
 
 export default async function ProductsPage({ searchParams }: SearchParams) {

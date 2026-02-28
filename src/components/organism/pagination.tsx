@@ -8,7 +8,7 @@ import {
   ChevronsRight,
   MoreHorizontal,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 import { usePagination } from "@/hooks/website/use-pagination.hook";
 
 // ==================== Types

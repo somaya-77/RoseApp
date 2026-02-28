@@ -5,7 +5,7 @@ import { Icon } from "@/components";
 import { usePathname } from "next/navigation";
 // import { DataProps } from "@/lib/types/types";
 // import { data } from "@/lib/constance/constance";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 import { dashboardLinks } from "@/lib/constants/dashboard";
 
 export default function SidebarLinks() {

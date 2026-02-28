@@ -1,6 +1,6 @@
 import { occasion } from './../constants/homepage';
 import { Result } from "@/lib/types";
-import { allOccasionsService } from "@/lib/_services/all-occasion.service";
+import { allOccasionsService } from "@/lib/services/all-occasion.service";
 import { Occasion } from "../types/occasion.type";
 
 

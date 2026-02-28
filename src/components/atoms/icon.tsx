@@ -1,5 +1,5 @@
 import React from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 import {
     GraduationCap, UserRound, ChevronDown, Timer, CircleQuestionMark, LogOut, Lock, CircleUserRound, ArrowRight, ChevronLeft, ChevronRight, MoveLeft, CheckIcon, ClosedCaption, X, ShoppingCart, BrushCleaning, CheckCheck, EllipsisVertical, Check, Trash2, Bell, Search, Heart, LocationEdit, User, Sun, Moon, ArrowLeft, Flower, LayoutDashboard, ClipboardList, CalendarHeart, Package, CircleDollarSign, ClipboardListIcon, ReceiptText, Star,
 } from "lucide-react";

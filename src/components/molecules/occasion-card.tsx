@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 import { useTranslations } from "next-intl";
 import { IOccasionCardProps } from "@/lib/types/occasion.type";
 

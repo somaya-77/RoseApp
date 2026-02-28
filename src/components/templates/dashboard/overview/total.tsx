@@ -1,12 +1,12 @@
-import { cn } from "@/lib/utils";
 import { Icon } from "@/components";
+import { cn } from "@/lib/utils/utils";
 import { totalData } from "@/lib/constants/dashboard";
 
 export default function Total() {
 
     return (
         <>
-            <ul className="grid grid-cols-2 h-60 gap-4">
+            <ul className="grid grid-cols-2 h-60 gap-4"> 
                 {totalData.map((Item, index) => {
                     const { bg, num, title, icon, text, pound } = Item;
                     return (

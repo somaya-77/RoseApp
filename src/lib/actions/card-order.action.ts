@@ -1,0 +1,33 @@
+"use server";
+
+import { CreateCardOrderPayload, CreateCardOrderResponse } from "../types/address";
+import getToken from "../utils/manage-token";
+
+export const createCardOrder = async ({
+  shippingAddress,
+  clientToken,
+}: CreateCardOrderPayload): Promise<CreateCardOrderResponse> => {
+  const token = await getToken();
+
+  if (!token) throw new Error("Not logged in");
+
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/orders/checkout?url=${process.env.BASE_URL}`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token?.accessToken || clientToken}`,
+      },
+      body: JSON.stringify({ shippingAddress }),
+      cache: "no-store",
+    },
+  );
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data?.message || "Checkout session failed");
+  }
+
+  return data;
+};

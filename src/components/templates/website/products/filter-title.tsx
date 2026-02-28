@@ -3,7 +3,7 @@
 import { Button } from "@/components";
 // import { toReadableQueryString } from "@/lib/utils/query-string";
 import { useRouter } from "@/i18n/navigation";
-import { toReadableQueryString } from "@/lib/utils";
+import { toReadableQueryString } from "@/lib/utils/utils";
 import { X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";

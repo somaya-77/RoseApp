@@ -9,7 +9,7 @@ import {
   MoreHorizontal, 
 } from "lucide-react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 import { PaginationLinkProps } from "@/lib/types";
 
 /*  CONTAINER  */

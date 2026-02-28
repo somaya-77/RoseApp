@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 import {MainTitle} from "@/components";
 import { useTranslations } from "next-intl";
 import { useRouter, useSearchParams } from "next/navigation";

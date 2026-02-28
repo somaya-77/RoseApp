@@ -1,6 +1,6 @@
 import Review from "./review";
 import { getTranslations } from "next-intl/server";
-import { getProductsReviewService } from "@/lib/_services/get-reviews.service";
+import { getProductsReviewService } from "@/lib/services/get-reviews.service";
 
 export default async function AllReviews({ productId }: {productId: string}) {
     //Translation

@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/lib/constants/homepage";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 import { useLocale } from "next-intl";
 
 export default function NavBar() {

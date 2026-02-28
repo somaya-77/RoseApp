@@ -42,3 +42,19 @@ export type PriceFilterForm = {
   priceFrom?: number;
   priceTo?: number;
 };
+
+//Types
+export interface PaymentMethod {
+  id: "cash" | "card";
+  illustration: React.ReactNode;
+}
+
+export interface PaymentMethodStepProps {
+  onBack: () => void;
+  onNext: () => void;
+}
+
+export interface StepperProps {
+  steps: string[];
+  currentStep: number; 
+}

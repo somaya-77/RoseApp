@@ -1,4 +1,4 @@
-import { getAllCategoriesService } from "@/lib/_services/all-categories.service"
+import { getAllCategoriesService } from "@/lib/services/all-categories.service"
 
 
 export default async function AllCategories() {

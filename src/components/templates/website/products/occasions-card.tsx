@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 import { OccasionCardProps } from "@/lib/types/props.type";
 import { useUrlParams } from "@/hooks/website/use-url-params.hook";
 

@@ -10,7 +10,7 @@ import React, {
 import { useSession } from "next-auth/react";
 import { toast } from "sonner";
 
-import { addProductToServerCart, fetchServerCart } from "../_services/cart.service";
+import { addProductToServerCart, fetchServerCart } from "../services/cart.service";
 import { CartContextType, CartItem } from "../types/cart.type";
 import { ProductDetails } from "../types/product.type";
 

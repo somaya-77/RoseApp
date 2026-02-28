@@ -87,6 +87,8 @@ import {
     SelectScrollUpButton,
     SelectScrollDownButton
 } from "./atoms/select";
+import { Separator } from "./atoms/separator";
+import  Stepper  from "./atoms/stepper";
 
 import { Toaster } from "./atoms/sonner";
 import SubTitle from "./atoms/sub-title";
@@ -126,7 +128,6 @@ import {   Form,
   FormMessage, } from "./atoms/form";
 
 
-
 export {
     // ATOMS
     Icon,
@@ -135,9 +136,11 @@ export {
     Title,
     Badge,
     Button,
+    Stepper,
     Toaster,
     Textarea,
     SubTitle,
+    Separator,
     MainTitle,
     FileInput,
     PhoneInput,

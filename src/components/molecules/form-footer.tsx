@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 import { useTranslations } from "next-intl";
 
 export default function FormFooter({ title }: { title: string }) {

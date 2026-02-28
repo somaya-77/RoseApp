@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { getProductDetails } from "@/lib/_services/product-details.service";
+import { getProductDetails } from "@/lib/services/product-details.service";
 
 export default function useProductDetails(id: string) {
   const { isLoading, data, error } = useQuery({

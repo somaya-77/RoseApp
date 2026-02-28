@@ -1,5 +1,5 @@
 import * as React from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 import { Loader2 } from "lucide-react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";

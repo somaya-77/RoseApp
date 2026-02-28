@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 import { ProductDetails } from "@/lib/types/product.type";
 
 export default function ProductGallery({

@@ -1,5 +1,5 @@
 import { BadgeProps } from "@/lib/types/interface";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 import { cva } from "class-variance-authority";
 
 const badgeVariants = cva(

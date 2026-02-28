@@ -2,7 +2,7 @@
 
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { DEFAULT_OCCASIONS_LIMIT } from "@/lib/constants";
-import { allOccasionsService } from "@/lib/_services/all-occasion.service";
+import { allOccasionsService } from "@/lib/services/all-occasion.service";
 import { useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 import { MetaData } from "@/lib/types";

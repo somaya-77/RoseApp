@@ -1,4 +1,4 @@
-import { bestSellingService } from "@/lib/_services/best-selling.service";
+import { bestSellingService } from "@/lib/services/best-selling.service";
 import { BestSellingProduct, GetBestSellingParams } from "../types/product.type";
 import { Result } from "../types";
 

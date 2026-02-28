@@ -1,7 +1,7 @@
 'use client';
 
 import Swiper from 'swiper';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils/utils';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { occasionsSliderData } from '@/lib/constants/homepage';
 import { useLocale } from 'next-intl';

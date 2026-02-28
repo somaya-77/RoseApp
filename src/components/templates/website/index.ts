@@ -50,6 +50,13 @@ import OrderCard from "./orders/order-card";
 import OrderItems from "./orders/order-item";
 import OrderList from "./orders/order-list";
 
+// WEBSITE ==> CART
+import CartSummary from "./cart/cart-summary";
+// WEBSITE ==> Checkout
+import Checkout from "./checkout/checkout";
+import CheckoutDialog from "./checkout/checkout-dialog";
+import PaymentMethodStep from "./checkout/payment-method";
+import ShippingAddressStep from "./checkout/shipping-address";
 export {
     
     // WEBSITE
@@ -102,5 +109,12 @@ export {
     HeaderOrderItem,
     OrderItems,
     OrderList,
-    OrderCard,
+    // WEBSITE ==> CART
+    CartSummary,
+    // WEBSITE ==> CHECKOUT
+    
+    Checkout,
+    CheckoutDialog,
+    PaymentMethodStep,
+    ShippingAddressStep,
 }
