@@ -8,43 +8,42 @@ import { toast } from "sonner";
 import { defaultValue, LoginSchema, LoginSchemaType } from "@/lib/schemas/login.schema";
 
 export function useLoginHook() {
-    // navigation
-    const router = useRouter()
+    const router = useRouter();
 
-    // hook
     const form = useForm<LoginSchemaType>({
         resolver: zodResolver(LoginSchema),
         defaultValues: defaultValue,
-    })
+    });
 
-    // handle submit
     const onSubmit = async (data: LoginSchemaType) => {
-        const { email, password } = data;
+        const { email, password, remember } = data;
 
         try {
             const response = await signIn("credentials", {
                 email,
                 password,
+                remember: remember ? "true" : "false",
                 redirect: false,
             });
 
-            if (response?.status === 200) {
-                toast.success("Login successful!", {
-                    duration: 2000,
-                    onAutoClose: () => {
-                        router.push("/dashboard");
-                    }
-                });
-            } else {
-                toast.error(response?.error);
+            if (!response?.ok) {
+                toast.error(response?.error || "Login failed");
+                return;
             }
+
+            toast.success("Login successful!");
+
+            router.push("/");
+            router.refresh();
+
         } catch (err) {
             console.error("Unexpected error:", err);
+            toast.error("Something went wrong");
         }
     };
 
     return {
         form,
         onSubmit,
-    }
+    };
 }

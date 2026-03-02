@@ -51,12 +51,20 @@ import OrderItems from "./orders/order-item";
 import OrderList from "./orders/order-list";
 
 // WEBSITE ==> CART
-import CartSummary from "./cart/cart-summary";
 // WEBSITE ==> Checkout
 import Checkout from "./checkout/checkout";
 import CheckoutDialog from "./checkout/checkout-dialog";
 import PaymentMethodStep from "./checkout/payment-method";
 import ShippingAddressStep from "./checkout/shipping-address";
+// WEBSITE ==> Profile
+import ChangePasswordForm from "./profile/change-password-form";
+import ProfileForm from "./profile/profile-form";
+import AccountSideBar from "./profile/profile-sidebar";
+import UpdatePhoto from "./profile/update-photo";
+import Cart from "./cart/cart";
+import CartContent from "./cart/cart-content";
+import ContinueShopping from "./cart/continue-shopping-btn";
+
 export {
     
     // WEBSITE
@@ -110,11 +118,21 @@ export {
     OrderItems,
     OrderList,
     // WEBSITE ==> CART
-    CartSummary,
+    Cart,
+    CartContent,
+    ContinueShopping,
+
+
     // WEBSITE ==> CHECKOUT
     
     Checkout,
     CheckoutDialog,
     PaymentMethodStep,
     ShippingAddressStep,
+    
+    // WEBSITE ==> PROFILE
+    UpdatePhoto,
+    ProfileForm,
+    AccountSideBar,
+    ChangePasswordForm,
 }

@@ -1,4 +1,5 @@
 "use server";
+
 import { decode, encode, JWT } from "next-auth/jwt";
 import { cookies } from "next/headers";
 
@@ -7,6 +8,7 @@ const cookieName =
         ? "__Secure-next-auth.session-token"
         : "next-auth.session-token";
 
+// GET TOKEN
 export default async function getToken() {
     const tokenCookie = cookies().get(cookieName)?.value;
 
@@ -22,6 +24,8 @@ export default async function getToken() {
         return null;
     }
 }
+
+// SET TOKEN
 export async function setToken(token: JWT) {
     const encodedToken = await encode({
         token,
@@ -36,6 +40,8 @@ export async function setToken(token: JWT) {
         sameSite: "lax",
     });
 }
+
+// UPDATE SESSION TOKEN
 export async function updateSessionToken(newToken: string) {
     try {
         const currentToken = await getToken();
@@ -56,3 +62,8 @@ export async function updateSessionToken(newToken: string) {
         return { success: false, error };
     }
 }
+
+
+
+
+

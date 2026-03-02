@@ -2,47 +2,38 @@
 
 import Link from "next/link";
 import { useSession } from "next-auth/react";
-import { ChevronDown, User } from "lucide-react";
+import { User } from "lucide-react";
 
 import {
     HoverCard,
     HoverCardContent,
     HoverCardTrigger,
+    Icon,
+    UserDropDown,
 } from "@/components"
 import { useTranslations } from "next-intl";
 import LoginPopover from "../molecules/login-popover";
+import { InitialDataProps } from "@/lib/types/props.type";
 
-export default function InfoUser() {
+export default function InfoUser({ initialData }: InitialDataProps) {
+
     const t = useTranslations("auth")
-    const { data: session } = useSession();
-    const token = session?.accessToken;
-    const user = session?.user;
-    const firstName = user?.firstName;
+
 
     return (
         <HoverCard openDelay={100} closeDelay={40000}>
             <div className="inline-block cursor-pointer">
-                {!token ? (
+                {!initialData?.user && (
                     <HoverCardTrigger asChild>
                         <Link href="/login" className="flex items-center gap-1 text-sm py-1">
-                            <User className="h-5 w-5" />
+                            <Icon name="User" className="h-5 w-5" />
                             {t("Login")}
                         </Link>
                     </HoverCardTrigger>
-                ) : (
-                    <div className="w-24 flex justify-between items-center py-1">
-                        <div>
-                            <p className="text-zinc-500 -mb-2.5 text-xs">{t("Hello")}</p>
-                            <h3 className="text-maroon-600 dark:text-softPink-200">
-                                {firstName}
-                            </h3>
-                        </div>
-                        <ChevronDown className="text-zinc-500" />
-                    </div>
                 )}
             </div>
 
-            {!token && (
+            {!initialData?.user && (
                 <HoverCardContent align="start" className="w-100 p-0 shadow-2xl rounded-lg overflow-hidden">
                     <LoginPopover />
                 </HoverCardContent>

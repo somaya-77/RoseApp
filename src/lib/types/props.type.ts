@@ -57,4 +57,18 @@ export interface PaymentMethodStepProps {
 export interface StepperProps {
   steps: string[];
   currentStep: number; 
-}
+};
+
+// header
+
+export type InitialDataProps = {
+  initialData: {
+    user: {
+      firstName: string;
+      lastName: string;
+      email: string;
+      phone: string;
+      photo: string;
+    };
+  };
+};

@@ -1,17 +1,11 @@
-import Total from "./overview/total";
-import Revenue from "./overview/revenue";
-import LowStock from "./overview/low-stock";
-import TopSelling from "./overview/top-selling";
-import OrderState from "./overview/order-state";
-import AllCategories from "./overview/all-categories";
+import AllCategoriesStats from "./overview/all-categories-stats";
+import AllStatsCard from "./overview/all-stats-card";
+import StatisticsItem from "./overview/stats-item";
 
 
 export {
-    Total,
-    Revenue,
-    LowStock,
-    TopSelling,
-    OrderState,
-    AllCategories, 
+    AllStatsCard,
+    StatisticsItem,
+    AllCategoriesStats,
 
 }

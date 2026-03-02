@@ -1,20 +1,23 @@
+import { SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/components/layout/dashboard/app-sidebar";
+import DashboardProvider from "@/components/providers/dashboard/dashboard.provider";
 
-import DashboardNavbar from "@/components/molecules/dashboard-navbar";
-import Sidebar from "@/components/organism/sidebar";
+type DashboardLayoutProps = {
+    children: React.ReactNode;
+};
 
-export default function DashboardLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="flex h-screen">
-      {/* <Sidebar /> */}
-      <Sidebar />
-      <div className="ml-80 flex-1">
-        <DashboardNavbar />
-        <main className="bg-gray-50 p-4 h-screen">{children}</main>
-      </div>
-    </div>
-  );
+export default function DashboardLayout({ children }: DashboardLayoutProps) {
+    return (
+        <DashboardProvider>
+            {/* Side menu */}
+            <aside>
+                <AppSidebar />
+                <SidebarTrigger />
+            </aside>
+
+            <div className="ms-14">
+                {children}
+            </div>
+        </DashboardProvider>
+    );
 }

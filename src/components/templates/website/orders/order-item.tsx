@@ -1,10 +1,11 @@
 'use client'
 
-import { OrderCard } from "..";
+// import { OrderCard } from "..";
 import { useState } from "react";
 import { Icon } from "@/components";
 import { useTranslations } from "next-intl";
 import { OrderItem } from "@/lib/types/orders.type";
+import OrderCard from "./order-card";
 
 
 export default function OrderItems({ data }: { data: OrderItem[] }) {

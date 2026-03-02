@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Notifications } from "../templates/website";
-import { Icon, InfoUser, Location, ModeToggle, NavBar, Searchbar } from "@/components";
+import { Icon, InfoUser, Location, ModeToggle, NavBar, Searchbar, User } from "@/components";
 import LanguageSwitcher from "../molecules/language-switcher";
 
 
@@ -26,7 +26,7 @@ export default function DesktopHeader() {
 
                 {/* User Actions */}
                 <div className="flex items-center gap-2 text-gray-700 dark:text-zinc-50">
-                    <InfoUser />
+                    <User  />
 
                     <div className="flex items-center gap-4 px-4 border-x border-zinc-200">
                         <Icon name="Heart" className="h-5 w-5" />

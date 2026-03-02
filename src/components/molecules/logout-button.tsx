@@ -1,9 +1,8 @@
 "use client";
 
-import React from "react";
-import { Icon,DropdownMenuItem } from "@/components";
 import { signOut } from "next-auth/react";
 import { useTranslations } from "next-intl";
+import { Icon,DropdownMenuItem } from "@/components";
 
 export default function LogOutButton() {
   const t = useTranslations("common");

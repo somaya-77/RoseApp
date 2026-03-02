@@ -1,15 +1,17 @@
 import { z } from "zod";
+import { Translations } from "../types/global";
 
-export const otpSchema = z.object({
-    resetCode: z
-        .string()
-        .length(6, "OTP must be exactly 6 digits")
-        .regex(/^\d+$/, "OTP must only contain numbers"),
-});
+export const otpStepSchema = (t: Translations) =>
+    z.object({
+        resetCode: z
+            .string()
+            .regex(/^\d*$/, t("otp-regex"))
+            .length(6, t("otp-length")),
+    });
 
 export const otpDefaultValues: otpFormValues = {
     resetCode: "",
 };
 
 
-export type otpFormValues = z.infer<typeof otpSchema>;
+export type otpFormValues = z.infer<typeof otpStepSchema>;

@@ -1,10 +1,10 @@
 "use client";
 
+import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { FieldValues } from "react-hook-form";
 import { AuthFormProps } from "@/lib/types/interface";
 import { FormFooter, TypeInputs, Button, OTPTimer } from "@/components";
-import Link from "next/link";
-import { useTranslations } from "next-intl";
 import { useForgotPasswordMutation } from "@/lib/query/Auth-query/auth-query";
 import { ForgotPasswordFormValues } from "@/lib/schemas/forgot-password.schema";
 
@@ -13,7 +13,6 @@ export default function Form<T extends FieldValues>({ title, data, titleBtn, han
     const forgotPasswordMutation = useForgotPasswordMutation();
 
     const handleResendOTP = (email: ForgotPasswordFormValues) => {
-        console.log(email)
         forgotPasswordMutation.mutate(email);
     };
 

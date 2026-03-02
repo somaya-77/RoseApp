@@ -10,9 +10,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  SubmissionError,
 } from "@/components";
 import { Trash, Loader2 } from "lucide-react";
-import SubmissionError from "./submission-error";
+// import SubmissionError from "./submission-error";
 import { useState } from "react";
 
 type DeleteConfirmationProps = {

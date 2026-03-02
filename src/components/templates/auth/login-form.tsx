@@ -8,10 +8,11 @@ import GreetingTitle from "@/components/atoms/greeting-title";
 import { LoginSchemaType } from "@/lib/schemas/login.schema";
 
 export default function LoginForm() {
-    // Hook
-    const { form, onSubmit } = useLoginHook()
+    // Translate
     const t = useTranslations("auth");
 
+    // Hook
+    const { form, onSubmit } = useLoginHook();
 
     return (
         <>

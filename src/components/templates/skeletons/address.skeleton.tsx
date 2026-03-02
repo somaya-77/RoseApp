@@ -1,7 +1,6 @@
 "use client";
 
-import { Card, CardContent } from "@/components";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Card, CardContent,Skeleton } from "@/components";
 
 export default function ShippingAddressSkeleton() {
   return (

@@ -11,7 +11,7 @@ import {
     BreadcrumbEllipsis,
 } from "./atoms/breadcrumb";
 import { Button } from "./atoms/button"
-import { Card, CardContent, CardFooter, CardHeader } from "./atoms/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./atoms/card";
 import {
     Carousel,
     CarouselContent,
@@ -88,7 +88,7 @@ import {
     SelectScrollDownButton
 } from "./atoms/select";
 import { Separator } from "./atoms/separator";
-import  Stepper  from "./atoms/stepper";
+import Stepper from "./atoms/stepper";
 
 import { Toaster } from "./atoms/sonner";
 import SubTitle from "./atoms/sub-title";
@@ -120,16 +120,45 @@ import InfoUser from "./organism/info-user";
 import NavBar from "./organism/NavBar";
 import PhoneHeader from "./organism/phone-header";
 import TypeInputs from "./organism/type-inputs";
-import {   Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage, } from "./atoms/form";
-
+import {
+    Form,
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from "./atoms/form";
+import UserDropDown from "./organism/user-dropdown";
+import { Sidebar, SidebarProvider } from "./atoms/sidebar";
+import {
+    Tooltip, TooltipTrigger, TooltipContent, TooltipProvider
+} from "./atoms/tooltip";
+import {
+    Sheet,
+    SheetPortal,
+    SheetOverlay,
+    SheetTrigger,
+    SheetClose,
+    SheetContent,
+    SheetHeader,
+    SheetFooter,
+    SheetTitle,
+    SheetDescription,
+} from "./atoms/sheet";
+import { Checkbox } from "./atoms/checkbox";
+import { Avatar, AvatarImage, AvatarFallback } from "./atoms/avatar";
+import SubmissionError from "./atoms/submission-error";
+import User from "./molecules/user";
+import { Skeleton } from "./atoms/skeleton";
 
 export {
     // ATOMS
+    Skeleton,
+    SubmissionError,
+    Avatar, AvatarImage, AvatarFallback,
+    SidebarProvider,
+    Checkbox,
+    Sidebar,
     Icon,
     Input,
     Label,
@@ -152,7 +181,20 @@ export {
     AuthLanguageSwitcher,
 
 
-    
+    Tooltip, TooltipTrigger, TooltipContent, TooltipProvider,
+
+
+    Sheet,
+    SheetPortal,
+    SheetOverlay,
+    SheetTrigger,
+    SheetClose,
+    SheetContent,
+    SheetHeader,
+    SheetFooter,
+    SheetTitle,
+    SheetDescription,
+
     // Breadcrumb
     Breadcrumb,
     BreadcrumbList,
@@ -215,6 +257,7 @@ export {
     CardContent,
     CardFooter,
     CardHeader,
+    CardTitle,
     Card,
 
     // Carousel
@@ -223,7 +266,7 @@ export {
     CarouselItem,
     CarouselPrevious,
     CarouselNext,
-
+    
     // select
     Select,
     SelectGroup,
@@ -238,22 +281,22 @@ export {
 
 
     // hover card
-    HoverCard, 
+    HoverCard,
     HoverCardTrigger, HoverCardContent,
 
     // tab
-    Tabs, 
-    TabsContent, 
-    TabsList, 
+    Tabs,
+    TabsContent,
+    TabsList,
     TabsTrigger,
 
     // form
-      Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
+    Form,
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
 
     // MOLECULES
     EmptyNotifications,
@@ -262,6 +305,7 @@ export {
     AuthLayoutForm,
     AuthInfoPanel,
     OccasionCard,
+    User,
     ModeToggle,
     FormFooter,
     TypeInputs,
@@ -272,6 +316,7 @@ export {
 
     // ORGANISM
     DesktopHeader,
+    UserDropDown,
     PhoneHeader,
     Header,
     NavBar,

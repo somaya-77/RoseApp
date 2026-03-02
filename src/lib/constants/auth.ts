@@ -28,7 +28,8 @@ export const changePasswordInputs = [
 
 export const loginInputs = [
     { id: 1, label: "email-label", type: "text", name: "email" },
-    { id: 2, label: "password-label", type: "password", name:"password" }
+    { id: 2, label: "password-label", type: "password", name:"password" },
+    { id: 3, label: "remember", type: "checkbox", name:"remember" },
 ];
 
 export const forgotPasswordInputs = [

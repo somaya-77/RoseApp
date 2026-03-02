@@ -1,14 +1,12 @@
 'use client';
-// import { Controller } from "react-hook-form";
-import { Input, Label, InputOTP, InputOTPSlot, PhoneInput, Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components";
+
+import { useTranslations } from "next-intl";
 import { Controller } from "react-hook-form";
 import { InputPassword } from "../molecules/input-password";
-import { useTranslations } from "next-intl";
-// import { PhoneInput } from 'react-international-phone';
-// import 'react-international-phone/style.css';
+import { Input, Label, InputOTP, PhoneInput, Select, SelectTrigger, SelectValue, SelectContent, SelectItem, Checkbox } from "@/components";
 
 export default function TypeInputs({ form, ...props }: any) {
-
+// Translate
     const t = useTranslations("auth")
     const inputStyle = "w-full flex flex-col gap-2"
 
@@ -121,6 +119,23 @@ export default function TypeInputs({ form, ...props }: any) {
                         )}
                     />
                     <p className="text-sm text-red-600">{form.formState.errors[props.name]?.message}</p>
+                </div>
+            )
+
+
+        case "checkbox":
+            return (
+                <div className={inputStyle}>
+                    <div className="flex items-center gap-2 mb-5">
+                        <Controller
+                            control={form.control}
+                            name={props.name}
+                            render={({ field }) => (
+                                <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                            )}
+                        />
+                        <Label>{labelText}</Label>
+                    </div>
                 </div>
             )
 

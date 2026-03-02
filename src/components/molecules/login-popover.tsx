@@ -8,7 +8,7 @@ export default function LoginPopover() {
     const t = useTranslations("auth")
 
     return (
-        <Tabs defaultValue="login" className="w-100">
+        <Tabs defaultValue="login" className="w-100 bg-white dark:bg-zinc-800">
             <TabsList>
                 <TabsTrigger value="login">{t("Login")}</TabsTrigger>
                 <TabsTrigger value="register">

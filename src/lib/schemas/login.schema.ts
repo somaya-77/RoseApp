@@ -10,11 +10,14 @@ export const LoginSchema = z.object({
             /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[#?!@$%^&*-]).+$/,
             "Password must contain uppercase, lowercase, number, and special character"
         ),
+
+    remember: z.boolean().default(false).optional(),
 });
 
 export const defaultValue = {
     email: "",
     password: "",
+    remember: false,
 }
 
 export type LoginSchemaType = z.infer<typeof LoginSchema>;

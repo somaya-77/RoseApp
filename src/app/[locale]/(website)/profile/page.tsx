@@ -1,10 +1,5 @@
+import React from "react";
 
-const page = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+export default function ProfilePage() {
+  return <></>;
 }
-
-export default page
