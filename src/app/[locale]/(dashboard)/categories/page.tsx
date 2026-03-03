@@ -1,11 +1,10 @@
-import React from 'react'
+// import Categories from "./_components/categories";
 
-const page = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+export default function page({
+  searchParams,
+}: {
+  searchParams?: { page?: string };
+}) {
+    return (<></>)
+    // <Categories searchParams={searchParams} />;
 }
-
-export default page

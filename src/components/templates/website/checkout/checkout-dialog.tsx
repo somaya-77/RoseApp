@@ -5,7 +5,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components";
 
 export default function CheckoutDialog() {
   return (

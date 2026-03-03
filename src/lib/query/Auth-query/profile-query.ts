@@ -2,13 +2,14 @@ import { useMutation } from "@tanstack/react-query";
 import { axiosInstance } from "../../axios";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { ChangePasswordSchemaType } from "@/lib/schemas/change-password.schema";
+// import { ChangePasswordSchemaType } from "@/lib/schemas/change-password.schema";
 
 // change password
 export const useChangePasswordMutation = () => {
     const router = useRouter();
     return useMutation({
-        mutationFn: async (data: ChangePasswordSchemaType) => {
+        mutationFn: async (data: any) => {
+        // mutationFn: async (data: ChangePasswordSchemaType) => {
             const res = await axiosInstance.put(`auth/change-password`, data);
             return res.data;
         },

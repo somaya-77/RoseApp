@@ -30,12 +30,12 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     if (!guestCart.length) return;
 
     for (const item of guestCart) {
-      await addProductToServerCart(item.product._id, item.quantity);
+      // await addProductToServerCart(item.product._id, item.quantity);
     }
 
     localStorage.removeItem("guest_cart");
-    const serverCart = await fetchServerCart();
-    setCart(serverCart);
+    // const serverCart = await fetchServerCart();
+    // setCart(serverCart);
   };
 
   useEffect(() => {
@@ -46,8 +46,8 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
       }
 
       if (status === "authenticated") {
-        const serverCart = await fetchServerCart();
-        setCart(serverCart);
+        // const serverCart = await fetchServerCart();
+        // setCart(serverCart);
       }
     };
 
@@ -65,8 +65,8 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const addToCartHandler = async (product: ProductDetails, quantity = 1) => {
     try {
       if (status === "authenticated") {
-        const updatedCart = await addProductToServerCart(product._id, quantity);
-        setCart(updatedCart);
+        // const updatedCart = await addProductToServerCart(product._id, quantity);
+        // setCart(updatedCart);
       } else {
         // Add to guest cart in localStorage
         const guestCart: CartItem[] = JSON.parse(

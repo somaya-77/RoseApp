@@ -11,71 +11,72 @@ import CartProductDetails from "./cart-product-details";
 import { Button } from "@/components";
 import { AlertCircle } from "lucide-react";
 import CartSkeleton from "../../skeletons/cart.skeleton";
+// import { useCartQuery } from "@/hooks/website/use-cart";
 
 export default function CartContent() {
   //Hooks
-  const { data: cart, isPending, isError, error, refetch } = useCartQuery();
+  // const { data: cart, isPending, isError, error, refetch } = useCartQuery();
 
-  if (isPending) return <CartSkeleton />;
+  // if (isPending) return <CartSkeleton />;
 
-  if (isError) {
-    return (
-      <div className="max-w-195.5 mb-12">
-        <div className="border border-red-200 bg-red-50 p-8 rounded-xl text-center">
-          <AlertCircle className="size-12 text-red-500 mx-auto mb-4" />
-          <p className="text-red-700 mb-4">
-            {error ? error.message : "Something went wrong"}
-          </p>
-          <Button onClick={() => refetch()} variant="outline">
-            Try Again
-          </Button>
-        </div>
-      </div>
-    );
-  }
-  if (!cart || cart.cartItems.length === 0) return <EmptyCart />;
+  // if (isError) {
+  //   return (
+  //     <div className="max-w-195.5 mb-12">
+  //       <div className="border border-red-200 bg-red-50 p-8 rounded-xl text-center">
+  //         <AlertCircle className="size-12 text-red-500 mx-auto mb-4" />
+  //         <p className="text-red-700 mb-4">
+  //           {error ? error.message : "Something went wrong"}
+  //         </p>
+  //         <Button onClick={() => refetch()} variant="outline">
+  //           Try Again
+  //         </Button>
+  //       </div>
+  //     </div>
+  //   );
+  // }
+  // if (!cart || cart.cartItems.length === 0) return <EmptyCart />;
+return(<></>)
+  // return (
+  //   <div className="max-w-195.5 mb-12">
+  //     {/*Cart Header */}
+  //     <CartHeader
+  //       cartLength={cart.cartItems.length}
+  //       disabled={!cart || cart.cartItems.length === 0}
+  //     />
 
-  return (
-    <div className="max-w-195.5 mb-12">
-      {/*Cart Header */}
-      <CartHeader
-        cartLength={cart.cartItems.length}
-        disabled={!cart || cart.cartItems.length === 0}
-      />
+  //     {/* Cart Items */}
+  //     <div className="border border-zinc-200 p-5 rounded-xl max-h-200 overflow-y-auto cart-scroll">
+  //       {cart?.cartItems?.map((item: any) => (
+  //         <div
+  //           key={item.product._id}
+  //           className="flex justify-between border-b last:border-b-0 border-zinc-200 py-5"
+  //         >
+  //           <div className="flex items-center gap-4">
+  //             {item.product?.imgCover && (
+  //               <Image
+  //                 src={item.product.imgCover}
+  //                 alt={item.product.title}
+  //                 width={117}
+  //                 height={140}
+  //                 className="rounded-lg object-cover w-28 h-36"
+  //               />
+  //             )}
 
-      {/* Cart Items */}
-      <div className="border border-zinc-200 p-5 rounded-xl max-h-200 overflow-y-auto cart-scroll">
-        {cart?.cartItems?.map((item) => (
-          <div
-            key={item.product._id}
-            className="flex justify-between border-b last:border-b-0 border-zinc-200 py-5"
-          >
-            <div className="flex items-center gap-4">
-              {item.product?.imgCover && (
-                <Image
-                  src={item.product.imgCover}
-                  alt={item.product.title}
-                  width={117}
-                  height={140}
-                  className="rounded-lg object-cover w-28 h-36"
-                />
-              )}
+  //             <CartProductDetails item={item} />
+  //           </div>
 
-              <CartProductDetails item={item} />
-            </div>
+  //           <div className="flex flex-col justify-between items-end h-35 ms-32">
+  //             <DeleteProduct productId={item.product._id} />
 
-            <div className="flex flex-col justify-between items-end h-35 ms-32">
-              <DeleteProduct productId={item.product._id} />
-
-              <CartQuantityControl
-                productId={item.product._id}
-                stock={item.product.quantity}
-                initialQty={item.quantity}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  //             <CartQuantityControl
+  //               productId={item.product._id}
+  //               stock={item.product.quantity}
+  //               initialQty={item.quantity}
+  //             />
+  //           </div>
+  //         </div>
+  //       ))}
+  //     </div>
+  //   </div>
+  // );
 }

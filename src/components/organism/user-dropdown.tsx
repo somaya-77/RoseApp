@@ -22,10 +22,12 @@ import LogOutButton from "../molecules/logout-button";
 import { InitialDataProps } from "@/lib/types/props.type";
 import useGetProfileData from "@/hooks/website/use-get-user-data";
 
-export default function UserDropDown({ initialData }: InitialDataProps) {
+export default function UserDropDown() {
+// export default function UserDropDown({ initialData }: InitialDataProps) {
   const t = useTranslations("header");
   const { profileData: session } = useGetProfileData();
-  const userData = session || initialData;
+  const userData = session;
+  // const userData = session || initialData;
 
   return (
     <>

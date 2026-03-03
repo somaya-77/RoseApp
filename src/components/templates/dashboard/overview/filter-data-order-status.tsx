@@ -1,9 +1,10 @@
-import { OrderStatus } from "@/lib/types";
+// import { OrderStatus } from "@/lib/types";
 import { STATUS_COLORS } from "@/lib/constants";
 import { useTranslations } from "next-intl";
 
 
-export default function FilterDataOrderStatus({ data, totalCount }: { data: OrderStatus[], totalCount: number }) {
+export default function FilterDataOrderStatus({ data, totalCount }: { data: any[], totalCount: number }) {
+// export default function FilterDataOrderStatus({ data, totalCount }: { data: OrderStatus[], totalCount: number }) {
     // TRANSLATE
 const t = useTranslations("order");
 

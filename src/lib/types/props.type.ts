@@ -62,7 +62,7 @@ export interface StepperProps {
 // header
 
 export type InitialDataProps = {
-  initialData: {
+  // initialData: {
     user: {
       firstName: string;
       lastName: string;
@@ -70,5 +70,5 @@ export type InitialDataProps = {
       phone: string;
       photo: string;
     };
-  };
+  // };
 };

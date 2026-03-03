@@ -10,7 +10,8 @@ const cookieName =
 
 // GET TOKEN
 export default async function getToken() {
-    const tokenCookie = cookies().get(cookieName)?.value;
+    const cookieStore = await cookies();
+    const tokenCookie = cookieStore.get(cookieName)?.value;
 
     try {
         const jwt = await decode({
@@ -27,12 +28,16 @@ export default async function getToken() {
 
 // SET TOKEN
 export async function setToken(token: JWT) {
+    const cookieStore = await cookies();
+
     const encodedToken = await encode({
         token,
         secret: process.env.NEXTAUTH_SECRET!,
     });
 
-    cookies().set(cookieName, encodedToken, {
+    cookieStore.set({
+        name: cookieName,
+        value: encodedToken,
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         maxAge: 60 * 60 * 24 * 7,

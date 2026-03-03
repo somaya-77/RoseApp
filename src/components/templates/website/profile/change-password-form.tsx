@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 // import { changePasswordSchema } from "@/lib/schemes/auth.schema";

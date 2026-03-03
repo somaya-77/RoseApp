@@ -8,11 +8,11 @@ export default async function User() {
 const session = await getServerSession(authOptions);
     return (
   <>
-          {session?.user ? (
+          {/* {session?.user ? (
             <UserDropDown initialData={session} />
           ) : (
             <InfoUser initialData={session}/>
-          )}
+          )} */}
   </>
     )
 }

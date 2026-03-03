@@ -1,8 +1,9 @@
 "use server";
 
 import { getServerSession } from "next-auth";
-import type { CartResponse } from "@/lib/types/cart";
+// import type { CartResponse } from "@/lib/types/cart";
 import { authOptions } from "@/auth";
+import { CartResponse } from "../types/cart.type";
 
 export async function addToCartAction(productId: string, quantity: number) {
   const session = await getServerSession(authOptions);

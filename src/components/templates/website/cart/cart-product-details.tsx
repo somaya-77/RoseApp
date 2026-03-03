@@ -1,9 +1,10 @@
-import { CartItem } from "@/lib/types/cart";
+// import { CartItem } from "@/lib/types/cart";
 import { Star } from "lucide-react";
 import { useTranslations } from "next-intl";
 import React from "react";
 
-export default function CartProductDetails({item}:{item:CartItem}) {
+export default function CartProductDetails({item}:{item:any}) {
+// export default function CartProductDetails({item}:{item:CartItem}) {
   //Translation
   const t = useTranslations("product");
 

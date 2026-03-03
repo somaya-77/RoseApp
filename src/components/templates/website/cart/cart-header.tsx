@@ -1,9 +1,9 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components";
 import { BrushCleaning } from "lucide-react";
 import React from "react";
-import { useClearCart } from "../hooks/use-clear-cart";
+// import { useClearCart } from "../hooks/use-clear-cart";
 import { useSession } from "next-auth/react";
 import { useTranslations } from "next-intl";
 
@@ -19,7 +19,7 @@ export default function CartHeader({
 
   // Hooks
   const { data: session } = useSession();
-  const clearCart = useClearCart(!!session?.user);
+  // const clearCart = useClearCart(!!session?.user);
 
   return (
     <div className="flex justify-between items-center pb-5 max-w-[782px] w-full">
@@ -29,7 +29,7 @@ export default function CartHeader({
           {cartLength} {t("products-count")}
         </span>
       </h2>
-
+{/* 
       <Button
         onClick={() => clearCart.mutate()}
         disabled={disabled || clearCart.isPending}
@@ -40,7 +40,7 @@ export default function CartHeader({
         {clearCart.isPending
           ? t("clean-cart-btn-loading")
           : t("clean-cart-btn")}
-      </Button>
+      </Button> */}
     </div>
   );
 }

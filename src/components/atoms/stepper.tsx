@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils/utils";
 import { StepperProps } from "@/lib/types/props.type";
 
-export default function Stepper({ steps, currentStep }: React.FC<StepperProps>) {
+export default function Stepper({ steps, currentStep }: StepperProps) {
     const isLastStep = currentStep === steps.length - 1;
 
     return (

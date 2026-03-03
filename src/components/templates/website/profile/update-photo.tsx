@@ -17,7 +17,7 @@ import { useRef } from "react";
 // import useGetProfileData from "../../../../../hooks/website/use-get-user-data";
 // import { photoUploadSchema } from "@/lib/schemes/auth.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "@/components";
 import { LoaderIcon } from "lucide-react";
 import { photoUploadSchema } from "@/lib/schemas/upload-profile-photo.schema";
 import useGetProfileData from "@/hooks/website/use-get-user-data";
@@ -117,7 +117,7 @@ export default function UpdatePhoto() {
                         />
                       )}
                       <Input
-                        ref={fileInputRef}
+                        // ref={fileInputRef}
                         type="file"
                         accept="image/*"
                         className="hidden"

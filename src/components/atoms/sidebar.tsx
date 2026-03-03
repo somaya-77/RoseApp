@@ -22,7 +22,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components"
-import { Skeleton } from "@/components/ui/skeleton"
+import { Skeleton } from "@/components"
 import { useIsMobile } from "@/hooks/use-mobile"
 import { SIDEBAR_COOKIE_MAX_AGE, SIDEBAR_COOKIE_NAME, SIDEBAR_KEYBOARD_SHORTCUT, SIDEBAR_WIDTH, SIDEBAR_WIDTH_ICON, SIDEBAR_WIDTH_MOBILE } from "@/lib/constants"
 

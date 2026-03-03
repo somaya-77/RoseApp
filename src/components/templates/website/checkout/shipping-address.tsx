@@ -3,7 +3,7 @@
 import { useTranslations, useLocale } from "next-intl";
 import { PhoneIcon, MoveRight, MoveLeft } from "lucide-react";
 import React, { useEffect } from "react";
-import { Card, CardContent,Button,Dialog, DialogTrigger,separator } from "@/components";
+import { Card, CardContent,Button,Dialog, DialogTrigger } from "@/components";
 
 import CheckoutDialog from "./checkout-dialog";
 import { cn } from "@/lib/utils/utils";
@@ -134,9 +134,9 @@ const ShippingAddressStep: React.FC<ShippingAddressStepProps> = ({
 
             {/* OR */}
             <div className="my-3 flex items-center justify-center">
-                <Separator className="w-full max-w-xs" />
+                {/* <Separator className="w-full max-w-xs" /> */}
                 <span className="mx-2.5 text-zinc-500 text-lg font-semibold">OR</span>
-                <Separator className="w-full max-w-xs" />
+                {/* <Separator className="w-full max-w-xs" /> */}
             </div>
 
             {/* Add new address */}

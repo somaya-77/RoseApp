@@ -10,12 +10,13 @@ import {
     CartesianGrid
 } from "recharts";
 import { useLocale } from "next-intl";
-import { OrderStatus } from "@/lib/types";
+// import { OrderStatus } from "@/lib/types";
 import CustomTooltip from "./custom-tooltip";
 import { formatXAxis } from "@/lib/constants";
-import { CardContent } from "@/components/ui/card";
+import { CardContent } from "@/components";
 
-export default function RevenueChartContent({ data }: { data: OrderStatus[] }) {
+export default function RevenueChartContent({ data }: { data: any[] }) {
+// export default function RevenueChartContent({ data }: { data: OrderStatus[] }) {
     // direction
     const isRTL = useLocale() === "ar";
 
